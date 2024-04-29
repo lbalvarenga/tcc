@@ -1,0 +1,3 @@
+set adjust-open "best-fit"
+set scroll-step 50
+set guioptions "scv"
