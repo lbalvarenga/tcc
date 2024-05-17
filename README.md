@@ -44,3 +44,9 @@ RMI &rarr; Arranjo Institucional &rarr; Inflação
 4. [ ] Metodologia, Modelo e Dados
 5. [ ] Resultados e Discussão
 6. [ ] Conclusão
+
+## TODO
+
+### Referências
+
+- Souza-Sobrinho BCB

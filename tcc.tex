@@ -37,9 +37,9 @@
 \documentclass[12pt,oneside,a4paper,chapter=TITLE,english,brazil,sumario=abnt-6027-2012]{abntex2}
 
 % Dark mode
-\usepackage{xcolor}
-\pagecolor[rgb]{0.1,0.1,0.15} %black
-\color[rgb]{0.5,0.5,0.5} %grey
+% \usepackage{xcolor}
+% \pagecolor[rgb]{0.1,0.1,0.15} %black
+% \color[rgb]{0.5,0.5,0.5} %grey
 
 % %%%%%%%%%%%%%%%%
 % PACOTES
@@ -413,16 +413,19 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 	\item[ABNT] Associação Brasileira de Normas Técnicas.
 	\item[RMI] Regime de metas de inflação
 	\item[IPCA] Índice Nacional de Preços ao Consumidor Amplo
+	\item[CMN] Conselho Monetário Nacional
+	\item[ECM] Modelagem de Correção de Erros
+	\item[VAR] Análise de Vetores Autoregressivos
 \end{siglas}
 \pagebreak
 
 
 % %%%%%%%%%%%%%%%%
 %LISTA DE SíMBOLOS
-\begin{simbolos}
-	\item[Depeco] Departamento de Economia
-\end{simbolos}
-\pagebreak
+% \begin{simbolos}
+% 	\item[Depeco] Departamento de Economia
+% \end{simbolos}
+% \pagebreak
 
 
 % %%%%%%%%%%%%%%%%
@@ -440,21 +443,47 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 
 \chapter{Introdução}
 
-Diversos países adotam, atualmente, regimes de metas de inflação. O modelo surgiu em 1990 na Nova Zelândia e chegou ao Brasil em 1999, quando foi proposta uma série de diretrizes que têm por objetivo atingir uma meta preestabelecida de crescimento de um índice de inflação, nomeadamente o Índice Nacional de Preços ao Consumidor Amplo (IPCA) \cite{sicsu2002teoriarmi}. Não há consenso econômico entre economistas acerca da teoria econômica que é mais adequada para sustentar o RMI. Tem-se discordância, por exemplo, se de fato existe uma taxa natural de desemprego, abaixo de cuja desencadear-se-ia um processo inflacionário.
+% Diversos países adotam, atualmente, regimes de metas de inflação. O modelo surgiu em 1990 na Nova Zelândia e chegou ao Brasil em 1999, quando foi proposta uma série de diretrizes que têm por objetivo atingir uma meta preestabelecida de crescimento de um índice de inflação, nomeadamente o Índice Nacional de Preços ao Consumidor Amplo (IPCA) \cite{sics_2002_teoria}. Não há consenso econômico entre economistas acerca da teoria econômica que é mais adequada para sustentar o RMI. Tem-se discordância, por exemplo, se de fato existe uma taxa natural de desemprego, abaixo de cuja desencadear-se-ia um processo inflacionário.
+
+O controle da inflação é um dos principais desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. Este trabalho tem como objetivo analisar a dinâmica inflacionária no Brasil sob o RMI entre os anos de 19XX e 20XX, focando especificamente nos componentes de inflação de demanda e de oferta.
+
+O Regime de Metas de Inflação é um arranjo institucional em que o Banco Central se compromete a manter a inflação dentro de um intervalo preestabelecido, utilizando instrumentos de política monetária, como a taxa de juros, para alcançar esse objetivo \cite{svensson_1997_inflation}. Este regime busca ancorar as expectativas inflacionárias dos agentes econômicos, contribuindo para a estabilidade macroeconômica \cite{mishkin_2000_inflation}. Desde sua implementação, o RMI no Brasil tem se baseado em metas anuais de inflação definidas pelo Conselho Monetário Nacional (CMN), com o Banco Central ajustando a taxa Selic para controlar a demanda agregada e manter a inflação dentro dos limites estipulados (SOUZA-SOBRINHO, 2010).
+
+A economia está sujeita, por diversos motivos, a um descompasso entre o crescimento real e a base monetária, fazendo com que ocorra inflação. O processo inflacionário pode ter como fonte diversos fatores. Entre eles é comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural.
+
+A inflação de demanda ocorre quando a demanda por bens e serviços supera a capacidade produtiva da economia, levando a aumentos generalizados de preços \cite{olivierblanchard_2013_macroeconomics}. Por outro lado, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}. Compreender a interação entre esses dois tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas.
+
+Neste contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios. A análise será conduzida através de um modelo econômico que considera os principais determinantes da inflação, utilizando dados históricos para avaliar a eficácia do regime.
+
+Para analisar a eficácia do RMI e a dinâmica inflacionária no Brasil, é essencial utilizar técnicas econométricas aplicadas a séries temporais. A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+
+A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas permitem aos pesquisadores avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços.
+
+A estrutura deste trabalho é composta por seis seções. Após esta introdução, a segunda seção abordará os diferentes tipos de inflação, seguida por uma discussão sobre o RMI no Brasil e a política monetária na terceira seção. A quarta seção detalhará a metodologia, o modelo utilizado e os dados coletados. Os resultados e a discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica.
 
 \chapter{Tipos de Inflação}
 
 \section{Inflação de Oferta}
 
-\subsection{Subseção}
+A inflação de oferta, também conhecida como inflação de custos, ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
 
-\subsubsection{Subsubseção}
+% \subsection{Subseção}
+
+% \subsubsection{Subsubseção}
 
 \section{Inflação de Demanda}
 
+A inflação de demanda ocorre quando a demanda agregada por bens e serviços supera a capacidade produtiva da economia, resultando em pressões inflacionárias. Este tipo de inflação é frequentemente associado a períodos de crescimento econômico robusto, onde a renda disponível e o consumo das famílias aumentam significativamente. Segundo \citeonline{olivierblanchard_2013_macroeconomics}, a inflação de demanda pode ser desencadeada por políticas fiscais expansionistas, como aumentos nos gastos governamentais ou cortes de impostos, que elevam a demanda agregada sem um correspondente aumento na oferta.
+
+Um exemplo histórico significativo de inflação de demanda ocorreu durante a década de 1970, quando muitos países enfrentaram pressões inflacionárias devido a políticas fiscais expansionistas e aumentos rápidos nos gastos de consumo \cite{blinder_2008_the}. No Brasil, a inflação de demanda tem sido uma preocupação constante, especialmente em contextos de políticas fiscais agressivas que aumentam o poder de compra sem um acompanhamento na produção. Segundo \cite{woodford_2009_interest}, a gestão eficaz da demanda agregada é crucial para evitar pressões inflacionárias, destacando a importância da coordenação entre políticas fiscais e monetárias. Portanto, o controle da inflação de demanda requer uma abordagem equilibrada que inclua a moderação das expansões fiscais e uma política monetária prudente que consiga antecipar e neutralizar excessos de demanda.
+
 \section{Inflação Estrutural}
 
+A inflação estrutural é causada por desequilíbrios fundamentais na estrutura econômica de um país. Fatores como a rigidez dos mercados, a ineficiência produtiva e a falta de competitividade em determinados setores podem contribuir para esse tipo de inflação. A inflação estrutural é particularmente relevante em economias em desenvolvimento, onde a infraestrutura inadequada e a baixa produtividade agrícola podem levar a aumentos persistentes nos preços. Essa forma de inflação requer reformas estruturais profundas para melhorar a eficiência e a capacidade produtiva da economia.
+
 \section{Inflação Inercial}
+
+A inflação inercial refere-se à tendência dos índices de preços de continuarem subindo devido à persistência das expectativas inflacionárias passadas. Esse tipo de inflação é mantido pela indexação de preços e salários, onde os agentes econômicos ajustam automaticamente os preços e salários futuros com base na inflação passada. \citeonline{lopes_1985_inflao} explica que, em um ambiente de inflação inercial, as expectativas de inflação se tornam autorrealizáveis, perpetuando a continuidade da inflação mesmo na ausência de novos choques de demanda ou custos.
 
 \chapter{Regime de Metas de Inflação}
 
@@ -481,290 +510,290 @@ Diversos países adotam, atualmente, regimes de metas de inflação. O modelo su
 
 %%%%%%%%%%%%%%%%%
 %APÊNCICES
-\apendices
+% \apendices
 
-\chapter{Anexos e Apêndices, quando for o caso.}
+% \chapter{Anexos e Apêndices, quando for o caso.}
 
-\chapter{Cronograma}
+% \chapter{Cronograma}
 
-\begin{table}[H]
-	\centering
-	\caption{Cronograma}
-	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
-		\toprule
-		Atividades\textbackslash{}Data & Jan & Fev & Mar & Abr & Mai & Jun & Jul & Ago & Set & Out & Nov \\
-		\midrule
-		Atividade 1                    &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		Atividade 2                    &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\midrule
-		                               &     &     &     &     &     &     &     &     &     &     &     \\
-		\bottomrule
-	\end{tabular}%
-	\label{tab:addlabel}%
-\end{table}%
+% \begin{table}[H]
+% 	\centering
+% 	\caption{Cronograma}
+% 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+% 		\toprule
+% 		Atividades\textbackslash{}Data & Jan & Fev & Mar & Abr & Mai & Jun & Jul & Ago & Set & Out & Nov \\
+% 		\midrule
+% 		Atividade 1                    &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		Atividade 2                    &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\midrule
+% 		                               &     &     &     &     &     &     &     &     &     &     &     \\
+% 		\bottomrule
+% 	\end{tabular}%
+% 	\label{tab:addlabel}%
+% \end{table}%
 
 
-\chapter{Dicas}
+% \chapter{Dicas}
 
-\section {Figuras e Tabelas}
+% \section {Figuras e Tabelas}
 
-\subsection{Figuras}
+% \subsection{Figuras}
 
-Para adicionar uma figura, crie o ambiente de figura e utilize \verb|\includegraphics| para anexar a figura no texto. Com esse comando você pode definir a largura e altura da figura no texto. 
+% Para adicionar uma figura, crie o ambiente de figura e utilize \verb|\includegraphics| para anexar a figura no texto. Com esse comando você pode definir a largura e altura da figura no texto. 
 
-Exemplo: 
+% Exemplo: 
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-\verb|\begin{figure}[H]|
+% \verb|\begin{figure}[H]|
 
-\verb|\caption{Logo da UEL}|
+% \verb|\caption{Logo da UEL}|
 
-\verb|\includegraphics[width=7cm,height=2cm]{Logo_Uel}\\|
+% \verb|\includegraphics[width=7cm,height=2cm]{Logo_Uel}\\|
 
-\verb|{\footnotesize Fonte: ... }|
+% \verb|{\footnotesize Fonte: ... }|
 
-\verb|\end{figure}|
+% \verb|\end{figure}|
 
-\vspace{0.5cm}
+% \vspace{0.5cm}
 
-Compilando esses comandos chegamos ao seguinte resultado: 
+% Compilando esses comandos chegamos ao seguinte resultado: 
 
 
-\begin{figure}[H]
-	\caption{Logo da UEL}
-	\includegraphics[width=7cm,height=2cm]{Logo_Uel}\\
-	{\footnotesize Fonte: ... }
-\end{figure}
+% \begin{figure}[H]
+% 	\caption{Logo da UEL}
+% 	\includegraphics[width=7cm,height=2cm]{Logo_Uel}\\
+% 	{\footnotesize Fonte: ... }
+% \end{figure}
 
-{\bfseries Importante:} As figuras devem estar na mesma pasta que o TCC está salvo.	
+% {\bfseries Importante:} As figuras devem estar na mesma pasta que o TCC está salvo.	
 
-\subsection{Tabelas}
+% \subsection{Tabelas}
 
-Escrever tabelas no {\LaTeX} sempre foi um ato de coragem dado o tempo necessário para completar a tarefa. 
+% Escrever tabelas no {\LaTeX} sempre foi um ato de coragem dado o tempo necessário para completar a tarefa. 
 
-Para escrever uma tabela você precisa primeiro criar o ambiente tabular, definir quantas colunas indicando seu posicionamento (\verb|l = esquerda; c=centro; r=direita|) e adicionar os dados separados por \verb|&| e no final de cada linha indicar que ela terminou escrevendo \verb|\\| (quebra de linha). Linhas verticais podem ser geradas adicionando o caracter | e linhas horizontais o comando \verb|\hline|.
+% Para escrever uma tabela você precisa primeiro criar o ambiente tabular, definir quantas colunas indicando seu posicionamento (\verb|l = esquerda; c=centro; r=direita|) e adicionar os dados separados por \verb|&| e no final de cada linha indicar que ela terminou escrevendo \verb|\\| (quebra de linha). Linhas verticais podem ser geradas adicionando o caracter | e linhas horizontais o comando \verb|\hline|.
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-Exemplo:
+% Exemplo:
 
-\verb|\begin{table}[H]|
+% \verb|\begin{table}[H]|
 
-\verb|\caption{Nossa Tabela}|
+% \verb|\caption{Nossa Tabela}|
 
-\verb|\begin{tabular}{ c c }|
+% \verb|\begin{tabular}{ c c }|
 
-\verb|\hline|
+% \verb|\hline|
 
-\verb|1 & 2 \\|
+% \verb|1 & 2 \\|
 
-\verb|4 & 5 \\|
+% \verb|4 & 5 \\|
 
-\verb|\hline|
+% \verb|\hline|
 
-\verb|\end{tabular}\\|
+% \verb|\end{tabular}\\|
 
-\verb|{\footnotesize Nota: ... }|
+% \verb|{\footnotesize Nota: ... }|
 
-\verb|\end{table}|
+% \verb|\end{table}|
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-Compilando esses comando chegamos ao seguinte resultado: 
+% Compilando esses comando chegamos ao seguinte resultado: 
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-\begin{table}[H]
-	\caption{Nossa Tabela}
-	\begin{tabular}{ c  c }
-		\hline
-		1 & 2 \\
-		4 & 5 \\
-		7 & 8 \\
-		\hline
-	\end{tabular}\\
-	{\footnotesize Nota: ... }
-\end{table}
-\vspace{0.5cm}
+% \begin{table}[H]
+% 	\caption{Nossa Tabela}
+% 	\begin{tabular}{ c  c }
+% 		\hline
+% 		1 & 2 \\
+% 		4 & 5 \\
+% 		7 & 8 \\
+% 		\hline
+% 	\end{tabular}\\
+% 	{\footnotesize Nota: ... }
+% \end{table}
+% \vspace{0.5cm}
 
-Entretanto uma maneira mais fácil é utilizar um conversor.  No nosso caso vamos utilizar um conversor de EXCEL par {\LaTeX}. Baixe o conversor Excel2LaTeX no seguinte link: {$\href{https://ctan.org/tex-archive/support/excel2latex?lang=en}{https://ctan.org/tex-archive/support/excel2latex?lang=en}$} e adicione o conversor aos \textit{Add-ins} do Excel. 
+% Entretanto uma maneira mais fácil é utilizar um conversor.  No nosso caso vamos utilizar um conversor de EXCEL par {\LaTeX}. Baixe o conversor Excel2LaTeX no seguinte link: {$\href{https://ctan.org/tex-archive/support/excel2latex?lang=en}{https://ctan.org/tex-archive/support/excel2latex?lang=en}$} e adicione o conversor aos \textit{Add-ins} do Excel. 
 
 
-\section{Ambiente Matemático}
+% \section{Ambiente Matemático}
 
-Quando estamos no meio do texto podemos criar um ambiente matemático utilizando cifrões. Por exemplo, \verb|$Y_t=K_t^\alpha L_t^{1-\alpha}$| sairá no texto como $Y_t=K_t^\alpha L_t^{1-\alpha}$. Observe que os caracteres \verb|_| gera subscrito e \verb|^| gera o sobrescrito. Entretanto, para escrevermos equações que mereçam destaque, devemos criar o ambiente equation, o qual numerará automaticamente as equações.  
+% Quando estamos no meio do texto podemos criar um ambiente matemático utilizando cifrões. Por exemplo, \verb|$Y_t=K_t^\alpha L_t^{1-\alpha}$| sairá no texto como $Y_t=K_t^\alpha L_t^{1-\alpha}$. Observe que os caracteres \verb|_| gera subscrito e \verb|^| gera o sobrescrito. Entretanto, para escrevermos equações que mereçam destaque, devemos criar o ambiente equation, o qual numerará automaticamente as equações.  
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-Exemplo:
+% Exemplo:
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-\verb|\begin{equation}|
+% \verb|\begin{equation}|
 
-\verb|Y_t=K_t^\alpha L_t^{1-\alpha}|
+% \verb|Y_t=K_t^\alpha L_t^{1-\alpha}|
 
-\verb|\end{equation}|
+% \verb|\end{equation}|
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-Compilando esses comando chegamos a seguinte equação
+% Compilando esses comando chegamos a seguinte equação
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-\begin{equation}\label{equ1}
-	Y_t=K_t^\alpha L_t^{1-\alpha}
-\end{equation}
+% \begin{equation}\label{equ1}
+% 	Y_t=K_t^\alpha L_t^{1-\alpha}
+% \end{equation}
 
-Algumas operações que normalmente usamos são frações, somatórias, limites, derivas e integrais:
+% Algumas operações que normalmente usamos são frações, somatórias, limites, derivas e integrais:
 
-\begin{itemize}
-	\item Fração = \verb|\frac{numredaor}{denominador}| = $\frac{Numerador}{Denominador}$
-	      
-	\item Somatória = \verb|\sum_{mínimo}^{máximo} | = $\sum_{min}^{max}$
-	      
-	\item Derivada = \verb|\partial| = $\partial$
-	      
-	\item Integral, \verb|\int_{mínimo}^{máximo}| = $\int_{min}^{max}$
-	      
-\end{itemize}
+% \begin{itemize}
+% 	\item Fração = \verb|\frac{numredaor}{denominador}| = $\frac{Numerador}{Denominador}$
 
-No caso das matrizes precisamos criar o ambiente de matrizes, bmatrix e escreve-la de forma parecida como escrevemos uma tabela.
+% 	\item Somatória = \verb|\sum_{mínimo}^{máximo} | = $\sum_{min}^{max}$
 
-\vspace{0.2cm}
-Exemplo: 
-\vspace{0.2cm}
+% 	\item Derivada = \verb|\partial| = $\partial$
 
-\verb|\[|
+% 	\item Integral, \verb|\int_{mínimo}^{máximo}| = $\int_{min}^{max}$
 
-M=
+% \end{itemize}
 
-\verb|\begin{bmatrix}|
+% No caso das matrizes precisamos criar o ambiente de matrizes, bmatrix e escreve-la de forma parecida como escrevemos uma tabela.
 
-\verb|1 & 2  \\|
+% \vspace{0.2cm}
+% Exemplo: 
+% \vspace{0.2cm}
 
-\verb|3 & 4 |
+% \verb|\[|
 
-\verb|\end{bmatrix}|
+% M=
 
-\verb|\]|
+% \verb|\begin{bmatrix}|
 
-\vspace{0.4cm}
+% \verb|1 & 2  \\|
 
-Nossa Matriz:
+% \verb|3 & 4 |
 
-\vspace{0.2cm}
-\[
-	M=
-	\begin{bmatrix}
-		1 & 2   \\
-		3 & 4 
-	\end{bmatrix}
-\]
+% \verb|\end{bmatrix}|
 
+% \verb|\]|
 
+% \vspace{0.4cm}
 
+% Nossa Matriz:
 
-\section{Citações e Referências}\label{citaebib}
+% \vspace{0.2cm}
+% \[
+% 	M=
+% 	\begin{bmatrix}
+% 		1 & 2   \\
+% 		3 & 4 
+% 	\end{bmatrix}
+% \]
 
-{\tiny }
 
-Para fazer citações e a seção de referências é necessário utilizar um pacote de apoio as várias opções. No nosso caso estamos utilizando o pacote \verb|\usepackage[alf]{abntex2cite}|, o qual traz as normas da ABNT.
 
-\subsection{Arquivo .bib}
 
-Para gerar sua bibliografia é necessário criar um aquivo que contêm a sintaxe padrão da extensão .bib das referências que serão utilizadas. Cada referência deve apresentar uma lista de informações que serão utilizadas na geração das referências. 
+% \section{Citações e Referências}\label{citaebib}
 
-O exemplo abaixo mostra a entrada no aquivo .bib de duas teses de doutorado. Cada entrada é definida como uma tese, @phdthesis, que será chamada pelo {\LaTeX} como alexopoulos2012three e a outra bego2017three. Nas referências serão utilizadas as informações do título, nome do autor, ano e instituição.  
+% {\tiny }
 
-\vspace{1cm}
-{
-\noindent
-@phdthesis{alexopoulos2012three,\\
-title={Three essays on inequality},\\
-author={Alexopoulos, Joanna},\\
-year={2012},\\
-school={University of Illinois at Urbana-Champaign}\\
-}
-}
+% Para fazer citações e a seção de referências é necessário utilizar um pacote de apoio as várias opções. No nosso caso estamos utilizando o pacote \verb|\usepackage[alf]{abntex2cite}|, o qual traz as normas da ABNT.
 
-\vspace{1cm}
-{
-\noindent
-@phdthesis{bego2017three,\\
-title={Three essays on agricultural markets},\\
-author={Bego, Marcelo da Silva},\\
-year={2017}\\
-}
-}
+% \subsection{Arquivo .bib}
 
+% Para gerar sua bibliografia é necessário criar um aquivo que contêm a sintaxe padrão da extensão .bib das referências que serão utilizadas. Cada referência deve apresentar uma lista de informações que serão utilizadas na geração das referências. 
 
-Você não precisa gerar a entrada de cada artigo, pois o Google Scholar oferece esse formato. Em cite no Google Scholar procure por BibTeX. 
+% O exemplo abaixo mostra a entrada no aquivo .bib de duas teses de doutorado. Cada entrada é definida como uma tese, @phdthesis, que será chamada pelo {\LaTeX} como alexopoulos2012three e a outra bego2017three. Nas referências serão utilizadas as informações do título, nome do autor, ano e instituição.  
 
-Nomeando e salvando o aquivo que contêm as referências de ref.bib (ou qualquer nome que você deseja) na mesma pasta que o TCC está salvo é possível adicionar a citação no texto e o \LaTeX \hspace{0.1cm} gerará a referência automaticamente. 
+% \vspace{1cm}
+% {
+% \noindent
+% @phdthesis{alexopoulos2012three,\\
+% title={Three essays on inequality},\\
+% author={Alexopoulos, Joanna},\\
+% year={2012},\\
+% school={University of Illinois at Urbana-Champaign}\\
+% }
+% }
 
-	{{\bfseries Importante:} Para compilar o aquivo ref.bib use F8}. Assim use F8 para compilar a entrada de novas referências e F5  para compilar o texto com a nova entrada de referência e atualizar o pdf.  
+% \vspace{1cm}
+% {
+% \noindent
+% @phdthesis{bego2017three,\\
+% title={Three essays on agricultural markets},\\
+% author={Bego, Marcelo da Silva},\\
+% year={2017}\\
+% }
+% }
 
-\subsection{Citações}
 
-Para fazer a citação com \verb|\usepackage[alf]{abntex2cite}| temos as seguintes opções: \verb|\citet|,  \verb|\citeonline|.
+% Você não precisa gerar a entrada de cada artigo, pois o Google Scholar oferece esse formato. Em cite no Google Scholar procure por BibTeX. 
 
-Exemplos: 
+% Nomeando e salvando o aquivo que contêm as referências de ref.bib (ou qualquer nome que você deseja) na mesma pasta que o TCC está salvo é possível adicionar a citação no texto e o \LaTeX \hspace{0.1cm} gerará a referência automaticamente. 
 
-\verb|\cite{alexopoulos2012three}| = (ALEXOPOULOS, 2012)
+% 	{{\bfseries Importante:} Para compilar o aquivo ref.bib use F8}. Assim use F8 para compilar a entrada de novas referências e F5  para compilar o texto com a nova entrada de referência e atualizar o pdf.  
 
-\verb|\citeonline{alexopoulos2012three}| = Alexopoulos (2012)
+% \subsection{Citações}
 
-\verb|\cite{bego2017three}| = (BEGO, 2017)
+% Para fazer a citação com \verb|\usepackage[alf]{abntex2cite}| temos as seguintes opções: \verb|\citet|,  \verb|\citeonline|.
 
-\verb|\citeonline{bego2017three}| = Bego (2017)
+% Exemplos: 
 
-\subsection{Referências}
+% \verb|\cite{alexopoulos2012three}| = (ALEXOPOULOS, 2012)
 
-A bibliografia é gerada e atualizada automaticamente cada vez que adicionamos ou retiramos uma citação no corpo do texto. Para gerar a seção referências utiliza-se o seguintes comandos:  
+% \verb|\citeonline{alexopoulos2012three}| = Alexopoulos (2012)
 
-\vspace{1cm}
-{
-	\noindent
-	\verb|\bibliographystyle{abntex2-alf}%Definição do padrão ANBT| \\
-	\verb|\bibliography{ref}%chamando o arquivo .bib com as referências | \\
-}
+% \verb|\cite{bego2017three}| = (BEGO, 2017)
 
-Como resultado as referências bibliográficas do texto serão apresentadas da seguinte forma: 
+% \verb|\citeonline{bego2017three}| = Bego (2017)
 
-\vspace{1cm}
-\begin{center}
-	\large \bfseries REFERÊNCIAS
-\end{center}
+% \subsection{Referências}
 
-{
-\noindent
-ALEXOPOULOS, J. Three essays on inequality. Tese (Doutorado)—University of Illinois at
-Urbana-Champaign, 2012.
+% A bibliografia é gerada e atualizada automaticamente cada vez que adicionamos ou retiramos uma citação no corpo do texto. Para gerar a seção referências utiliza-se o seguintes comandos:  
 
-\noindent
-BEGO, M. d. S. Three essays on agricultural markets. Tese (Doutorado), 2017.
-}
+% \vspace{1cm}
+% {
+% 	\noindent
+% 	\verb|\bibliographystyle{abntex2-alf}%Definição do padrão ANBT| \\
+% 	\verb|\bibliography{ref}%chamando o arquivo .bib com as referências | \\
+% }
+
+% Como resultado as referências bibliográficas do texto serão apresentadas da seguinte forma: 
+
+% \vspace{1cm}
+% \begin{center}
+% 	\large \bfseries REFERÊNCIAS
+% \end{center}
+
+% {
+% \noindent
+% ALEXOPOULOS, J. Three essays on inequality. Tese (Doutorado)—University of Illinois at
+% Urbana-Champaign, 2012.
+
+% \noindent
+% BEGO, M. d. S. Three essays on agricultural markets. Tese (Doutorado), 2017.
+% }
 
 
 \end{document}
