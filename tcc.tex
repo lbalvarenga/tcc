@@ -103,7 +103,7 @@
 
 % %%%%%%%%%%%%%%%%
 %NOME DO TRABALHO 
-\titulo{\bfseries ANÁLISE DA DINÂMICA INFLACIONÁRIA SOB O REGIME DE METAS DE INFLAÇÃO NO BRASIL ENTRE 19XX e 20XX}
+\titulo{\bfseries ANÁLISE DA DINÂMICA INFLACIONÁRIA SOB O REGIME DE METAS DE INFLAÇÃO NO BRASIL ENTRE 2003 e 2023}
 
 
 % %%%%%%%%%%%%%%%%
@@ -113,7 +113,7 @@
 
 % %%%%%%%%%%%%%%%%
 %NOME DO ORIENTADOR
-\orientador{CARLOS EDUARDO CALDARELLI}
+\orientador{Carlos Eduardo Caldarelli}
 
 
 % %%%%%%%%%%%%%%%%
@@ -187,7 +187,7 @@
 				\SingleSpacing
 				Trabalho de Conclusão de Curso apresentado ao Departamento de Economia da Universidade Estadual de Londrina.
 				
-				Orientador: Prof(a). \imprimirorientador
+				Orientador: Prof. \imprimirorientador
 			\end{minipage}%
 		\end{flushright}
 		
@@ -362,7 +362,7 @@
 % %%%%%%%%%%%%%%%%
 %RESUMO
 \noindent
-ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 19XX e 20XX}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
+ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
@@ -376,7 +376,7 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 % %%%%%%%%%%%%%%%%
 %ABSTRACT
 \noindent
-ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 19XX e 20XX}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
+ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 
 \begin{resumo}[Abstract]
 	\begin{otherlanguage*}{english}
@@ -412,10 +412,15 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 	\item[UEL] Universidade Estadual de Londrina. 
 	\item[ABNT] Associação Brasileira de Normas Técnicas.
 	\item[RMI] Regime de metas de inflação
+	\item[SELIC] Sistema Especial de Liquidação e Custódia
 	\item[IPCA] Índice Nacional de Preços ao Consumidor Amplo
+	\item[IGP-DI] Índice Geral de Preços - Disponibilidade Interna
 	\item[CMN] Conselho Monetário Nacional
 	\item[ECM] Modelagem de Correção de Erros
 	\item[VAR] Análise de Vetores Autoregressivos
+	\item[PIB] Produto Interno Bruto
+	\item[PAI] Programa de Ação Imediata
+	\item[PEC] Proposta de Emenda à Constituição
 \end{siglas}
 \pagebreak
 
@@ -443,33 +448,42 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 
 \chapter{Introdução}
 
-% Diversos países adotam, atualmente, regimes de metas de inflação. O modelo surgiu em 1990 na Nova Zelândia e chegou ao Brasil em 1999, quando foi proposta uma série de diretrizes que têm por objetivo atingir uma meta preestabelecida de crescimento de um índice de inflação, nomeadamente o Índice Nacional de Preços ao Consumidor Amplo (IPCA) \cite{sics_2002_teoria}. Não há consenso econômico entre economistas acerca da teoria econômica que é mais adequada para sustentar o RMI. Tem-se discordância, por exemplo, se de fato existe uma taxa natural de desemprego, abaixo de cuja desencadear-se-ia um processo inflacionário.
+O controle da inflação é um dos principais desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. Diante desse contexto, este trabalho tem como objetivo analisar a dinâmica inflacionária no Brasil sob o RMI entre os anos de 2003 e 2023, focando especificamente nos componentes de inflação de demanda e de oferta para verificar a efetividade das políticas do Banco Central.
 
-O controle da inflação é um dos principais desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. Este trabalho tem como objetivo analisar a dinâmica inflacionária no Brasil sob o RMI entre os anos de 19XX e 20XX, focando especificamente nos componentes de inflação de demanda e de oferta.
+Ao longo deste trabalho, serão abordados os diferentes tipos de inflação, seguido por um detalhamento do histórico econômico brasileiro e uma discussão sobre o RMI e a política monetária na terceira seção. A quarta seção detalhará a metodologia, o modelo utilizado e os dados coletados. Os resultados e a discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica, assim como os impactos sobre o produto e o desenvolvimento econômico.
 
-O Regime de Metas de Inflação é um arranjo institucional em que o Banco Central se compromete a manter a inflação dentro de um intervalo preestabelecido, utilizando instrumentos de política monetária, como a taxa de juros, para alcançar esse objetivo \cite{svensson_1997_inflation}. Este regime busca ancorar as expectativas inflacionárias dos agentes econômicos, contribuindo para a estabilidade macroeconômica \cite{mishkin_2000_inflation}. Desde sua implementação, o RMI no Brasil tem se baseado em metas anuais de inflação definidas pelo Conselho Monetário Nacional (CMN), com o Banco Central ajustando a taxa Selic para controlar a demanda agregada e manter a inflação dentro dos limites estipulados (SOUZA-SOBRINHO, 2010).
+Para compreender o cenário a ser estudado, definimos o Regime de Metas de Inflação como um arranjo institucional em que o Banco Central se compromete a manter a inflação dentro de um intervalo preestabelecido, utilizando instrumentos de política monetária, como as operações em \textit{open market}, para alcançar esse objetivo \cite{svensson_1997_inflation}. Este regime busca ancorar as expectativas inflacionárias dos agentes econômicos, contribuindo para a estabilidade macroeconômica \cite{mishkin_2000_inflation}. Desde sua implementação, o RMI no Brasil tem se baseado em metas anuais de inflação definidas pelo Conselho Monetário Nacional (CMN), com o Banco Central ajustando a taxa do Sistema Especial de Liquidação e Custódia (SELIC) via instrumentos de política monetária para controlar a demanda agregada e manter a inflação dentro dos limites estipulados.
 
-A economia está sujeita, por diversos motivos, a um descompasso entre o crescimento real e a base monetária, fazendo com que ocorra inflação. O processo inflacionário pode ter como fonte diversos fatores. Entre eles é comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural.
+De acordo com o Banco Central do Brasil (2013), A taxa SELIC é obtida através do cálculo da taxa média ponderada e ajustada das operações de financiamento de um dia, que são garantidas por títulos públicos federais. Essas operações ocorrem no sistema financeiro ou em câmaras de compensação e liquidação de ativos, sob a forma de operações compromissadas, onde o vendedor se compromete a recomprar os títulos vendidos no dia útil seguinte. Abaixo, na equação 1.1, é dada a fórmula utilizada para o cálculo da taxa.
 
-A inflação de demanda ocorre quando a demanda por bens e serviços supera a capacidade produtiva da economia, levando a aumentos generalizados de preços \cite{olivierblanchard_2013_macroeconomics}. Por outro lado, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}. Compreender a interação entre esses dois tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas.
+\begin{equation}
+	\left[ \left( \left(\frac{\sum_{j=1}^{n} L_j \cdot V_j}{\sum_{j=1}^{n} V_j} \right)^{252} - 1 \right) \times 100 \right] \textrm{\% ao ano}
+\end{equation}
 
-Neste contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios. A análise será conduzida através de um modelo econômico que considera os principais determinantes da inflação, utilizando dados históricos para avaliar a eficácia do regime.
 
-Para analisar a eficácia do RMI e a dinâmica inflacionária no Brasil, é essencial utilizar técnicas econométricas aplicadas a séries temporais. A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+A equação 1.1 baseia-se em três principais variáveis, sendo elas $L_j$, o fator diário correspondente à taxa da j-ésima operação, $V_j$, o valor financeiro correspondente à taxa da j-ésima operação e $n$, o número de operações que compõem a amostra.
 
-A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas permitem aos pesquisadores avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços.
+É essencial, também, detalhar os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido. A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento real e a base monetária, resultando em inflação. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI.
 
-A estrutura deste trabalho é composta por seis seções. Após esta introdução, a segunda seção abordará os diferentes tipos de inflação, seguida por uma discussão sobre o RMI no Brasil e a política monetária na terceira seção. A quarta seção detalhará a metodologia, o modelo utilizado e os dados coletados. Os resultados e a discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica.
+Como exemplo, a inflação de demanda ocorre quando a demanda por bens e serviços supera a capacidade produtiva da economia, levando a aumentos generalizados de preços \cite{olivierblanchard_2013_macroeconomics}. Por outro lado, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}. Compreender a interação entre esses dois tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Nesse contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios.
+
+Para isso, é essencial utilizar técnicas econométricas aplicadas a séries temporais relacionadas aos índices de preços, produte interno e outros indicadores econômicos. A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+
+A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas permitem aos pesquisadores avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços. A seguir, é iniciada a descrição aprofundada dos tipos de inflação que a economia brasileira observou historicamente.
 
 \chapter{Tipos de Inflação}
 
+Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada uma influenciada por fatores econômicos e contextos específicos. Nos anos 1980 e início dos anos 1990, o país sofreu com altos níveis de inflação, caracterizada por aumentos de preços extremamente rápidos e incontroláveis. Esse período foi marcado por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Diversos planos econômicos foram implementados, como o Plano Cruzado, Plano Bresser e os dois planos Collor, mas muitos falharam em conter a inflação de forma sustentável.
+
+O Brasil experenciou de forma ostensiva a inflação inercial no final do sécula XX. Esse fenômeno é como um ciclo vicioso, uma vez que a inflação persiste devido à expectativa de que ela continuará, independentemente de outros fatores econômicos. Nos anos 1990, especialmente antes do Plano Real, a inflação inercial era alimentada pela indexação, onde preços e contratos eram ajustados automaticamente com base na inflação passada. O Plano Real, implementado em 1994, conseguiu quebrar essa inércia ao introduzir uma nova moeda e uma série de reformas econômicas que estabilizaram a economia. A partir desse ponto, o Brasil passou a experimentar uma inflação mais controlada, embora ainda enfrentasse desafios ocasionais devido a choques externos e flutuações internas na economia.
+
 \section{Inflação de Oferta}
 
-A inflação de oferta, também conhecida como inflação de custos, ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
+Também conhecida como inflação de custos, esse tipo de inflação ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
 
-% \subsection{Subseção}
+Um exemplo marcante de inflação de oferta, tanto no Brasil quanto no mundo, ocorreu durante as crises do petróleo dos anos 1970. O aumento abrupto dos preços do petróleo, um insumo fundamental para diversas indústrias, resultou em custos mais altos de transporte e produção, impactando a economia brasileira. Outro exemplo mais recente foi observado durante a crise hídrica na região sudeste em 2014 e 2015, quando a escassez de água afetou a produção agrícola e a geração de energia hidrelétrica, levando ao aumento dos custos de alimentos e eletricidade (FRANCO, 2014).
 
-% \subsubsection{Subsubseção}
+Combater a inflação de oferta envolve várias estratégias, incluindo a melhoria da infraestrutura para reduzir custos de produção e distribuição, a diversificação de fontes de insumos para diminuir a dependência de um único fornecedor e o incentivo à inovação e adoção de novas tecnologias para aumentar a produtividade. Além disso, políticas cambiais que estabilizem a moeda podem minimizar os impactos de variações cambiais nos custos de insumos importados. 
 
 \section{Inflação de Demanda}
 
@@ -477,19 +491,134 @@ A inflação de demanda ocorre quando a demanda agregada por bens e serviços su
 
 Um exemplo histórico significativo de inflação de demanda ocorreu durante a década de 1970, quando muitos países enfrentaram pressões inflacionárias devido a políticas fiscais expansionistas e aumentos rápidos nos gastos de consumo \cite{blinder_2008_the}. No Brasil, a inflação de demanda tem sido uma preocupação constante, especialmente em contextos de políticas fiscais agressivas que aumentam o poder de compra sem um acompanhamento na produção. Segundo \cite{woodford_2009_interest}, a gestão eficaz da demanda agregada é crucial para evitar pressões inflacionárias, destacando a importância da coordenação entre políticas fiscais e monetárias. Portanto, o controle da inflação de demanda requer uma abordagem equilibrada que inclua a moderação das expansões fiscais e uma política monetária prudente que consiga antecipar e neutralizar excessos de demanda.
 
+Combater a inflação de demanda envolve principalmente o uso de políticas monetárias e fiscais para controlar o excesso de demanda na economia. Uma das principais ferramentas é o aumento das taxas de juros, que desestimula o consumo e o investimento ao encarecer o crédito. Além disso, a redução dos gastos públicos e o aumento da tributação podem diminuir a quantidade de dinheiro em circulação, ajudando a conter a demanda agregada. Essas medidas visam equilibrar a demanda com a capacidade produtiva da economia, reduzindo a pressão sobre os preços.
+
 \section{Inflação Estrutural}
 
 A inflação estrutural é causada por desequilíbrios fundamentais na estrutura econômica de um país. Fatores como a rigidez dos mercados, a ineficiência produtiva e a falta de competitividade em determinados setores podem contribuir para esse tipo de inflação. A inflação estrutural é particularmente relevante em economias em desenvolvimento, onde a infraestrutura inadequada e a baixa produtividade agrícola podem levar a aumentos persistentes nos preços. Essa forma de inflação requer reformas estruturais profundas para melhorar a eficiência e a capacidade produtiva da economia.
+
+No Brasil, a inflação estrutural pôde ser observada durante as décadas de 1970 e 1980, quando o país enfrentou uma inflação persistente devido a vários fatores estruturais na economia. Entre esses fatores estavam a ineficiência produtiva, a baixa competitividade das indústrias nacionais, a excessiva burocracia, e a rigidez do mercado de trabalho. Isso foi agravado pela indexação generalizada da economia, onde salários, contratos e preços eram ajustados automaticamente com base na inflação passada, criando um ciclo contínuo de reajustes que perpetuava a inflação.
 
 \section{Inflação Inercial}
 
 A inflação inercial refere-se à tendência dos índices de preços de continuarem subindo devido à persistência das expectativas inflacionárias passadas. Esse tipo de inflação é mantido pela indexação de preços e salários, onde os agentes econômicos ajustam automaticamente os preços e salários futuros com base na inflação passada. \citeonline{lopes_1985_inflao} explica que, em um ambiente de inflação inercial, as expectativas de inflação se tornam autorrealizáveis, perpetuando a continuidade da inflação mesmo na ausência de novos choques de demanda ou custos.
 
-\chapter{Regime de Metas de Inflação}
+A indexação da economia, como já mencionada na seção 2.3 de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação fazia com que a inflação se perpetuasse ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito (PEREIRA, 1998).
 
-\section{RMI No Brasil}
+\chapter{Elementos Sobre Economia Brasileira}
 
-\section{Política Monetária}
+Nessa seção, inicia-se a contextualização da história econômica do Brasil, assim como a análise do comportamento da política monetária ao longo do tempo. É feito, também, um detalhamento das principais características das políticas econômicas conduzidas por cada governo de 2003 a 2023 e seus impactos sobre o cenário econômico nacional.
+
+\section{Governos do Século XX}
+
+A bagagem econômica herdada dos diversos governos do século XX no Brasil teve um impacto duradouro na economia e na capacidade do país de implementar políticas macroeconômicas eficazes. Durante as décadas de 1950 e 1960, os governos de Getúlio Vargas e Juscelino Kubitschek adotaram políticas desenvolvimentistas que promoveram a industrialização acelerada e a expansão da infraestrutura, muitas vezes financiadas por meio de déficit público \cite{bielschowsky_2022_a}. Essas políticas resultaram em um crescimento econômico robusto, mas também em um aumento significativo da dívida pública e das pressões inflacionárias.
+
+Sob o governo de Getúlio Vargas, a criação da Petrobras e da Companhia Siderúrgica Nacional (CSN) marcou um período de forte intervenção estatal na economia. O Estado Novo de Vargas (1937-1945) e seu segundo governo (1951-1954) buscaram consolidar a indústria de base no Brasil, visando reduzir a dependência de importações e fortalecer o mercado interno. Embora essas iniciativas tenham contribuído para a modernização da economia brasileira, elas também levaram a um aumento dos gastos públicos e ao crescimento da dívida externa \cite{fabiogiambiagi_2016_economia}.
+
+Durante o governo de Juscelino Kubitschek (1956-1961), a política econômica se concentrou no Plano de Metas, que buscava ``50 anos em 5'' de desenvolvimento. Esse plano incluiu a construção de Brasília, a nova capital federal, e a expansão da infraestrutura de transporte e energia. Embora esses projetos tenham impulsionado a industrialização e o crescimento econômico, eles também resultaram em um aumento significativo do déficit público e da inflação \cite{bielschowsky_2022_a}. A rápida expansão foi financiada por meio de empréstimos externos, deixando o país vulnerável a crises de balanço de pagamentos.
+
+Nos anos de 1960, a instabilidade política e econômica levou ao golpe militar de 1964, que instaurou um regime autoritário com uma nova agenda econômica. O governo militar inicial adotou medidas de austeridade para controlar a inflação e estabilizar a economia. Contudo, o período mais notável de crescimento, conhecido como o "milagre econômico brasileiro" (1968-1973), foi caracterizado por investimentos massivos em infraestrutura e pela abertura econômica. Esse crescimento foi impulsionado por políticas fiscais e monetárias expansivas, que, embora tenham gerado um aumento substancial do produto interno bruto (PIB), também ampliaram a dívida externa e interna \cite{amaurypatrickgremaud_2009_economia}.
+
+O ``milagre econômico'' foi marcado por grandes projetos, como a construção da Rodovia Transamazônica e a usina de Itaipu, que demandaram enormes recursos financeiros. Embora esses projetos tenham impulsionado a economia, eles também aumentaram as pressões inflacionárias. Além disso, a concentração de renda e a repressão aos movimentos sociais geraram tensões sociais significativas. O choque do petróleo de 1973 exacerbou as vulnerabilidades econômicas, pois aumentou os custos de importação de energia e pressionou ainda mais a balança de pagamentos.
+
+Isso fez com que a década de 1980, chamada de ``década perdida'', fosse marcada por estagnação econômica, hiperinflação e crise da dívida externa. A política econômica dos governos militares posteriores, particularmente sob a presidência de João Figueiredo (1979-1985), foi incapaz de lidar com as consequências dos choques externos e das políticas expansionistas anteriores. A moratória da dívida em 1987 simbolizou a profundidade da crise econômica \cite{fabiogiambiagi_2016_economia} na época. As tentativas de estabilização, como o Plano Cruzado (1986) durante o governo de José Sarney, falharam em resolver os problemas estruturais e levaram a surtos de hiperinflação.
+
+O Plano Cruzado tentou controlar a inflação por meio do congelamento de preços e salários e da introdução de uma nova moeda, o cruzado. Inicialmente, o plano teve sucesso em reduzir a inflação, mas a falta de controle sobre os gastos públicos e a resistência política levaram ao seu fracasso. A inflação retornou, exacerbada pela falta de ajustes estruturais e pela deterioração das contas públicas \cite{fabiogiambiagi_1999_a}.
+
+A transição para a democracia em 1985 trouxe novos desafios econômicos. O governo de Fernando Collor (1990-1992) implementou o Plano Collor, que incluía o confisco de depósitos bancários e a tentativa de liberalização econômica. Embora tenha reduzido temporariamente a inflação, o plano causou uma grave recessão econômica e enfrentou forte oposição política, resultando em sua rápida deterioração e na posterior hiperinflação \cite{lacerda_2010_economia}.
+
+Durante o governo de Itamar Franco (1992-1995), o Brasil finalmente começou a estabilizar sua economia com o Plano Real, liderado pelo então Ministro da Fazenda Fernando Henrique Cardoso. O plano introduziu uma nova moeda, o real, e implementou âncoras cambiais e políticas fiscais rígidas. Essas medidas conseguiram estabilizar a inflação e criar uma base para o crescimento econômico sustentável. O sucesso do Plano Real foi um ponto de inflexão na história econômica do Brasil, marcando o fim de um ciclo de políticas populistas e instabilidade econômica \cite{lacerda_2010_economia}.
+
+A instabilidade econômica e a subsequente estabilização pela qual o Brasil passou no período anterior e posterior ao Plano Real é claramente observada nas variações do Índice Geral de Preços - Disponibilidade Interna (IGP-DI). A Figura 1, a seguir, apresenta a série temporal do comportamento da inflação entre 1985 e 1996 no Brasil, com destaque para as diversas tentativas de estabilização realizadas.
+
+\begin{figure}[H]
+	
+	\caption{Comportamento da Inflação Mensal - IGP-DI - 1985-1996 (\%)}
+	
+	\includegraphics[]{igp-di.png}\\
+	
+	\footnotesize Fonte: FGV.
+	
+\end{figure}
+
+Com destaque, a inflação no Brasil (Figura 1), observou diversos choques resultantes de políticas ineficazes no controle dos preços. O legado dos governos populistas do século XX, com suas políticas desenvolvimentistas e intervenções estatais, deixou uma economia caracterizada por altas taxas de inflação, dívida pública crescente e instabilidade macroeconômica. A implementação do RMI em 1999 representou um esforço para romper com esse passado e adotar uma política monetária mais disciplinada e previsível, visando garantir a estabilidade de preços e promover o crescimento sustentável a longo prazo \cite{amaurypatrickgremaud_2009_economia}.
+
+\section{Transição para a Estabilidade: Plano Real e a Introdução do RMI}
+
+O Plano Real, implementado em 1994 durante o governo de Itamar Franco e sob a liderança do então Ministro da Fazenda Fernando Henrique Cardoso, marcou um ponto de inflexão na luta contra a inflação no Brasil. O plano envolveu uma série de medidas macroeconômicas, incluindo a criação de uma nova moeda, o real, a introdução de âncoras cambiais e a implementação de políticas fiscais rigorosas \cite{amaurypatrickgremaud_2009_economia}. Essas medidas conseguiram estabilizar a inflação e restaurar a confiança na economia brasileira.
+
+A estabilidade alcançada pelo Plano Real criou as condições necessárias para a adoção do Regime de Metas de Inflação (RMI) em 1999. Esse novo regime, que enfatiza a transparência e a credibilidade das políticas monetárias, representou uma mudança de paradigma na abordagem do Brasil ao controle da inflação. Ao focar em metas de inflação como guia principal para a política monetária, o Banco Central do Brasil conseguiu ancorar as expectativas inflacionárias e promover um ambiente macroeconômico mais estável.
+
+A implementação do Plano Real começou com uma série de medidas preparatórias, conhecidas como o Programa de Ação Imediata (PAI), que visavam reduzir a inércia inflacionária e estabilizar a economia antes da introdução da nova moeda. Essas medidas incluíram o ajuste fiscal, a redução do déficit público e a liberalização do comércio. Em julho de 1994, o real foi finalmente introduzido, substituindo o cruzeiro real a uma taxa de paridade inicial de 1:1 com o dólar norte-americano. A âncora cambial foi uma ferramenta crucial para estabilizar as expectativas inflacionárias e fortalecer a credibilidade da nova moeda \cite{silva_2002_plano}. 
+
+A introdução do real foi acompanhada por uma política monetária restritiva, com altas taxas de juros para controlar a demanda agregada e evitar pressões inflacionárias. O governo também adotou um regime de câmbio fixo, permitindo que o Banco Central interviesse para manter a paridade da moeda. Essas medidas foram fundamentais para o sucesso inicial do Plano Real, que conseguiu reduzir a inflação anual de mais de 2.000\% em 1993 para menos de 10\% em 1996 \cite{fabiogiambiagi_1999_a}.
+
+O sucesso do Plano Real não foi isento de desafios. A âncora cambial, enquanto eficaz no curto prazo, gerou pressões sobre a balança de pagamentos do Brasil, levando a um aumento do déficit em conta corrente. Além disso, a apreciação do real tornou as exportações brasileiras menos competitivas, aumentando a dependência de capital externo para financiar o déficit. Esses desequilíbrios se tornaram evidentes durante as crises financeiras internacionais da segunda metade da década de 1990, como a crise do México (1994-1995), a crise asiática (1997) e a crise da Rússia (1998) \cite{santna_2002_crises}.
+
+Em resposta a essas crises e às pressões cambiais crescentes, o governo brasileiro decidiu abandonar a âncora cambial em janeiro de 1999 e adotar um regime de câmbio flutuante. Essa mudança foi acompanhada pela introdução do Regime de Metas de Inflação (RMI), que visava ancorar as expectativas inflacionárias por meio da transparência e previsibilidade das ações do Banco Central. Sob o RMI, o Conselho Monetário Nacional estabelece metas de inflação anuais, e o Banco Central utiliza as operações de \textit{open market}, redesconto e depósito compulsório como  principais instrumentos para atingir essas metas.
+
+A transição para o RMI representou uma mudança significativa na política monetária do Brasil. Ao invés de se concentrar exclusivamente no controle do câmbio, o Banco Central passou a focar na estabilidade de preços como seu principal objetivo. Essa abordagem permitiu uma maior flexibilidade na condução da política monetária, facilitando a resposta a choques econômicos internos e externos. A transparência do regime de metas também aumentou a credibilidade das políticas do Banco Central, ajudando a ancorar as expectativas inflacionárias e a reduzir a inflação de forma sustentável.
+
+Nos primeiros anos do RMI, a economia brasileira enfrentou desafios significativos, incluindo uma crise cambial em 1999 e um cenário internacional adverso. No entanto, a política monetária firme e a disciplina fiscal contribuíram para a estabilização da economia. A inflação, que chegou a 8,9\% em 1999, foi gradualmente reduzida, atingindo 5,97\% em 2002. A credibilidade do Banco Central e a eficácia do RMI foram reforçadas pela consistência das políticas adotadas, mesmo diante de adversidades \cite{fabiogiambiagi_1999_a}.
+
+Os governos de Fernando Henrique Cardoso (1995-2002) implementaram reformas estruturais importantes que complementaram a estabilidade macroeconômica promovida pelo Plano Real e pelo RMI. Entre essas reformas estavam a privatização de empresas estatais, a liberalização do mercado financeiro e a promoção de ajustes fiscais. Essas medidas contribuíram para aumentar a eficiência econômica e trazer ao Brasil características mais semelhantes às de países desenvolvidos \cite{fabiogiambiagi_2016_economia}.
+
+No início dos anos 2000, o Brasil começou a colher os frutos das reformas e da estabilidade macroeconômica. A economia cresceu, a inflação permaneceu sob controle e a dívida pública passou a ser mais controlada. Apesar de parte do crescimento ter sido eclipsado pela crise energética de 2001 \cite{fabiogiambiagi_2016_economia}, as reformas monetárias foram um sucesso.
+
+Em resumo, a transição para a estabilidade econômica no Brasil foi marcada pela implementação bem-sucedida do Plano Real e a adoção do Regime de Metas de Inflação. Essas mudanças representaram um rompimento com o passado de instabilidade e políticas populistas, estabelecendo as bases para um crescimento econômico sustentável e uma maior credibilidade das instituições econômicas brasileiras. A disciplina fiscal, a independência do Banco Central e a transparência das políticas monetárias foram elementos-chave para o sucesso dessa transição, que continua a influenciar positivamente a economia brasileira até os dias de hoje.
+
+A partir de 2003, a economia brasileira passou por diversas mudanças econômicas e políticas que influenciaram a condução e os resultados do RMI. Os períodos analisados a seguir foram marcados por diferentes administrações que implementaram políticas econômicas distintas, refletindo na dinâmica inflacionária e na eficácia do regime. A seguir, é detalhada a evolução do quadro econômico brasileiro ao longo das diversas gestões.
+
+\section{Período Lula (2003-2010)}
+
+Durante o governo de Luiz Inácio Lula da Silva (2003-2010), o Brasil experimentou um período de forte crescimento econômico, impulsionado pela alta nos preços das \textit{commodities} e um aumento significativo nos investimentos estrangeiros diretos. A gestão do Banco Central, sob a liderança de Henrique Meirelles, manteve uma política monetária rigorosa para controlar a inflação. A taxa SELIC foi usada de forma ativa para garantir que a inflação permanecesse dentro das metas estabelecidas pelo Conselho Monetário Nacional (CMN). Segundo \citeonline{silva_2016_politica}, a política fiscal contracionista adotada nos primeiros anos do governo Lula contribuiu para a credibilidade dos mandatos, permitindo uma redução gradual da taxa de juros sem comprometer a estabilidade dos preços.
+
+O período também foi marcado por um aumento na credibilidade internacional do Brasil, com a economia apresentando crescimento robusto e uma significativa redução na vulnerabilidade externa. O superávit primário foi mantido, garantindo um controle mais rígido das contas públicas e contribuindo para a estabilidade macroeconômica. A combinação de uma política fiscal responsável com uma política monetária eficiente permitiu que o Brasil navegasse com sucesso por um cenário econômico global inicialmente favorável, mas que se tornou desafiador com a crise financeira de 2008 \cite{fabiogiambiagi_2016_economia}.
+
+A crise financeira global de 2008 representou um grande desafio para a economia brasileira. O governo Lula, em resposta, adotou uma série de medidas para mitigar os impactos da crise, incluindo a redução da taxa SELIC e a implementação de pacotes de estímulo fiscal para sustentar o consumo e o investimento. Essas medidas, associadas à robustez do sistema financeiro brasileiro e à atuação prudente do Banco Central, permitiram que o Brasil enfrentasse a crise de maneira mais resiliente em comparação com muitas outras economias emergentes e desenvolvidas.
+
+Além das políticas de estabilização econômica, o governo Lula implementou programas sociais de grande alcance, como o Bolsa Família, que contribuíram para a redução da pobreza e da desigualdade social. Esses programas tiveram um efeito positivo no aumento da demanda interna, apoiando o crescimento econômico. A inclusão social promovida por esses programas não apenas melhorou as condições de vida de milhões de brasileiros, mas também criou um mercado consumidor interno mais dinâmico, o que foi fundamental para o crescimento sustentado da economia durante esse período.
+
+No entanto, o aumento do consumo e a expansão dos programas sociais também colocaram pressão sobre a inflação. O Banco Central teve que equilibrar cuidadosamente a necessidade de manter a inflação dentro das metas com o objetivo de sustentar o crescimento econômico e a inclusão social.
+
+% TODO: passar citações para refs.bib
+
+\section{Período Dilma Rousseff (2011-2016)}
+O governo de Dilma Rousseff (2011-2016) enfrentou desafios econômicos significativos, incluindo uma desaceleração econômica e aumento das pressões inflacionárias. A política econômica adotada durante este período foi caracterizada por uma expansão fiscal e intervenções frequentes nos preços administrados, como combustíveis e energia, o que dificultou o controle da inflação. A credibilidade do governo foi colocada em questão devido ao uso de medidas não convencionais e à percepção de interferência política no Banco Central. Como resultado, a inflação frequentemente excedeu as metas estabelecidas, exigindo aumentos abruptos na taxa de juros para tentar trazer a inflação de volta ao intervalo meta \cite{carvalho_2016_growth}.
+
+A implementação de políticas expansionistas, conhecidas como "nova matriz econômica", buscava incentivar o crescimento econômico através do aumento dos gastos públicos e subsídios a setores estratégicos. No entanto, essas políticas resultaram em um aumento do déficit fiscal e da dívida pública, o que elevou as expectativas inflacionárias. As desonerações tributárias e a política de controle de preços contribuíram para a deterioração das contas públicas e limitaram a capacidade do Banco Central de utilizar a política monetária para controlar a inflação de maneira eficaz.
+
+O contexto internacional também influenciou significativamente a economia brasileira durante o governo Dilma. A queda nos preços das \textit{commodities} e a desaceleração do crescimento global impactaram negativamente a balança comercial brasileira, reduzindo as receitas de exportação e aumentando a vulnerabilidade externa do país. Esses fatores externos, aliados às políticas domésticas expansionistas, intensificaram as pressões inflacionárias e tornaram o ambiente econômico mais desafiador para a manutenção da estabilidade dos preços.
+
+A falta de coordenação entre as políticas fiscal e monetária foi um dos principais problemas enfrentados durante esse período. Enquanto o Banco Central tentava controlar a inflação através do aumento da taxa SELIC, a política fiscal expansionista do governo gerava pressões contrárias, dificultando o alcance das metas inflacionárias. Esse descompasso entre as políticas minou a eficácia do RMI e aumentou a incerteza econômica, afetando negativamente a confiança dos investidores e consumidores.
+
+Ao final do segundo mandato de Dilma Rousseff, a economia brasileira enfrentava uma grave recessão, com inflação elevada e desemprego em alta. A crise política e econômica culminou no \textit{impeachment} da presidente em 2016. A gestão subsequente herdou um cenário econômico complexo, marcado pela necessidade urgente de ajustes fiscais e de recuperação da credibilidade. Esse período evidenciou a importância de uma coordenação eficaz entre as políticas fiscal e monetária para a manutenção da estabilidade econômica e do controle inflacionário.
+
+\section{Período Michel Temer (2016-2018)}
+
+Com a chegada de Michel Temer à presidência em 2016, houve uma mudança significativa na política econômica do Brasil. Após o \textit{impeachment} de Dilma Rousseff, o governo Temer buscou implementar uma série de reformas estruturais com o objetivo de restaurar a confiança dos mercados e estabilizar a economia brasileira. Entre as principais medidas adotadas estavam a reforma trabalhista e a  proposta de emenda à constituição (PEC) do teto dos gastos, que limitou o crescimento dos gastos públicos à taxa de inflação do ano anterior por vinte anos. Essas reformas foram vistas como cruciais para o ajuste fiscal e para a recuperação da credibilidade econômica do país.
+
+A gestão do Banco Central sob a liderança de Ilan Goldfajn foi marcada por um compromisso firme com o controle da inflação e a estabilização macroeconômica. Uma das primeiras ações de Goldfajn foi ancorar as expectativas inflacionárias, o que permitiu uma redução gradual e consistente da taxa SELIC ao longo de seu mandato. Essa abordagem contribuiu significativamente para a redução da inflação, que voltou a se situar dentro das metas estabelecidas pelo Conselho Monetário Nacional (CMN) após os elevados índices registrados no final do governo Dilma Rousseff.
+
+Além das reformas estruturais e da política monetária rigorosa, o governo Temer também enfrentou o desafio de recuperar a confiança dos investidores e reverter a recessão econômica. O impacto positivo dessas medidas começou a ser percebido já em 2017, quando o Brasil registrou um leve crescimento econômico após dois anos de recessão profunda. A combinação de um ambiente regulatório mais favorável e de uma política monetária estável ajudou a atrair investimentos e a estimular a recuperação do emprego e da renda.
+
+No entanto, o governo Temer também enfrentou dificuldades, incluindo a resistência política às reformas e os escândalos de corrupção que marcaram seu mandato. Apesar das controvérsias, a continuidade da política econômica voltada para a austeridade fiscal e a estabilidade monetária foi fundamental para consolidar os avanços obtidos na estabilização da economia.
+
+\section{Período Jair Bolsonaro (2019-2022)}
+
+O governo de Jair Bolsonaro (2019-2022) enfrentou desafios econômicos significativos, incluindo a pandemia de COVID-19, que impactou profundamente a economia global e doméstica. A resposta inicial do governo incluiu medidas fiscais expansivas para mitigar os efeitos econômicos da pandemia, como o auxílio emergencial e programas de manutenção de emprego, o que aumentou as preocupações inflacionárias. Essas medidas, apesar de essenciais para a proteção social e a manutenção da renda, pressionaram as contas públicas e elevaram a relação dívida/PIB do país.
+
+Durante esse período, Roberto Campos Neto, presidente do Banco Central, manteve uma postura vigilante, ajustando a taxa SELIC conforme necessário para conter as pressões inflacionárias. Inicialmente, a taxa de juros foi reduzida para níveis historicamente baixos a fim de estimular a economia (2\%), mas a partir de 2021, devido ao aumento das pressões inflacionárias, houve um ciclo de elevação da SELIC para controlar a inflação, gerando uma alta significativa (13,75\%).
+
+A pandemia também causou disrupções significativas nas cadeias de suprimentos globais, resultando em aumentos nos preços dos alimentos, energia e outros bens essenciais. Esses choques de oferta, combinados com uma depreciação cambial significativa, contribuíram para o aumento da inflação no Brasil. Apesar dessas dificuldades, o Banco Central adotou medidas de política monetária para evitar que a inflação se descontrolasse, influenciando proativamente a taxa de juros.
+
+A política fiscal do governo Bolsonaro, particularmente durante a pandemia, foi caracterizada por um aumento substancial nos gastos públicos para enfrentar a crise sanitária e econômica. No entanto, essa expansão fiscal foi acompanhada de uma preocupação crescente com a sustentabilidade das contas públicas. A combinação de um elevado déficit fiscal e a crescente dívida pública gerou incertezas sobre a capacidade do governo de cumprir as metas fiscais e de manter a estabilidade econômica a longo prazo.
+
+Além dos desafios econômicos, o governo Bolsonaro também enfrentou uma série de crises políticas que impactaram a economia. A relação tensa entre o poder executivo e os outros poderes, além das constantes mudanças nos ministérios, contribuiu para um ambiente de incerteza. No entanto, a independência formal do Banco Central, conquistada em 2021, foi vista como um passo importante para fortalecer o RMI e garantir uma política monetária mais eficiente e menos sujeita a pressões políticas, contribuindo para a estabilidade macroeconômica.
+
+\section{Perspectivas Recentes e Desafios (2023)}
+
+À medida que o Brasil entra em 2023, enfrenta uma série de desafios e oportunidades econômicas. Um dos principais focos continua sendo o controle da inflação, que permanece uma preocupação central para o Banco Central. Sob a liderança de Roberto Campos Neto, a política monetária tem sido rigorosamente ajustada para garantir que a inflação fique dentro das metas estabelecidas, apesar das pressões inflacionárias globais e domésticas.
 
 \chapter{Metodologia}
 

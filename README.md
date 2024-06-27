@@ -5,6 +5,7 @@
 | Autor           | Data       | Descrição           |
 | --------------- | ---------- | ------------------- |
 | Lucas Alvarenga | 2024-04-29 | Formulação do TCC I |
+| Lucas Alvarenga | 2024-05-23 | Ajustes e Evolução  |
 
 ## Pré Requisitos
 
@@ -38,9 +39,9 @@ RMI &rarr; Arranjo Institucional &rarr; Inflação
 
 ## Estrutura
 
-1. [ ] Introdução
-2. [ ] Tipos de Inflação
-3. [ ] RMI no Brasil e Política Monetária
+1. [X] Introdução
+2. [X] Tipos de Inflação
+3. [X] RMI no Brasil e Política Monetária
 4. [ ] Metodologia, Modelo e Dados
 5. [ ] Resultados e Discussão
 6. [ ] Conclusão
@@ -50,3 +51,4 @@ RMI &rarr; Arranjo Institucional &rarr; Inflação
 ### Referências
 
 - Souza-Sobrinho BCB
+-  Pereira, Luiz Carlos Bresser (1998). Economia brasileira: uma introdução crítica 3ª ed. [S.l.]: Editora 34. p. 196
