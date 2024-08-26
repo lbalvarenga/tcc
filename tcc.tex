@@ -1,13 +1,16 @@
 %----------------------------------------------------------------
-%% Template para preparação de trabalho de conclusão de 
+%% Template adaptado para preparação de trabalho de conclusão de 
 %% curso   (TCC)   do   Departamento   de   Economia   da 
 %% Universidade      Estadual     de      Londrina       (UEL)
 %
 %% Autores: 
 %% Prof Ph.D. Joanna G. Alexopoulos
 %% Prof. Dr. Marcelo S. Bego 
+%%
+%% Modificações:
+%% Lucas Alvarenga
 %
-%% Data da última atualização: 22/02/2020
+%% Data da última atualização: 25/08/2024
 %----------------------------------------------------------------
 %%
 %% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) 
@@ -36,10 +39,11 @@
 
 \documentclass[12pt,oneside,a4paper,chapter=TITLE,english,brazil,sumario=abnt-6027-2012]{abntex2}
 
-% Dark mode
+% Modo escuro %%%%
 % \usepackage{xcolor}
 % \pagecolor[rgb]{0.1,0.1,0.15} %black
 % \color[rgb]{0.5,0.5,0.5} %grey
+% %%%%%%%%%%%%%%%% 
 
 % %%%%%%%%%%%%%%%%
 % PACOTES
@@ -66,11 +70,15 @@
 \captionsetup{labelfont=bf}
 \usepackage[singlelinecheck=false]{caption}
 \usepackage{amsmath}
+\usepackage[table]{xcolor} % Para colorir tabelas
+\usepackage{zref-totpages}
+\usepackage{titlesec}
+
 
 % %%%%%%%%%%%%%%%%
 %MARGENS
 %As margens são configuradas conforme a NBR 14724:2011
-%As margens devem ser: para o anverso, esquerda e superior de 3 cm e direita e inferior de 2 cm; para o verso, direita e superior de 3 cm e esquerda e inferior de 2 cm. 
+%As margens devem ser: para o anverso, esquerda e superior de 3 cm e direita e inferior de 2 cm; para o verso, direita e superior de 3 cm e esquerda e inferior de 2 cm.
 
 % %%%%%%%%%%%%%%%%
 %FONTES 
@@ -86,12 +94,17 @@
 
 \renewcommand{\ABNTEXsectionfont}{\bfseries}%Subseções em negrito.
 
+\definecolor{verdeUEL}{RGB}{10,128,20}
+
+
+\setlength\afterchapskip{18pt}
+
 % %%%%%%%%%%%%%%%%
 % ESPAÇAMENTOS
 % %%%%%%%%%%%%%%%%
 
 % TAMANHO DO PARÁGRAFO 
-\setlength{\parindent}{3cm} %Primeira linha
+\setlength{\parindent}{1.27cm} %Primeira linha
 
 %ESPAÇO ENTRE LINHAS
 %O padrão é definido como \OnehalfSpacing (1.5)
@@ -117,11 +130,11 @@
 
 
 % %%%%%%%%%%%%%%%%
-\local{LONDRINA, PARANÁ}
+\local{Londrina}
 \data{\the\year}
 \tipotrabalho{monografia}
 \instituicao{Universidade Estadual de Londrina (UEL)}
-\preambulo{ Trabalho de Conclusão de Curso apresentado ao Departamento de Economia da Universidade  Estadual de Londrina.}
+\preambulo{Trabalho de Conclusão de Curso apresentado ao Departamento de Economia da Universidade  Estadual de Londrina.}
 % %%%%%%%%%%%%%%%%
 
 
@@ -131,13 +144,13 @@
 	\begin{capa}
 		\center
 		\begin{figure}
-		\includegraphics[height=4.5cm,width=14cm]{Logo_UEL}
+		\includegraphics[height=3.65cm,width=15.5cm]{fig/Logo_UEL_new.png}
 		\end{figure}
 
-		\begin{tikzpicture}
-		\fill[ForestGreen!90] (17.1,0.6) rectangle (1,1);
-		\end{tikzpicture}
-		\large 
+		% \begin{tikzpicture}
+		% \fill[verdeUEL] (17.1,1.25) rectangle (1,1);
+		% \end{tikzpicture}
+		% \large 
 		
 		{\bfseries CENTRO DE ESTUDOS SOCIAIS APLICADOS\\
 		DEPARTAMENTO DE ECONOMIA\\
@@ -151,12 +164,13 @@
 		\vfill
 		
 		\begin{flushright}
-			{\ABNTEXchapterfont\textsc{\Large \imprimirautor}}
+			\imprimirautor
+			\vspace{-0.5cm}
 			
 		\end{flushright}
 		
 		\begin{tikzpicture}
-		\fill[ForestGreen!90] (17.1,0.6) rectangle (1,1);
+		\fill[verdeUEL] (17.1,1.125) rectangle (1,1);
 		\end{tikzpicture}
 		
 		{\imprimirlocal}
@@ -165,6 +179,11 @@
 		
 	\end{capa}
 }
+
+
+\emergencystretch 3em
+\hyphenpenalty 10000
+\exhyphenpenalty 10000
 
 % %%%%%%%%%%%%%%%%
 % FOLHA DE ROSTO
@@ -185,9 +204,11 @@
 		\begin{flushright}
 			\begin{minipage}{8cm}
 				\SingleSpacing
-				Trabalho de Conclusão de Curso apresentado ao Departamento de Economia da Universidade Estadual de Londrina.
+
+				Trabalho de Conclusão de Curso apresentado à Universidade Estadual de Londrina - UEL, como requisito parcial para a obtenção do título de Bacharel em Ciências Econômicas.
+				\break
 				
-				Orientador: Prof. \imprimirorientador
+				Orientador: Prof. Dr. \imprimirorientador
 			\end{minipage}%
 		\end{flushright}
 		
@@ -224,7 +245,7 @@
 				\begin{flushright}
 					\begin{minipage}{10cm}
 						\SingleSpacing
-						Trabalho de Conclusão de Curso apresentado ao Departamento de Economia da Universidade Estadual de Londrina.
+						Trabalho de Conclusão de Curso apresentado à Universidade Estadual de Londrina - UEL, como requisito parcial para a obtenção do título de Bacharel em Ciências Econômicas.
 					\end{minipage}%
 				\end{flushright}	
 				
@@ -282,7 +303,7 @@
 				\begin{flushright}
 					\begin{minipage}{6cm}	
 				\centering
-				Londrina, XX de XX de \imprimirdata.
+				Londrina, 27 de Agosto de \imprimirdata.
 					\end{minipage}
 			\end{flushright}
 		
@@ -346,7 +367,7 @@
 \begin{dedicatoria}
 	\vspace*{\fill}
 	\noindent
-	Dedico esse trabalho aos meus pais, Bruno e Silvia, por todo amor, apoio e incentivo, que foram fundamentais para a realização de mais uma conquista. Sua dedicação e sacrifícios me proporcionaram a oportunidade de seguir em frente e realizar meus objetivos. 
+	Dedico esse trabalho aos meus pais, Bruno e Silvia, por todo amor, apoio e incentivo, que foram fundamentais para a realização de mais uma conquista. Sua dedicação e sacrifícios me proporcionaram a oportunidade de realizar meus sonhos.
 	\vspace*{\fill}
 \end{dedicatoria}
 
@@ -355,41 +376,45 @@
 %AGRADECIMENTOS
 \begin{agradecimentos}
 	\noindent
-	Agradeço aos professores e colegas de curso, que contribuíram com conhecimentos, experiências e incentivos, tornando a jornada acadêmica mais rica e gratificante. Aos amigos, que estiveram presentes nos momentos de lazer e de estudo, proporcionando equilíbrio e motivação durante o percurso.	À Universidade Estadual de Londrina por oferecer um ambiente de aprendizado e crescimento. A todos aqueles que, direta ou indiretamente, colaboraram para a conclusão deste trabalho.
+	Agradeço ao meu orientador, Prof. Dr. Carlos Eduardo Caldarelli, por toda ajuda, conhecimento e experiência que compartilhou comigo durante a confecção desse trabalho.
+	Agradeço a todos meus professores e a todos os meus colegas de curso, que contribuíram com conhecimentos, experiências e incentivos, tornando minha jornada mais rica e gratificante. Aos amigos, que estiveram presentes nos momentos de lazer e de estudo, proporcionando equilíbrio e motivação durante o percurso.	À Universidade Estadual de Londrina por oferecer um ambiente de aprendizado e crescimento tão acolhedor. A todos aqueles que, direta ou indiretamente, colaboraram para a conclusão deste trabalho.
 \end{agradecimentos}
 
 
 % %%%%%%%%%%%%%%%%
 %RESUMO
-\noindent
-ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
 
-	Este trabalho tem por objetivo verificar o impacto da inflação de oferta e da inflação de demanda sobre a economia brasileira e avaliar os efeitos exercidos por estas sobre a eficácia do regime de metas de inflação (RMI) no Brasil. Será examinado se as respostas do Banco Central são eficientes e sob quais óticas a política monetária deve ser definida a fim de atender os objetivos propostos pelo RMI. Por meio deste trabalho, busca-se atingir um melhor entendimento dos mecanismos que regem a dinâmica inflacionária no Brasil e como é moldada a resposta à inflação pela autoridade monetária brasileira.
+	\noindent
+	ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}. \imprimirdata. \ztotpages \, f. Monografia (Graduação em Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 	
-	\textbf{Palavras-chave}: inflação; oferta; demanda
+	Este trabalho tem por objetivo verificar o impacto da inflação, principalmente sob a ótica da oferta e da demanda sobre a economia brasileira e avaliar os efeitos exercidos por estas sobre a eficácia do regime de metas de inflação (RMI) no Brasil. Será examinado se as respostas do Banco Central são eficientes e sob quais óticas a política monetária deve ser definida a fim de atender os objetivos propostos pelo RMI. Por meio deste trabalho, busca-se atingir um melhor entendimento dos mecanismos que regem a dinâmica inflacionária no Brasil e como é moldada a resposta à inflação pela autoridade monetária brasileira. Para isso, são utilizados modelos econométricos que conseguem capturar relações de longo prazo entre as variáveis escolhidas, que são a taxa de inflação, a taxa de juros, o produto interno bruto (PIB) real do Brasil e... 
+	
+	TODO: all variables
+	
+	\textbf{Palavras-chave}: inflação; oferta; demanda; econometria; política monetária.
 \end{resumo}
 
 
 % %%%%%%%%%%%%%%%%
 %ABSTRACT
-\noindent
-ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
+% \noindent
+% ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}, \imprimirdata. <FOLHAS> f. Monografia (Curso de Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 
-\begin{resumo}[Abstract]
-	\begin{otherlanguage*}{english}
-		
-		Write your abstract here... 
-		
-		\vspace{\onelineskip}
-		
-		\noindent 
-		\textbf{Keywords}: 
-	\end{otherlanguage*}
-\end{resumo}
-\pagebreak
+% \begin{resumo}[Abstract]
+% 	\begin{otherlanguage*}{english}
+
+% 		Write your abstract here... 
+
+% 		\vspace{\onelineskip}
+
+% 		\noindent 
+% 		\textbf{Keywords}: 
+% 	\end{otherlanguage*}
+% \end{resumo}
+% \pagebreak
 
 
 % %%%%%%%%%%%%%%%%
@@ -414,6 +439,7 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 	\item[RMI] Regime de metas de inflação
 	\item[SELIC] Sistema Especial de Liquidação e Custódia
 	\item[IPCA] Índice Nacional de Preços ao Consumidor Amplo
+	\item[IBGE] Instituto Brasileiro de Geografia e Estatística
 	\item[IGP-DI] Índice Geral de Preços - Disponibilidade Interna
 	\item[CMN] Conselho Monetário Nacional
 	\item[ECM] Modelagem de Correção de Erros
@@ -421,6 +447,12 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 	\item[PIB] Produto Interno Bruto
 	\item[PAI] Programa de Ação Imediata
 	\item[PEC] Proposta de Emenda à Constituição
+	\item[BCB] Banco Central do Brasil
+	\item[IPP] Índice de Preços ao Produtor
+	\item[IPA-EP-DI] Índice de Preços ao Produtor Amplo, Estágios de Produção, Disponibilidade Interna
+	\item[MQO] Método de Mínimos Quadrados Ordinários
+	\item[MQG] Método de Mínimos Quadrados Generalizados
+	\item[ADF] Dickey-Fuller Aumentado
 \end{siglas}
 \pagebreak
 
@@ -450,58 +482,94 @@ ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime d
 
 O controle da inflação é um dos principais desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. Diante desse contexto, este trabalho tem como objetivo analisar a dinâmica inflacionária no Brasil sob o RMI entre os anos de 2003 e 2023, focando especificamente nos componentes de inflação de demanda e de oferta para verificar a efetividade das políticas do Banco Central.
 
-Ao longo deste trabalho, serão abordados os diferentes tipos de inflação, seguido por um detalhamento do histórico econômico brasileiro e uma discussão sobre o RMI e a política monetária na terceira seção. A quarta seção detalhará a metodologia, o modelo utilizado e os dados coletados. Os resultados e a discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica, assim como os impactos sobre o produto e o desenvolvimento econômico.
+Ao longo deste trabalho, serão abordados os diferentes tipos de inflação, seguido por um detalhamento do histórico econômico brasileiro e uma discussão sobre o RMI e a política monetária na terceira seção. A quarta seção detalhará a metodologia, os modelos utilizado e os dados coletados. Os resultados e a discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica, assim como os impactos sobre o produto e o desenvolvimento econômico.
 
 Para compreender o cenário a ser estudado, definimos o Regime de Metas de Inflação como um arranjo institucional em que o Banco Central se compromete a manter a inflação dentro de um intervalo preestabelecido, utilizando instrumentos de política monetária, como as operações em \textit{open market}, para alcançar esse objetivo \cite{svensson_1997_inflation}. Este regime busca ancorar as expectativas inflacionárias dos agentes econômicos, contribuindo para a estabilidade macroeconômica \cite{mishkin_2000_inflation}. Desde sua implementação, o RMI no Brasil tem se baseado em metas anuais de inflação definidas pelo Conselho Monetário Nacional (CMN), com o Banco Central ajustando a taxa do Sistema Especial de Liquidação e Custódia (SELIC) via instrumentos de política monetária para controlar a demanda agregada e manter a inflação dentro dos limites estipulados.
 
-De acordo com o Banco Central do Brasil (2013), A taxa SELIC é obtida através do cálculo da taxa média ponderada e ajustada das operações de financiamento de um dia, que são garantidas por títulos públicos federais. Essas operações ocorrem no sistema financeiro ou em câmaras de compensação e liquidação de ativos, sob a forma de operações compromissadas, onde o vendedor se compromete a recomprar os títulos vendidos no dia útil seguinte. Abaixo, na equação 1.1, é dada a fórmula utilizada para o cálculo da taxa.
+De acordo com o Banco Central do Brasil (2013), A taxa SELIC é obtida através do cálculo da taxa média ponderada e ajustada das operações de financiamento de um dia, que são garantidas por títulos públicos federais. Essas operações ocorrem no sistema financeiro ou em câmaras de compensação e liquidação de ativos, sob a forma de operações compromissadas, onde o vendedor se compromete a recomprar os títulos vendidos no dia útil seguinte. Abaixo, na equação 1.1, é dada a fórmula utilizada para o cálculo da taxa:
 
 \begin{equation}
 	\left[ \left( \left(\frac{\sum_{j=1}^{n} L_j \cdot V_j}{\sum_{j=1}^{n} V_j} \right)^{252} - 1 \right) \times 100 \right] \textrm{\% ao ano}
 \end{equation}
 
 
-A equação 1.1 baseia-se em três principais variáveis, sendo elas $L_j$, o fator diário correspondente à taxa da j-ésima operação, $V_j$, o valor financeiro correspondente à taxa da j-ésima operação e $n$, o número de operações que compõem a amostra.
+A equação 1.1 baseia-se em três principais variáveis, sendo elas $L_j$, o fator diário correspondente à taxa da j-ésima operação, $V_j$, o valor financeiro correspondente à taxa da j-ésima operação e $n$, o número de operações que compõem a amostra. A taxa SELIC é principalmente ajustada pelas operações de mercado aberto (\textit{open market}), instrumento da política monetária onde o Banco Central realiza a compra ou venda de títulos da dívida pública aos principais bancos comerciais brasileiros.
 
-É essencial, também, detalhar os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido. A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento real e a base monetária, resultando em inflação. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI.
+Dessa forma, o ajuste da SELIC reflete os movimentos do Banco Central no controle da inflação ao influenciar a oferta de moeda e o custo do crédito no mercado. A variação na taxa básica de juros, promovida pelas operações de mercado aberto, tem, portanto, efeitos diretos sobre os níveis de consumo e investimento na economia. A política monetária, ao atuar na direção de modificar a taxa SELIC, busca equilibrar o crescimento econômico com as pressões inflacionárias, que podem ter diferentes origens e dinâmicas.
 
-Como exemplo, a inflação de demanda ocorre quando a demanda por bens e serviços supera a capacidade produtiva da economia, levando a aumentos generalizados de preços \cite{olivierblanchard_2013_macroeconomics}. Por outro lado, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}. Compreender a interação entre os tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Nesse contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios.
+Assim, detalhamos os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido às mudanças nas variáveis macroeconômicas. A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento econômico real e a base monetária, resultando em inflação. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI.
 
-Para isso, é essencial utilizar técnicas econométricas aplicadas a séries temporais relacionadas aos índices de preços, produte interno e outros indicadores econômicos. A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+Como exemplo, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}, porém aumentar a taxa de juros em resposta a esse tipo de inflação pode ser ineficaz uma vez que abre oportunidade para o resfriamento da economia, já que não combate a causa raiz do processo inflacionário. Compreender a interação entre os tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Nesse contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios.
 
-A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas permitem aos pesquisadores avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços. A seguir, é feita a descrição aprofundada dos tipos de inflação que a economia brasileira observou historicamente e sua relação com o RMI.
+Para isso, é, também, essencial utilizar técnicas econométricas aplicadas a séries temporais relacionadas aos índices de preços, produto interno e outros indicadores econômicos. A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+
+A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas nos permite avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços. A seguir, é feita a descrição aprofundada dos tipos de inflação que a economia brasileira observou historicamente e sua relação com o RMI.
 
 \chapter{Tipos de Inflação}
 
-% TODO: Bresser-Pereira (1990) afirma que no caso brasileiro o gatilho da hiperinflação foi a crise fiscal nos anos 80 que pode ser dividida em três componentes: o déficit público, a dívida pública, tanto interna quanto externa e o curto prazo de vencimento dos títulos públicos.
+Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada um decorrente de fatores econômicos e contextos específicos. Nos anos de 1980 e início dos anos 1990, por exemplo, o país sofreu com altos níveis de inflação, caracterizado por aumentos de preços extremamente rápidos e incontroláveis. Esse período foi marcado por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Para \citeonline{bresser_1990_hiperinfla}, o fator desencadeante da hiperinflação foi a crise fiscal dos anos 1980, que pode ser desmembrada em três elementos: o déficit público, a dívida pública, tanto interna quanto externa, e o curto prazo de vencimento dos títulos públicos.
 
-Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada uma influenciada por fatores econômicos e contextos específicos. Nos anos 1980 e início dos anos 1990, o país sofreu com altos níveis de inflação, caracterizada por aumentos de preços extremamente rápidos e incontroláveis. Esse período foi marcado por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Diversos planos econômicos foram implementados, como o Plano Cruzado, Plano Bresser e os dois planos Collor, mas falharam em conter a inflação de forma sustentável.
+% TODO: citation to back this up? https://www.scielo.br/j/rec/a/4ZqfqsrqsHwFJV9QjJWYsfN/?lang=pt
 
-O Brasil experenciou de forma ostensiva a inflação inercial no final do sécula XX. Esse fenômeno é como um ciclo vicioso, uma vez que a inflação persiste devido à expectativa de que ela continuará, independentemente de outros fatores econômicos. Nos anos 1990, especialmente antes do Plano Real, a inflação inercial era alimentada pela indexação, onde preços e contratos eram ajustados automaticamente com base na inflação passada. O Plano Real, implementado em 1994, conseguiu quebrar essa inércia ao introduzir uma nova moeda e uma série de reformas econômicas que estabilizaram a economia. A partir desse ponto, o Brasil passou a experimentar uma inflação mais controlada, embora ainda enfrentasse desafios ocasionais devido a choques externos e flutuações internas na economia.
+O Brasil experenciou de forma ostensiva a inflação inercial no final do século XX. Esse fenômeno é como um ciclo vicioso, uma vez que a inflação persiste devido à expectativa de que ela continuará, independentemente de outros fatores econômicos. Nos anos 1990, especialmente antes do Plano Real, a inflação inercial era alimentada pela indexação, onde preços e contratos eram ajustados automaticamente com base na inflação passada. O Plano Real, implementado em 1994, conseguiu quebrar essa inércia ao introduzir uma nova moeda e uma série de reformas econômicas que estabilizaram a economia. A partir desse ponto, o Brasil passou a experimentar uma inflação mais controlada, embora ainda enfrentasse desafios ocasionais devido a choques externos e flutuações internas na economia.
 
-% TODO: Criar tabela com 
+Abaixo, é apresentado um breve histórico das moedas que circularam na economia brasileira. É importante observar como a base monetária se expandiu ao longo do tempo, principalmente a partir do Cruzeiro na década de 1970, momento em que houve sucessivos "cortes de zero", onde a nova moeda possuia valores nas cédulas geralmente mil vezes menores do que a moeda anterior.
+
+\vspace{0.2cm}
+
+\begin{table}[H]
+	\caption{Histórico de moedas brasileiras}
+	\rowcolors{2}{gray!8}{white}
+	\begin{tabular}{ | l || c | l | }
+		\hline
+		\textbf{Moeda Vigente}                      & \textbf{Período de Vigência} & \textbf{Equivalência}      \\
+		\hline
+		\textbf{Cruzeiro}                           & 1942 a 1964                  & Cr\$ 1,00 = Rs 1\$000      \\
+		\textbf{Cruzeiro (retirada dos centavos)}   & 1964 a 1967                  & Cr\$ 1 = Cr\$ 1,00         \\
+		\textbf{Cruzeiro Novo (volta dos centavos)} & 1967 a 1970                  & NCr\$ 1,00 = Cr\$ 1.000    \\
+		\textbf{Cruzeiro}                           & 1970 a 1984                  & Cr\$ 1,00 = NCr\$ 1,00     \\
+		\textbf{Cruzeiro (retirada dos centavos)}   & 1984 a 1986                  & Cr\$ 1 = Cr\$ 1,00         \\
+		\textbf{Cruzado (volta dos centavos)}       & 1986 a 1989                  & Cz\$ 1,00 = Cr\$ 1.000     \\
+		\textbf{Cruzado Novo}                       & 1989 a 1990                  & NCz\$ 1,00 = Cz\$ 1.000,00 \\
+		\textbf{Cruzeiro}                           & 1990 a 1993                  & Cr\$ 1,00 = NCz\$ 1,00     \\
+		\textbf{Cruzeiro Real}                      & 1993 a 1994                  & CR\$ 1,00 = Cr\$ 1.000,00  \\
+		\textbf{Real}                               & Desde 1994                   & R\$ 1,00 = CR\$ 2.750,00   \\                                                                  
+		\hline
+	\end{tabular}
+	\vspace{1ex}
+	
+	\noindent \footnotesize{Fonte: Histórico das Alterações da Moeda Nacional. Disponível em \\ https://web.archive.org/web/20151115205007/http://www.ocaixa.com.br/passos/passos2.htm.}
+\end{table}
+\vspace{-0.2cm}
+\vspace{0.5cm}
+
+Desde o Cruzeiro, passando pelo Cruzado, até chegar ao Real, cada uma das moedas surgiu em resposta a crises inflacionárias e à perda de confiança na moeda nacional. Essas mudanças foram frequentemente catalisadas por eventos externos, como crises internacionais, choques no preço do petróleo, e também por fatores internos, como descontrole fiscal e políticas econômicas inconsistentes. Abaixo, detalhamos como a instabilidade econômica que impacta diretamente a capacidade produtiva das empresas e o custo dos produtos e serviços contribui para a inflação de oferta.
 
 \section{Inflação de Oferta}
 
-% TODO: Citar como o RMI corrije esse tipo de situação e porque isso pode ser problemático
-
-% TODO: A inflação de custos, além de elevar o nível de preços da economia, causa estagflação, expressão empregada quando a economia apresenta alto nível de preços e contração do produto interno bruto, diferentemente da inflação de demanda, onde a expansão da demanda agregada, além de elevar o nível de preços, aquece a economia e estimula o crescimento do PIB.
-
 Um exemplo marcante de inflação de oferta, tanto no Brasil quanto no mundo, ocorreu durante as crises do petróleo dos anos 1970. O aumento abrupto dos preços do petróleo, um insumo fundamental para diversas indústrias, resultou em custos mais altos de transporte e produção, impactando a economia brasileira. Outro exemplo mais recente foi observado durante a crise hídrica na região sudeste em 2014 e 2015, quando a escassez de água afetou a produção agrícola e a geração de energia hidrelétrica, levando ao aumento dos custos de alimentos e eletricidade (FRANCO, 2014).
 
-Também conhecida como inflação de custos, esse tipo de inflação ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
+É também conhecida como inflação de custos e ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
 
-Combater a inflação de oferta envolve várias estratégias, incluindo a melhoria da infraestrutura para reduzir custos de produção e distribuição, a diversificação de fontes de insumos para diminuir a dependência de um único fornecedor e o incentivo à inovação e adoção de novas tecnologias para aumentar a produtividade. Além disso, políticas cambiais que estabilizem a moeda podem minimizar os impactos de variações cambiais nos custos de insumos importados. 
+"A inflação de custos, além de elevar o nível de preços da economia, causa estagflação, expressão empregada quando a economia apresenta alto nível de preços e contração do produto interno bruto, diferentemente da inflação de demanda, onde a expansão da demanda agregada, além de elevar o nível de preços, aquece a economia e estimula o crescimento do PIB". \cite{cortapasso_estagflacao}
+
+Logo, combater a inflação de oferta envolve várias estratégias, incluindo a melhoria da infraestrutura para reduzir custos de produção e distribuição, a diversificação de fontes de insumos para diminuir a dependência de um único fornecedor e o incentivo à inovação e adoção de novas tecnologias para aumentar a produtividade. Além disso, políticas cambiais que estabilizem a moeda podem minimizar os impactos de variações cambiais nos custos de insumos importados. 
+
+TODO: citation
+
+Visto que o Banco Central do Brasil (BCB) não prioriza o canal cambial para a transmissão da política monetária (XYZ, 2020), ter o principal instrumento de política monetária concentrado nas operações de mercado aberto implica que, em um caso de inflação de custos, a resposta seria a modificação da taxa de juros básica da economia. Aumentar a taxa de juros em resposta a esse tipo de inflação, porém, pode ser ineficaz ou até prejudicial, pois, embora possa ajudar a conter os preços, também pode frear o crescimento econômico, agravando a situação ao desestimular investimentos e aumentar o custo do crédito. Esse tipo de medida tende a impactar mais fortemente a demanda, mas não resolve as causas subjacentes do aumento nos custos de produção.
 
 \section{Inflação de Demanda}
 
 Se por um lado choques nos custos de produção e salários causam inflação de oferta, a inflação de demanda ocorre quando a demanda agregada por bens e serviços supera a capacidade produtiva da economia, resultando em pressões inflacionárias. Este tipo de inflação é frequentemente associado a períodos de crescimento econômico robusto, onde a renda disponível e o consumo das famílias aumentam significativamente. Segundo \citeonline{olivierblanchard_2013_macroeconomics}, a inflação de demanda pode ser desencadeada por políticas fiscais expansionistas, como aumentos nos gastos governamentais ou cortes de impostos, que elevam a demanda agregada sem um correspondente aumento na oferta.
 
-Um exemplo histórico significativo de inflação de demanda ocorreu durante a década de 1970, quando muitos países enfrentaram pressões inflacionárias devido a políticas fiscais expansionistas e aumentos rápidos nos gastos de consumo \cite{blinder_2008_the}. No Brasil, a inflação de demanda tem sido uma preocupação constante, especialmente em contextos de políticas fiscais agressivas que aumentam o poder de compra sem um acompanhamento na produção. Segundo \cite{woodford_2009_interest}, a gestão eficaz da demanda agregada é crucial para evitar pressões inflacionárias, destacando a importância da coordenação entre políticas fiscais e monetárias. Portanto, o controle da inflação de demanda requer uma abordagem equilibrada que inclua a moderação das expansões fiscais e uma política monetária prudente que consiga antecipar e neutralizar excessos de demanda.
+Um exemplo histórico significativo de inflação de demanda ocorreu durante a década de 1970, quando muitos países enfrentaram pressões inflacionárias devido a políticas fiscais expansionistas e aumentos rápidos nos gastos de consumo \cite{blinder_2008_the}. Segundo \cite{woodford_2009_interest}, a gestão eficaz da demanda agregada é crucial para evitar pressões inflacionárias, destacando a importância da coordenação entre políticas fiscais e monetárias. Portanto, o controle da inflação de demanda requer uma abordagem equilibrada que inclua a moderação das expansões fiscais e uma política monetária prudente que consiga antecipar e neutralizar excessos de demanda.
 
-% TODO: Falar mais sobre o RMI e seus impactos
+TODO: Falar mais sobre o RMI e seus impactos
 
-Uma das principais ferramentas utilizadas na gestão macroeconômica brasileira é o aumento das taxas de juros, que desestimula o consumo e o investimento ao encarecer o crédito. Além disso, a redução dos gastos públicos e o aumento da tributação podem diminuir a quantidade de dinheiro em circulação, ajudando a conter a demanda agregada. Essas medidas visam equilibrar a demanda com a capacidade produtiva da economia, reduzindo a pressão sobre os preços.
+TODO: 3rd phrase weird
+
+Um dos principais efeitos observados sob a gestão macroeconômica brasileira é o aumento das taxas de juros, que desestimula o consumo e o investimento ao encarecer o crédito. Além disso, é possível realizar a redução dos gastos públicos e o aumento da tributação, ajudando a conter a demanda agregada, mas trazendo efeitos colaterais negativos que fazem com que essa metodologia não seja tão utilizada. Essas medidas visam equilibrar a demanda com a capacidade produtiva da economia, reduzindo a pressão sobre os preços.
 
 \section{Inflação Estrutural}
 
@@ -509,15 +577,33 @@ Diferentemente das modalidades anteriores, a inflação estrutural é causada po
 
 No Brasil, a inflação estrutural pôde ser observada durante as décadas de 1970 e 1980, quando o país enfrentou uma inflação persistente devido a vários fatores estruturais na economia. Entre esses fatores estavam a ineficiência produtiva, a baixa competitividade das indústrias nacionais, a excessiva burocracia, e a rigidez do mercado de trabalho. Isso foi agravado pela indexação generalizada da economia, onde salários, contratos e preços eram ajustados automaticamente com base na inflação passada, criando um ciclo contínuo de reajustes que perpetuava a inflação.
 
+Sob o contexto do RMI, a regulação excessiva da taxa de juros pode contribuir para um cenário de inflação estrutural, uma vez que condições adversas de crédito e disponibilidade de moeda podem impedir processos de crescimento, atualização tecnológica e inovação dos setores produtivos. Adiante, observaremos o reflexo da condução da política monetária sobre a economia brasileira a longo prazo e como tentativas de preservação da estabilidade monetária podem, contraditoriamente, desencadear processos de descontrole monetário.
+
+
+TODO: better link
+
 \section{Inflação Inercial}
 
 % TODO: Como retratam Giambiagi et al. (2011), no Plano Collor II houve a tentativa de controle da inflação por meio do congelamento dos preços, visando acabar com a memória inflacionária, ou seja, desindexar a economia, contudo o plano reduziu a inflação somente no curto prazo, a solução veio com o Plano Real em 1994 que estabeleceu a Unidade Real de Valor (URV) para desindexar a economia e determinou o lançamento de uma nova unidade monetária que estaria indexada ao dólar, nascia assim o real.
 
-Outra forma de inflação experenciada pelo Brasil na mesma época foi a inflação inercial, que é associada à tendência dos índices de preços continuarem subindo devido à persistência das expectativas inflacionárias passadas. Esse tipo de inflação é mantido pela indexação de preços e salários, onde os agentes econômicos ajustam automaticamente os preços e salários futuros com base na inflação passada. \citeonline{lopes_1985_inflao} explica que, em um ambiente de inflação inercial, as expectativas de inflação se tornam autorrealizáveis, perpetuando a continuidade da inflação mesmo na ausência de novos choques de demanda ou custos.
+Outra forma de inflação experenciada pelo Brasil na mesma época discutida na seção anterior foi a inflação inercial, que é associada à tendência dos índices de preços continuarem aumentando devido à persistência das expectativas inflacionárias passadas. Esse tipo de inflação pode ser causado pela indexação de preços e salários, onde os agentes econômicos ajustam automaticamente os preços e salários futuros com base na inflação passada. \citeonline{lopes_1985_inflao} explica que, em um ambiente de inflação inercial, as expectativas de inflação se tornam autorrealizáveis, perpetuando a continuidade da inflação mesmo na ausência de novos choques de demanda ou custos.
 
-A indexação da economia, como já mencionada na seção 2.3 de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação fazia com que a inflação se perpetuasse ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito (PEREIRA, 1998).
+A indexação da economia, como já mencionada na seção 2.3 de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação perpetuava a inflação ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito (PEREIRA, 1998).
 
-% TODO: Os efeitos sobre a distribuição de renda são um dos mais graves efeitos da inflação, conforme Gremaud, Vasconcellos e Toneto Júnior (2007) e Blanchard (2011) alientam, a desigualdade é acentuada quando a taxa de crescimento dos preços não acomete todos os componentes da economia no mesmo ritmo, quando os preços de bens e serviços sobem a um determinado ritmo e o salário não acompanha faz com que a parcela mais pobre da população tenha seus orçamentos ainda mais reduzidos.
+É notável que, apesar do plano Real ter sido um fator muito importante para limitar as tendências inflácionárias, inclusive de inflação	inercial, o crescimento dos índices de preços, como o IGP-DI visto na Figura \ref{fig:igpdiacum} foram superiores às metas estipuladas pelo Banco Central. Assim, os preços de bens e serviços subiram a um ritmo mais acelerado que o esperado e a população mais pobre acaba tendo seu orçamento familiar comprimido.
+
+\begin{figure}[H]
+	
+	\caption{IGP-DI Acumulado x Meta de Inflação Acumulada (\%)}
+	
+	\includegraphics[]{fig/igpdi_96_24_t.png}\\
+	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central e Fundação Getúlio Vargas.
+	
+	\label{fig:igpdiacum}
+\end{figure}
+
+Na seção subsequente, observar-se-á que as principais fontes de inflação histórica no Brasil são associadas a políticas desenvolvimentistas e expansionistas. Nota-se que a inflação estrutural e a inflação inercial se sobressaltaram na economia brasileira, principalmente nas décadas de 1980 e 1990, até a execução bem-sucedida do Plano Real.
+
 
 \chapter{Elementos Sobre Economia Brasileira}
 
@@ -533,7 +619,7 @@ Sob o governo de Getúlio Vargas, a criação da Petrobras e da Companhia Sider�
 
 Durante o governo de Juscelino Kubitschek (1956-1961), a política econômica se concentrou no Plano de Metas, que buscava ``50 anos em 5'' de desenvolvimento. Esse plano incluiu a construção de Brasília, a nova capital federal, e a expansão da infraestrutura de transporte e energia. Embora esses projetos tenham impulsionado a industrialização e o crescimento econômico, eles também resultaram em um aumento significativo do déficit público e da inflação \cite{bielschowsky_2022_a}. A rápida expansão foi financiada por meio de empréstimos externos, deixando o país vulnerável a crises de balanço de pagamentos.
 
-Nos anos de 1960, a instabilidade política e econômica levou ao golpe militar de 1964, que instaurou um regime autoritário com uma nova agenda econômica. O governo militar inicial adotou medidas de austeridade para controlar a inflação e estabilizar a economia. Contudo, o período mais notável de crescimento, conhecido como o "milagre econômico brasileiro" (1968-1973), foi caracterizado por investimentos massivos em infraestrutura e pela abertura econômica. Esse crescimento foi impulsionado por políticas fiscais e monetárias expansivas, que, embora tenham gerado um aumento substancial do produto interno bruto (PIB), também ampliaram a dívida externa e interna \cite{amaurypatrickgremaud_2009_economia}.
+Nos anos de 1960, a instabilidade política e econômica levou ao golpe militar de 1964, que instaurou um regime autoritário com uma nova agenda econômica. O governo militar inicialmente adotou medidas de austeridade para controlar a inflação e estabilizar a economia. Contudo, o período mais notável de crescimento, conhecido como o "milagre econômico brasileiro" (1968-1973), foi caracterizado por investimentos massivos em infraestrutura e pela abertura econômica. Esse crescimento foi impulsionado por políticas fiscais e monetárias expansivas, que, embora tenham gerado um aumento substancial do produto interno bruto (PIB), também ampliaram a dívida externa e interna \cite{amaurypatrickgremaud_2009_economia}.
 
 O ``milagre econômico'' foi marcado por grandes projetos, como a construção da Rodovia Transamazônica e a usina de Itaipu, que demandaram enormes recursos financeiros. Embora esses projetos tenham impulsionado a economia, eles também aumentaram as pressões inflacionárias. Além disso, a concentração de renda e a repressão aos movimentos sociais geraram tensões sociais significativas. O choque do petróleo de 1973 exacerbou as vulnerabilidades econômicas, pois aumentou os custos de importação de energia e pressionou ainda mais a balança de pagamentos.
 
@@ -545,19 +631,21 @@ A transição para a democracia em 1985 trouxe novos desafios econômicos. O gov
 
 Durante o governo de Itamar Franco (1992-1995), o Brasil finalmente começou a estabilizar sua economia com o Plano Real, liderado pelo então Ministro da Fazenda Fernando Henrique Cardoso. O plano introduziu uma nova moeda, o real, e implementou âncoras cambiais e políticas fiscais rígidas. Essas medidas conseguiram estabilizar a inflação e criar uma base para o crescimento econômico sustentável. O sucesso do Plano Real foi um ponto de inflexão na história econômica do Brasil, marcando o fim de um ciclo de políticas populistas e instabilidade econômica \cite{lacerda_2010_economia}.
 
-A instabilidade econômica e a subsequente estabilização pela qual o Brasil passou no período anterior e posterior ao Plano Real é claramente observada nas variações do Índice Geral de Preços - Disponibilidade Interna (IGP-DI). A Figura 1, a seguir, apresenta a série temporal do comportamento da inflação entre 1985 e 1996 no Brasil, com destaque para as diversas tentativas de estabilização realizadas.
+A instabilidade econômica e a subsequente estabilização pela qual o Brasil passou no período anterior e posterior ao Plano Real é claramente observada nas variações do Índice Geral de Preços - Disponibilidade Interna (IGP-DI). A Figura \ref{fig:igpdi}, a seguir, apresenta a série temporal do comportamento da inflação entre 1985 e 1996 no Brasil, com destaque para as diversas tentativas de estabilização realizadas.
 
 \begin{figure}[H]
 	
 	\caption{Comportamento da Inflação Mensal - IGP-DI - 1985-1996 (\%)}
 	
-	\includegraphics[]{igp-di.png}\\
+	\includegraphics[]{fig/igp-di.png}\\
 	
 	\footnotesize Fonte: FGV.
 	
+	\label{fig:igpdi}
+	
 \end{figure}
 
-Com destaque, a inflação no Brasil (Figura 1), observou diversos choques resultantes de políticas ineficazes no controle dos preços. O legado dos governos populistas do século XX, com suas políticas desenvolvimentistas e intervenções estatais, deixou uma economia caracterizada por altas taxas de inflação, dívida pública crescente e instabilidade macroeconômica. A implementação do RMI em 1999 representou um esforço para romper com esse passado e adotar uma política monetária mais disciplinada e previsível, visando garantir a estabilidade de preços e promover o crescimento sustentável a longo prazo \cite{amaurypatrickgremaud_2009_economia}.
+Com destaque, a inflação no Brasil (Figura \ref{fig:igpdi}), observou diversos choques resultantes de políticas ineficazes no controle dos preços. O legado dos governos populistas do século XX, com suas políticas desenvolvimentistas e intervenções estatais, deixou uma economia caracterizada por altas taxas de inflação, dívida pública crescente e instabilidade macroeconômica. A implementação do RMI em 1999 representou um esforço para romper com esse passado e adotar uma política monetária mais disciplinada e previsível, visando garantir a estabilidade de preços e promover o crescimento sustentável a longo prazo \cite{amaurypatrickgremaud_2009_economia}.
 
 \section{Transição para a Estabilidade: Plano Real e a Introdução do RMI}
 
@@ -599,7 +687,7 @@ Além das políticas de estabilização econômica, o governo Lula implementou p
 
 No entanto, o aumento do consumo e a expansão dos programas sociais também colocaram pressão sobre a inflação. A execução do RMI levantou críticas sobre os altos custos dos empréstimos e o impacto negativo sobre o investimento e o crescimento econômico a longo prazo. Dessa forma, o regime de metas de inflação trouxe impactos para a economia brasileira durante o governo Lula, proporcionando estabilidade de preços, mas também impondo restrições à flexibilidade econômica.
 
-% TODO: passar citações para refs.bib
+TODO: passar citações para refs.bib
 
 \section{Período Dilma Rousseff (2011-2016)}
 O governo de Dilma Rousseff (2011-2016) enfrentou desafios econômicos significativos, incluindo uma desaceleração econômica e aumento das pressões inflacionárias. A política econômica adotada durante este período foi caracterizada por uma expansão fiscal e intervenções frequentes nos preços administrados, como combustíveis e energia, o que dificultou o controle da inflação. A credibilidade do governo foi colocada em questão devido ao uso de medidas não convencionais e à percepção de interferência política no Banco Central. Como resultado, a inflação frequentemente excedeu as metas estabelecidas, exigindo aumentos abruptos na taxa de juros para tentar trazer a inflação de volta ao intervalo meta \cite{carvalho_2016_growth}.
@@ -638,6 +726,18 @@ Além dos desafios econômicos, o governo Bolsonaro também enfrentou uma série
 
 À medida que o Brasil entra em 2023, enfrenta uma série de desafios e oportunidades econômicas. Um dos principais focos continua sendo o controle da inflação, que permanece uma preocupação central para o Banco Central. Sob a liderança de Roberto Campos Neto, a política monetária tem sido rigorosamente ajustada para garantir que a inflação fique dentro das metas estabelecidas, apesar das pressões inflacionárias globais e domésticas.
 
+\begin{figure}[H]
+	
+	\caption{Variação do IPCA x Meta de Inflação (BCB) (\%)}
+	
+	\includegraphics[]{fig/ibge_ipca_bcb_meta_99_23_t.png}\\
+	
+	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central e IBGE.
+	
+\end{figure}
+
+TODO: incluir mais um gráfico sintetizando PIB, inflação etc.
+
 % \section{}
 
 % A alta taxa de juros necessária para manter a inflação sob controle tem um impacto negativo sobre o crescimento econômico e o emprego. Os custos de empréstimos elevados desincentivam investimentos e consumo, limitando o crescimento do PIB
@@ -645,15 +745,6 @@ Além dos desafios econômicos, o governo Bolsonaro também enfrentou uma série
 % A pressão para atingir metas anuais pode levar a uma política monetária excessivamente restritiva ou expansiva, prejudicando a estabilidade econômica de longo prazo. A tentativa de atingir metas de curto prazo pode negligenciar problemas estruturais mais profundos na economia brasileira
 
 % Dominancia fiscal?
-
-\chapter{Metodologia}
-
-\section{Modelo}
-
-\section{Dados}
-
-\chapter{Considerações Finais}
-
 
 
 %%%%%%%%%%%%%
