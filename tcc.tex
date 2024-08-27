@@ -315,7 +315,7 @@
 
 
 % %%%%%%%%%%%%%%%%
-%REGULAMENTO DO TRABALHO DE CONCLUSÃO DO CURSO DE ECONOMIA (DISCIPLINAS MONOGRAFIA I E II – 6TCC404 E 6TCC405)
+%REGULAMENTO DO TRABALHO DE CONCLUSÃO DO CURSO DE ECONOMIA (DISCIPLINAS MONOGRAFIA I E II - 6TCC404 E 6TCC405)
 % %%%%%%%%%%%%%%%%
 
 %ART.16 A estrutura da monografia compõe-se de:
@@ -390,9 +390,7 @@
 	\noindent
 	ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}. \imprimirdata. \ztotpages \, f. Monografia (Graduação em Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 	
-	Este trabalho tem por objetivo verificar o impacto da inflação, principalmente sob a ótica da oferta e da demanda sobre a economia brasileira e avaliar os efeitos exercidos por estas sobre a eficácia do regime de metas de inflação (RMI) no Brasil. Será examinado se as respostas do Banco Central são eficientes e sob quais óticas a política monetária deve ser definida a fim de atender os objetivos propostos pelo RMI. Por meio deste trabalho, busca-se atingir um melhor entendimento dos mecanismos que regem a dinâmica inflacionária no Brasil e como é moldada a resposta à inflação pela autoridade monetária brasileira. Para isso, são utilizados modelos econométricos que conseguem capturar relações de longo prazo entre as variáveis escolhidas, que são a taxa de inflação, a taxa de juros, o produto interno bruto (PIB) real do Brasil e... 
-	
-	TODO: all variables
+	Este trabalho tem por objetivo verificar o impacto da inflação, principalmente sob a ótica da oferta e da demanda sobre a economia brasileira e avaliar os efeitos exercidos por estas sobre a eficácia do regime de metas de inflação (RMI) no Brasil. Será examinado se as respostas do Banco Central são eficientes e sob quais óticas a política monetária deve ser definida a fim de atender os objetivos propostos pelo RMI. Por meio deste trabalho, busca-se atingir um melhor entendimento dos mecanismos que regem a dinâmica inflacionária no Brasil e como é moldada a resposta à inflação pela autoridade monetária brasileira. Para isso, será utilizado o modelo econométrico de vetores autorregressivos (VAR), que consegue capturar relações de longo prazo entre as variáveis escolhidas, que são a meta de inflação anual do Banco Central, a taxa de câmbio entre o Real e o Dólar Americano, o produto interno bruto (PIB) real do Brasil, o Índice Nacional de Preços ao Consumidor Amplo (IPCA) e o Índice de Preços ao Produtor Amplo, Estágios de Produção - Disponibilidade Interna (IPA-EP-DI).
 	
 	\textbf{Palavras-chave}: inflação; oferta; demanda; econometria; política monetária.
 \end{resumo}
@@ -458,6 +456,7 @@
 	\item[VD]  Decomposição de Variância
 	\item[AIC] Critério de Informação de Akaike
 	\item[BIC] Critério de Informação Bayesiano
+	\item[IPEA] Instituto de Pesquisa Econômica Aplicada
 \end{siglas}
 \pagebreak
 
@@ -590,7 +589,7 @@ Outra forma de inflação experenciada pelo Brasil na mesma época discutida na 
 
 A indexação da economia, como já mencionada na seção 2.3 de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação perpetuava a inflação ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito (PEREIRA, 1998).
 
-É notável que, apesar do plano Real ter sido um fator muito importante para limitar as tendências inflácionárias, inclusive de inflação	inercial, o crescimento dos índices de preços, como o IGP-DI visto na Figura \ref{fig:igpdiacum} foram superiores às metas estipuladas pelo Banco Central. Assim, os preços de bens e serviços subiram a um ritmo mais acelerado que o esperado e a população de baixa renda acabou tendo seu orçamento familiar comprimido.
+É notável que, apesar do plano Real ter sido um fator muito importante para limitar as tendências inflácionárias, inclusive de inflação	inercial, o crescimento dos índices de preços, como o IGP-DI visto na Figura \ref{fig:igpdiacum} foram superiores às metas estipuladas pelo Banco Central. Assim, os preços de bens e serviços subiram a um ritmo mais acelerado que o esperado e as populações de rendas menores acabaram tendo seus poderes de compra reduzidos.
 
 \begin{figure}[H]
 	
@@ -723,7 +722,7 @@ Além dos desafios econômicos, o governo Bolsonaro também enfrentou uma série
 
 \section{Perspectivas Recentes e Desafios (2023)}
 
-À medida que o Brasil entra em 2023, enfrenta uma série de desafios e oportunidades econômicas. Um dos principais focos continua sendo o controle da inflação, que permanece uma preocupação central para o Banco Central. Sob a liderança de Roberto Campos Neto, a política monetária tem sido rigorosamente ajustada para garantir que a inflação fique dentro das metas estabelecidas, apesar das pressões inflacionárias globais e domésticas.
+Atualmente, o Brasil enfrenta uma série de desafios e oportunidades econômicas. Um dos principais focos continua sendo o controle da inflação, que permanece sendo um ponto focal para o Banco Central. Sob a liderança de Roberto Campos Neto, a política monetária tem sido rigorosamente ajustada para garantir que a inflação fique dentro das metas estabelecidas, apesar das pressões inflacionárias globais e domésticas. Como é observado abaixo na Figura \ref{fig:ipcatgt}, o país tem enfrentado taxas de inflação frequentemente maiores do que o planejado e isso se acentuou de forma severa após 2020:
 
 \begin{figure}[H]
 	
@@ -731,11 +730,12 @@ Além dos desafios econômicos, o governo Bolsonaro também enfrentou uma série
 	
 	\includegraphics[]{fig/ibge_ipca_bcb_meta_99_23_t.png}\\
 	
+	\label{fig:ipcatgt}
 	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central e IBGE.
 	
 \end{figure}
 
-TODO: incluir mais um gráfico sintetizando PIB, inflação etc.
+É interessante notar como crises econômicas	globais tiveram impacto sobre o ritmo do crescimento da inflação no Brasil. Tanto em 2009, na crise do \textit{subprime}, quanto em 2019, com a crise do COVID-19, observou-se (Tabela \ref{fig:ipcatgt}) a incapacidade das metas de inflação acompanharem a expansão monetária realizada nos períodos de gerenciamento das crises, evidenciando a dificuldade em manter a inflação sob controle. Diante dessa complexidade, a próxima seção traz a escolha de modelos econométricos que propõem formas de analisar o comportamento da política monetária diante de tais cenários econômicos.
 
 % \section{}
 
@@ -751,46 +751,98 @@ Há diversos modelos econométricos capazes de analisar a relação entre a pol�
 
 O modelo VAR será utilizado porque permite analisar a interação entre múltiplas variáveis econômicas de forma dinâmica, sem impor restrições \textit{a priori} sobre a causalidade entre elas. Em um contexto como o da inflação no Brasil, onde diversas variáveis interagem de maneira complexa, o VAR se destaca por sua capacidade de modelar essas inter-relações de forma simultânea. Diferentemente de modelos estruturais, o VAR trata todas as variáveis como endógenas, o que é crucial para capturar adequadamente a resposta da política monetária e outras variáveis econômicas a choques inesperados, como os de oferta e demanda.
 
-Como o objetivo deste estudo é analisar tanto a dinâmica inflacionária de oferta quanto de demanda, o VAR oferece a flexibilidade necessária para modelar essas influências e testar como a política monetária deve ser ajustada para alcançar os objetivos propostos pelo regime de metas de inflação. Em sua extensão, o modelo VAR oferece funções de resposta a impulsos (IRF) e decomposição de variância (VD), que são utilizados para estudar o impacto de um choque na política monetária sobre a inflação ao longo do tempo.
+Como o objetivo deste estudo é analisar tanto a dinâmica inflacionária de oferta quanto de demanda, o VAR oferece a flexibilidade necessária para modelar essas influências e testar como a política monetária deve ser ajustada para alcançar os objetivos propostos pelo regime de metas de inflação. Em sua extensão, o modelo VAR oferece funções de resposta a impulsos (IRF) e decomposição de variância (VD), que são utilizados para estudar o impacto de um choque na inflação sobre a política monetária ao longo do tempo.
 
 \section{Modelo}
 
-Para a construção do modelo VAR, o primeiro passo é garantir que as variáveis utilizadas no modelo sejam estacionárias. A estacionariedade é fundamental para evitar resultados espúrios, ou seja, resultados que indicam uma relação de longo prazo inexistente entre as variáveis. De acordo com Gujarati e Porter (2011), uma série temporal estacionária é aquela cujas propriedades estatísticas, como média, variância e autocorrelação, não mudam ao longo do tempo. A verificação da estacionariedade é realizada por meio de testes como o Dickey-Fuller aumentado (ADF) e o Phillips-Perron (PP), que testam a presença de raiz unitária na série temporal. Caso as séries não sejam estacionárias, é possível realizar diferenciações para atingir a estacionariedade \cite{gujarati_porter_2011}.
+Para a construção do modelo VAR, o primeiro passo é garantir que as variáveis utilizadas no modelo sejam estacionárias. A estacionariedade é fundamental para evitar resultados espúrios, ou seja, resultados que indicam uma relação de longo prazo inexistente entre as variáveis. De acordo com Gujarati e Porter (2011), uma série temporal estacionária é aquela cujas propriedades estatísticas, como média, variância e autocorrelação, não mudam ao longo do tempo. A verificação da estacionariedade é realizada por meio de testes como o Dickey-Fuller aumentado (ADF) e o Phillips-Perron (PP), que testam a presença de raiz unitária na série temporal. Caso as séries não sejam estacionárias, é possível realizar diferenciações para atingir a estacionariedade \cite{gujarati_porter_2011}, como observado a seguir.
 
 \subsection{Diferenciação de Séries Temporais}
 
-A diferenciação de uma série temporal é um procedimento utilizado para tornar uma série não estacionária em estacionária, eliminando tendências e ciclos de longo prazo. A diferenciação consiste em calcular a diferença entre os valores consecutivos da série. Para uma série temporal \( y_t \), a primeira diferença é dada por:
+A diferenciação de uma série temporal é um procedimento utilizado para tornar uma série não estacionária em estacionária, eliminando tendências e ciclos de longo prazo. A diferenciação consiste em calcular a diferença entre os valores consecutivos de uma série. Para uma observação de uma série temporal \( y_t \), a primeira diferença é dada por:
 
-\[
+\begin{equation}
 	\Delta y_t = y_t - y_{t-1}
-\]
+\end{equation}
 
 onde:
 
 \begin{itemize}
 	\item \( y_t \) é o valor da série no período \( t \),
 	\item \( y_{t-1} \) é o valor da série no período \( t-1 \),
-	\item \( \Delta y_t \) é a primeira diferença da série temporal.
+	\item \( \Delta y_t \) é a primeira diferença da observação na série temporal.
 \end{itemize}
 
-A diferenciação de ordem \( d \), observada na equação \ref{eqn:diffsimple} a seguir generaliza esse conceito. Quando a série precisa ser diferenciada mais de uma vez para se tornar estacionária, o processo pode ser repetido. De forma geral, a diferenciação de ordem \( d \) de uma série \( y_t \) é definida como:
+A diferenciação de ordem \( d \), observada na equação \ref{eqn:diffsimple} a seguir, generaliza esse conceito. Quando a série precisa ser diferenciada mais de uma vez para se tornar estacionária, o processo pode ser repetido. De forma geral, a diferenciação de ordem \( d \) de uma observação \( y_t \) em uma série é definida como:
 
 \begin{equation}
 	\label{eqn:diffsimple}
 	\Delta^d y_t = \Delta^{d-1}(y_t - y_{t-1})
 \end{equation}
 
-A diferenciação de séries temporais é frequentemente o primeiro passo para lidar com a não estacionariedade em modelos econométricos. No entanto, para verificar se a série tornou-se efetivamente estacionária após a diferenciação, é essencial realizar um teste formal de raiz unitária, como o teste de Dickey-Fuller Aumentado (ADF). Esse teste avalia a presença de uma raiz unitária na série, o que indicaria a não estacionariedade. O ADF ajusta a equação de Dickey-Fuller original incluindo defasagens das primeiras diferenças, a fim de controlar por autocorrelação nos resíduos, garantindo assim que a série diferenciada atenda às condições necessárias para a modelagem econométrica correta.
+Para determinar corretamente como proceder com a diferenciação de uma série, surge a necessidade de verificar o número ideal de defasagens a ser utilizado no modelo. Nesse contexto, as seções subsequentes oferecem critérios que equilibram a complexidade do modelo e seu ajuste aos dados, auxiliando na escolha do número de defasagens apropriado ao penalizar a inclusão de parâmetros desnecessários, garantindo que o modelo não seja superajustado.
+
+\subsection{Critério de Informação de Akaike (AIC)}
+
+O Critério de Informação de Akaike (AIC) é um dos métodos mais amplamente utilizados para determinar o número ótimo de defasagens em modelos de séries temporais. Desenvolvido por Hirotugu Akaike, sua fórmula é dada por:
+
+\begin{equation}
+	AIC = -2 \ln(L) + 2k
+\end{equation}
+
+onde:
+
+\begin{itemize}
+	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
+	\item \( k \) é o número de parâmetros estimados no modelo, incluindo as defasagens e o termo constante.
+\end{itemize}
+
+O AIC é construído de modo a favorecer modelos que maximizam a verossimilhança enquanto penaliza o número de parâmetros. Geralmente, quanto maior o número de parâmetros, melhor o ajuste do modelo aos dados. No entanto, um aumento no número de parâmetros pode levar a um modelo superajustado \textit{overfitting}, onde o modelo capta não apenas o padrão subjacente nos dados, mas também o ruído. Assim, o termo de penalização \( 2k \) busca corrigir esse problema.
+
+Ao comparar diferentes modelos com defasagens variáveis, o modelo que apresenta o menor valor de AIC é escolhido como o modelo ótimo. No entanto, o AIC tende a ser mais permissivo em relação ao número de defasagens, selecionando frequentemente um número maior de \textit{lags} em comparação com outros critérios, como o Critério de Informação de Schwarz (BIC) ou o Critério de Hannan-Quinn, vistos a seguir.
+
+\subsection{Critério de Informação de Schwarz (BIC)}
+
+O Critério de Informação de Schwarz (BIC), também conhecido como Critério de Informação Bayesiano, tem fórmula muito parecida com o AIC:
+
+\begin{equation}
+	BIC = -2 \ln(L) + k \ln(n)
+\end{equation}
+
+A diferença chave entre os critérios é que o termo de penalização no BIC, \( k \ln(n) \), aumenta com o número de observações, tornando-o mais rigoroso conforme a amostra cresce. Isso implica que, para grandes amostras, o BIC tende a selecionar modelos com menos parâmetros em comparação ao AIC. No entanto, devido à sua penalização mais severa, o BIC pode, às vezes, subestimar o número de defasagens necessário, principalmente em séries onde há muita autocorrelação residual.
+
+\subsection{Critério de Hannan-Quinn (HQIC)}
+
+Desenvolvido por Edward Hannan e Barry Quinn, o HQIC oferece um meio-termo entre o AIC e o BIC em termos de penalização pela inclusão de parâmetros adicionais. A fórmula do HQIC é:
+
+\begin{equation}
+	\label{eqn:hannanquinn}
+	HQIC = -2 L_{max} + 2k \ln(\ln(n))
+\end{equation}
+
+onde:
+
+\begin{itemize}
+	\item \( L_{max} \) é o valor da função (\textit{log-likelihood}) de verossimilhança estimada para o modelo,
+	\item \( k \) é o número de parâmetros estimados no modelo,
+	\item \( n \) é o número de observações na série temporal.
+\end{itemize}
+
+Como é observado na Equação \ref{eqn:hannanquinn}, o HQIC penaliza a inclusão de parâmetros de maneira mais severa que o AIC, mas menos rigorosa que o BIC. O termo \( 2k \ln(\ln(n)) \) cresce mais lentamente do que o termo \( k \ln(n) \) no BIC, tornando o HQIC uma escolha apropriada em situações onde o BIC pode ser muito conservador e o AIC, muito permissivo.
+
+O HQIC é particularmente útil em séries temporais de tamanho intermediário, onde o número de observações não é suficientemente grande para justificar o uso do BIC, mas onde ainda é necessário um controle maior sobre o número de defasagens em comparação com o AIC. 
+
+Como os outros critérios, o HQIC não garante que o modelo selecionado seja o "verdadeiro" modelo subjacente, apenas que ele representa um bom compromisso entre complexidade e ajuste. Seu uso, assim como o AIC e o BIC, deve ser acompanhado de outras análises diagnósticas para garantir a adequação do modelo às características da série temporal.
+
+Para proceder com a estimação do modelo, ainda resta verificar se as séries defasadas são efetivamente estacionárias após a diferenciação, sendo preciso realizar um teste formal de raiz unitária, como o teste de Dickey-Fuller Aumentado (ADF) ou o teste de Phillips-Perron (PP), descritos a seguir. 
 
 \subsection{Teste de Dickey-Fuller Aumentado}
 
-O teste de Dickey-Fuller Aumentado (ADF) é uma extensão do teste de Dickey-Fuller original, projetado para detectar a presença de raiz unitária em séries temporais, o que indicaria que a série é não estacionária. O teste ADF adiciona termos de defasagem das diferenças da variável dependente ao modelo para capturar qualquer autocorrelação nos resíduos. Isso permite que o teste corrija problemas de autocorrelação, que podem invalidar os resultados do teste de Dickey-Fuller padrão em séries temporais complexas, como é comum em séries macroeconômicas e financeiras.
+Extensão do teste de Dickey-Fuller original, o teste ADF adiciona termos de defasagem das diferenças da variável dependente ao modelo para capturar qualquer autocorrelação nos resíduos. Isso permite que o teste corrija problemas de autocorrelação, que podem invalidar os resultados do teste de Dickey-Fuller padrão em séries temporais complexas, como é comum em séries macroeconômicas e financeiras.  A equação geral do teste ADF pode ser representada da seguinte forma:
 
-A equação geral do teste ADF pode ser representada da seguinte forma:
-
-\[
+\begin{equation}
 	\Delta y_t = \alpha + \beta t + \gamma y_{t-1} + \sum_{i=1}^{p} \delta_i \Delta y_{t-i} + \epsilon_t
-\]
+\end{equation}
 
 onde:
 
@@ -803,22 +855,15 @@ onde:
 	\item \( \epsilon_t \) são os resíduos da equação.
 \end{itemize}
 
-A inclusão das defasagens \( \Delta y_{t-i} \) é fundamental, pois permite ao teste ADF lidar com séries temporais que apresentam autocorrelação serial nos erros. O número de defasagens \( p \) é selecionado com base em critérios de informação, como o Critério de Informação de Akaike (AIC) ou o Critério de Informação Bayesiano (BIC), de modo a garantir que os erros \( \epsilon_t \) sejam não correlacionados e distribuídos de forma aproximadamente normal.
+A inclusão das defasagens \( \Delta y_{t-i} \) permite ao teste ADF lidar com séries temporais que apresentam autocorrelação serial nos erros. O número de defasagens \( p \) é selecionado com base em critérios de informação, como o Critério de Informação de Akaike (AIC) ou o Critério de Informação Bayesiano (BIC), de modo a garantir que os erros \( \epsilon_t \) sejam não correlacionados e distribuídos de forma aproximadamente normal.
 
-A hipótese nula do teste ADF é que a série possui uma raiz unitária (\( H_0: \gamma = 0 \)), ou seja, que a série é não estacionária. Se o valor calculado da estatística \( t \) for menor do que o valor crítico correspondente, a hipótese nula é rejeitada, indicando que a série é estacionária. Caso contrário, a série é considerada não estacionária e, portanto, apresenta uma raiz unitária. O teste ADF, assim como o teste de Phillips-Perron, pode ser ajustado para incluir apenas um termo constante, um termo de tendência, ou ambos, dependendo da natureza da série temporal.
+A hipótese nula do teste ADF é que a série possui uma raiz unitária (\( H_0: \gamma = 0 \)), ou seja, que a série é não estacionária. Quando o valor calculado da estatística \( t \) é menor do que o valor crítico correspondente, a hipótese nula é rejeitada, indicando que a série é estacionária. Caso contrário, a série é considerada não estacionária e, portanto, apresenta uma raiz unitária. O teste ADF, assim como o teste de Phillips-Perron, pode ser ajustado para incluir apenas um termo constante, um termo de tendência, ou ambos, dependendo da natureza da série temporal.
 
 Uma vantagem do teste ADF em relação ao Dickey-Fuller simples é sua robustez a formas mais gerais de autocorrelação nos resíduos, o que o torna amplamente utilizado em análises econométricas. Contudo, sua eficácia ainda depende da seleção adequada do número de defasagens, pois incluir muitas defasagens pode reduzir a potência do teste, enquanto incluir poucas pode deixar a autocorrelação nos resíduos não ajustada, comprometendo os resultados do teste.
 
-
-Após garantir a estacionariedade das séries, o próximo passo consiste na escolha do número de defasagens (\textit{lags}) que devem ser incluídas no modelo VAR. Segundo \citeonline{enders_2014_applied_econometric}, a inclusão de defasagens apropriadas é essencial para captar as dinâmicas de curto prazo entre as variáveis, uma vez que a omissão de defasagens pode gerar autocorrelação residual nos erros. 
-
-Para determinar o número ideal de \textit{lags}, utilizam-se critérios de informação, como o Critério de Informação de Akaike (AIC) e o Critério de Informação Bayesiano (BIC). Esses critérios indicam o número de lags que minimiza a perda de informação no modelo. O AIC tende a selecionar um número maior de defasagens, enquanto o BIC costuma ser mais parcimonioso \cite{enders_2014_applied_econometric}.
-
 \subsection{Teste de Phillips-Perron}
 
-O teste de Dickey-Fuller Aumentado é amplamente utilizado para verificar a presença de uma raiz unitária em séries temporais. No entanto, ele assume que os erros do modelo são homocedásticos, o que pode ser uma limitação em casos onde há heterocedasticidade ou autocorrelação nos resíduos. Para resolver esses problemas, \citeonline{phillips_perron_1988} propuseram uma alternativa mais robusta, o teste de Phillips-Perron (PP), que lida com essas questões sem a necessidade de incluir defasagens adicionais das diferenças como no ADF.
-
-O teste de Phillips-Perron se baseia na mesma equação \ref{eqn:adf_reg} de regressão do teste de Dickey-Fuller, que pode ser representada como:
+Visto que o ADF assume que os erros do modelo são homocedásticos, sendo uma potencial limitação em casos onde há heterocedasticidade ou autocorrelação nos resíduos, \citeonline{phillips_perron_1988} propuseram uma alternativa mais robusta, que é o teste de Phillips-Perron (PP). O teste é procedido sem a necessidade de incluir defasagens adicionais das diferenças como no ADF. A metodologia de Phillips-Perron se baseia na mesma equação \ref{eqn:adf_reg} de regressão do teste de Dickey-Fuller, que pode ser representada como:
 
 \begin{equation}
 	\label{eqn:adf_reg}
@@ -837,121 +882,20 @@ onde:
 
 Diferentemente do ADF, o teste de Phillips-Perron utiliza uma correção não paramétrica para lidar com autocorrelação e heterocedasticidade nos erros \( \epsilon_t \). Em vez de adicionar defasagens para ajustar a autocorrelação serial, o teste PP ajusta a estatística \( t \) da regressão por meio de uma estimativa robusta da variância assintótica dos resíduos. Isso é feito através da seguinte modificação na estatística \( t \):
 
-\[
+\begin{equation}
 	Z_\alpha = \frac{\hat{\gamma}}{\widehat{\sigma}_{\gamma}}
-\]
+\end{equation}
 
 onde \( \hat{\gamma} \) é o coeficiente estimado da regressão e \( \widehat{\sigma}_{\gamma} \) é a estimativa robusta da variância assintótica de \( \hat{\gamma} \), que corrige para heterocedasticidade e autocorrelação dos erros \( \epsilon_t \).
 
-\citeonline{phillips_perron_1988} mostram que o teste PP é assintoticamente equivalente ao ADF, mas com a vantagem de ser mais robusto a formas de heterocedasticidade que são comuns em séries temporais econômicas. De acordo com \citeonline{greene_2008_econometric_analysis}, o teste de Phillips-Perron é uma alternativa poderosa quando se deseja manter a simplicidade do modelo sem incluir muitas defasagens, o que pode ser especialmente útil em amostras menores, onde a inclusão de muitas defasagens poderia reduzir a potência do teste.
+\citeonline{phillips_perron_1988} mostram que o teste PP é assintoticamente equivalente ao ADF, mas com a vantagem de ser mais robusto a formas de heterocedasticidade que são comuns em séries temporais econômicas. De acordo com \citeonline{greene_2008_econometric_analysis}, o teste de Phillips-Perron é uma alternativa poderosa quando se deseja manter a simplicidade do modelo sem incluir muitas defasagens, sendo especialmente útil em amostras menores, onde a inclusão de muitas defasagens poderia reduzir a potência do teste.
 
 Outro ponto importante é que o teste de Phillips-Perron, assim como o ADF, pode ser realizado sob diferentes hipóteses. Ele pode ser ajustado para incluir um termo constante, uma tendência determinística, ou ambos, dependendo das características da série temporal que se está analisando. Assim, ele oferece a flexibilidade necessária para lidar com uma ampla gama de séries temporais, desde aquelas com tendência até as que são puramente estacionárias.
 
 De maneira semelhante ao teste ADF, os valores críticos do teste de Phillips-Perron são obtidos de tabelas específicas que levam em consideração a estrutura assintótica da série. O valor de \( \gamma \) deve ser comparado com os valores críticos apropriados, e a hipótese nula de raiz unitária (\( H_0: \gamma = 0 \)) é rejeitada se a estatística de teste for menor que o valor crítico, indicando que a série é estacionária.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Critério de Informação de Akaike (AIC)}
-
-O Critério de Informação de Akaike (AIC) é um dos métodos mais amplamente utilizados para determinar o número ótimo de defasagens em modelos de séries temporais. Desenvolvido por Hirotugu Akaike, o AIC busca balancear a qualidade do ajuste do modelo com a complexidade do mesmo, penalizando a inclusão de parâmetros desnecessários. A fórmula do AIC é dada por:
-
-\[
-	AIC = -2 \ln(L) + 2k
-\]
-
-onde:
-
-\begin{itemize}
-	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
-	\item \( k \) é o número de parâmetros estimados no modelo, incluindo as defasagens e o termo constante.
-\end{itemize}
-
-O AIC é construído de modo a favorecer modelos que maximizam a verossimilhança enquanto penalizam o número de parâmetros. A ideia central é que, quanto maior o número de parâmetros, melhor o ajuste do modelo aos dados. No entanto, um aumento no número de parâmetros pode levar a um ajuste excessivo (overfitting), onde o modelo capta não apenas o padrão subjacente nos dados, mas também o ruído. O termo de penalização \( 2k \) busca corrigir esse problema, promovendo um equilíbrio entre ajuste e simplicidade.
-
-Ao comparar diferentes modelos com defasagens variáveis, o modelo que apresenta o menor valor de AIC é escolhido como o modelo ótimo. No entanto, o AIC tende a ser mais permissivo em relação ao número de defasagens, selecionando frequentemente um número maior de lags em comparação com outros critérios, como o Critério de Informação de Schwarz (BIC) ou o Critério de Hannan-Quinn.
-
-Embora o AIC seja amplamente utilizado, ele não garante que o modelo selecionado seja o verdadeiro. Ele se concentra na aproximação do modelo à realidade e pode ser mais adequado para previsões em vez de inferências estatísticas robustas. O uso do AIC é particularmente eficaz em amostras grandes, onde a penalização por complexidade é suavizada pela abundância de dados.
-
-\subsection{Critério de Informação de Schwarz (BIC)}
-
-O Critério de Informação de Schwarz (BIC), também conhecido como Critério de Informação Bayesiano, foi proposto por Gideon Schwarz e é uma alternativa ao AIC. O BIC também busca equilibrar a qualidade do ajuste do modelo e sua simplicidade, mas penaliza de maneira mais severa a inclusão de parâmetros adicionais. A fórmula do BIC é dada por:
-
-\[
-	BIC = -2 \ln(L) + k \ln(n)
-\]
-
-onde:
-
-\begin{itemize}
-	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
-	\item \( k \) é o número de parâmetros estimados no modelo,
-	\item \( n \) é o número de observações na série temporal.
-\end{itemize}
-
-Uma diferença chave entre o BIC e o AIC é que o termo de penalização no BIC, \( k \ln(n) \), aumenta com o número de observações, tornando-o mais rigoroso conforme a amostra cresce. Isso implica que, para grandes amostras, o BIC tende a selecionar modelos com menos parâmetros em comparação ao AIC. Essa característica torna o BIC mais adequado para inferências estatísticas, já que evita o ajuste excessivo aos dados.
-
-O critério BIC é amplamente utilizado quando se busca modelos parcimoniosos, ou seja, modelos que explicam os dados de maneira eficiente com o menor número possível de parâmetros. Ao minimizar o BIC, o pesquisador seleciona o modelo que equilibra o ajuste com a complexidade, favorecendo a simplicidade sempre que possível.
-
-No entanto, devido à sua penalização mais severa, o BIC pode, às vezes, subestimar o número de defasagens necessário, principalmente em séries temporais complexas ou quando há muita autocorrelação residual. Ainda assim, sua aplicação é preferida em contextos onde a robustez estatística é crucial, como em testes de hipóteses e modelagem econométrica tradicional.
-
-\subsection{Critério de Hannan-Quinn (HQIC)}
-
-O Critério de Hannan-Quinn (HQIC) é outra ferramenta importante para a seleção de defasagens em modelos de séries temporais. Desenvolvido por Edward Hannan e Barry Quinn, o HQIC oferece um meio-termo entre o AIC e o BIC em termos de penalização pela inclusão de parâmetros adicionais. A fórmula do HQIC é:
-
-\[
-	HQIC = -2 \ln(L) + 2k \ln(\ln(n))
-\]
-
-onde:
-
-\begin{itemize}
-	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
-	\item \( k \) é o número de parâmetros estimados no modelo,
-	\item \( n \) é o número de observações na série temporal.
-\end{itemize}
-
-Como pode ser observado na fórmula, o HQIC penaliza a inclusão de parâmetros de maneira mais severa que o AIC, mas menos rigorosa que o BIC. O termo \( 2k \ln(\ln(n)) \) cresce mais lentamente do que o termo \( k \ln(n) \) no BIC, tornando o HQIC uma escolha apropriada em situações onde o BIC pode ser muito conservador e o AIC, muito permissivo.
-
-O HQIC é particularmente útil em séries temporais de tamanho intermediário, onde o número de observações não é suficientemente grande para justificar o uso do BIC, mas onde ainda é necessário um controle maior sobre o número de defasagens em comparação com o AIC. Sua capacidade de fornecer um balanço entre ajuste e parcimônia o torna uma alternativa valiosa quando se busca modelar a interdependência entre variáveis sem superestimar a importância de defasagens mais longas.
-
-No entanto, como os outros critérios, o HQIC não garante que o modelo selecionado seja o "verdadeiro" modelo subjacente, apenas que ele representa um bom compromisso entre complexidade e ajuste. Seu uso, assim como o AIC e o BIC, deve ser acompanhado de outras análises diagnósticas para garantir a adequação do modelo às características da série temporal.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Formalização do Modelo}
-
-Com a seleção do número de lags concluída, o modelo VAR pode ser formalizado. A equação geral de um modelo VAR de ordem \( p \) com \( k \) variáveis endógenas pode ser expressa da seguinte forma:
-
-\[
-	Y_t = A_1 Y_{t-1} + A_2 Y_{t-2} + \dots + A_p Y_{t-p} + \epsilon_t
-\]
-
-onde \( Y_t \) é o vetor de variáveis endógenas no período \( t \), \( A_1, A_2, \dots, A_p \) são as matrizes de coeficientes de cada defasagem, e \( \epsilon_t \) é o vetor de erros aleatórios que captura choques não explicados pelas variáveis do modelo. É importante lembrar que esses erros são assumidos como não correlacionados entre si ao longo do tempo %\cite{stock_watson_2001}.
-
-
-Uma vez que o modelo está estimado, é crucial verificar a presença de autocorrelação serial nos resíduos, o que violaria as premissas do modelo. A autocorrelação pode ser testada utilizando o teste de Breusch-Godfrey, que é amplamente recomendado para a detecção de autocorrelação em modelos multivariados. A ausência de autocorrelação é um indicativo de que as defasagens selecionadas foram suficientes para capturar as dinâmicas entre as variáveis. Se a autocorrelação estiver presente, novas defasagens devem ser incluídas %\cite{wooldridge_2013_introductory_econometrics}.
-
-O próximo passo é realizar a decomposição da variância dos erros, que permite avaliar a contribuição de cada variável endógena na explicação das variações das demais variáveis ao longo do tempo. Segundo Lutkepohl (2005), a decomposição da variância oferece uma visão clara das inter-relações entre as variáveis no modelo, fornecendo uma ferramenta para análise da importância relativa dos choques em cada variável no sistema %\cite{lutkepohl_2005_new_introduction}.
-
-Além disso, deve-se realizar a função de resposta ao impulso (IRF), que mostra como as variáveis do modelo respondem a choques exógenos aplicados em uma das variáveis endógenas. A IRF é uma das principais ferramentas para a análise dinâmica de um sistema VAR, e sua interpretação requer atenção especial às respostas de curto e longo prazo. Um choque positivo em uma variável, por exemplo, pode causar uma resposta inicial positiva em outra variável, mas essa resposta pode se reverter após alguns períodos, dependendo das inter-relações dinâmicas entre as variáveis %\cite{hamilton_1994_time_series_analysis}.
-
-Finalmente, é possível integrar o modelo VAR com correções de erro (VECM), caso as variáveis sejam cointegradas. A cointegração ocorre quando existe uma relação de longo prazo estável entre duas ou mais séries temporais, mesmo que individualmente elas sejam não estacionárias. O modelo de correção de erro (ECM) introduz uma variável de correção que ajusta as discrepâncias de curto prazo em direção ao equilíbrio de longo prazo. O teste de Johansen é amplamente utilizado para verificar a existência de vetores de cointegração, o que justifica o uso do VECM em vez de um VAR padrão %\cite{johansen_1991_cointegration_and_vectors}.
-
-Após realizar todos esses passos, a validade do modelo deve ser avaliada por meio de testes de diagnóstico. Além do teste de autocorrelação já mencionado, é importante verificar a normalidade dos resíduos utilizando o teste de Jarque-Bera e a heterocedasticidade dos erros com o teste de White. Esses testes garantem que as premissas clássicas do modelo sejam atendidas, permitindo a validade inferencial das estimativas obtidas %\cite{green_2008_econometric_analysis}.
-
-Por fim, recomenda-se realizar uma análise de robustez, que pode incluir a reestimação do modelo com diferentes janelas temporais ou variáveis auxiliares. A robustez das conclusões é crucial para garantir que os resultados não sejam sensíveis a pequenas alterações nos dados ou no período de análise. O processo de validação do modelo econométrico deve ser contínuo, garantindo que os resultados sejam consistentes com a teoria econômica e os dados empíricos disponíveis %\cite{stock_watson_2011_introduction}.
-
-A aplicação de um modelo VAR, portanto, envolve uma série de etapas interdependentes que garantem a robustez e a confiabilidade dos resultados obtidos. A combinação entre critérios de seleção de lags, testes de estacionariedade e autocorrelação, e análise de respostas a choques proporciona uma ferramenta poderosa para o entendimento das dinâmicas entre variáveis econômicas.
-
-\subsection{Metodologia para VAR (Vetores Autorregressivos)}
-O modelo VAR (Vetores Autorregressivos) é uma metodologia amplamente utilizada para analisar a inter-relação entre variáveis macroeconômicas, capturando as influências simultâneas entre elas ao longo do tempo. No contexto da relação entre política monetária e inflação, o VAR permite tratar tanto a inflação quanto as variáveis de política monetária, como taxas de juros ou oferta monetária, como variáveis endógenas, ou seja, influenciam-se mutuamente.
-
-A estrutura do VAR envolve modelar cada variável como uma função das suas próprias defasagens e das defasagens de todas as outras variáveis do sistema. A escolha do número de defasagens é fundamental e pode ser determinada por critérios de informação, como o critério de Akaike (AIC) ou critério de Schwarz (BIC), que ajudam a evitar problemas de overfitting. Após a especificação do modelo, é possível usar funções de resposta a impulsos (IRFs) para avaliar como choques em uma variável, como um aumento na taxa de juros, afetam a inflação ao longo do tempo. Outro método complementar no VAR é a decomposição de variância (VD), que ajuda a entender a proporção de variação em uma variável (como a inflação) explicada por choques nas variáveis de política monetária.
-
-No entanto, o VAR é um modelo puramente estatístico, sem incorporar diretamente as restrições teóricas. Isso significa que é adequado para análises descritivas e para capturar relações contemporâneas, mas pode exigir a adoção de versões mais estruturais (como SVAR) para identificar relações causais claras.
-
-
+Baseado na metodologia exposta, são coletados e tratados os dados pertinentes ao estudo. A seção seguinte descreve a origem e a função dos dados no momento da composição do modelo.
 
 \section{Dados}
 
@@ -970,20 +914,30 @@ No entanto, o VAR é um modelo puramente estatístico, sem incorporar diretament
 
 % https://www3.bcb.gov.br/sgspub/localizarseries/localizarSeries.do?method=prepararTelaLocalizarSeries
 
-O Banco Central é a principal fonte de informações para indicadores monetários e de inflação, disponibilizando séries temporais detalhadas sobre a taxa SELIC, as metas anuais de inflação e outras variáveis relevantes para a política monetária. Esses dados são utilizados na composição do modelo econométrico para ...
 
-Além dos dados do Banco Central, outras fontes relevantes foram utilizadas para complementar a análise. O Instituto Brasileiro de Geografia e Estatística (IBGE) forneceu informações detalhadas sobre a evolução do IPCA, índice utilizado por ser o índice oficial para medir a inflação no Brasil. O IBGE também oferece dados sobre inflação setorial, o que pode ser útil para diferenciar a inflação de oferta e de demanda.
+% IPCA = https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html?=&t=series-historicas
+% IPA-EP-DI = https://extra-ibre.fgv.br/IBRE/sitefgvdados/visualizaconsulta.aspx
+% SELIC = https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/pagamentos-e-parcelamentos/taxa-de-juros-selic#Taxa_de_Juros_Selic
+% PIB = http://www.ipeadata.gov.br/ExibeSerie.aspx?serid=521274780&module=M
+% CAMBIO = http://www.ipeadata.gov.br/ExibeSerie.aspx?stub=1&serid=38590&module=M
 
-TODO: isso é citação direta do site FGV.
 
-O Índice de Preços ao Produtor - IPP, cujo âmbito são as indústrias extrativas e de transformação, tem como principal objetivo mensurar a mudança média dos preços de venda recebidos pelos produtores domésticos de bens e serviços, bem como sua evolução ao longo do tempo, sinalizando as tendências inflacionárias de curto prazo no País. Constitui, assim, um indicador essencial para o acompanhamento macroeconômico e, por conseguinte, um valioso instrumento analítico para tomadores de decisão, públicos ou privados.
+O Banco Central é a principal fonte de informações para indicadores monetários e de inflação, disponibilizando séries temporais detalhadas sobre a taxa SELIC, as metas anuais de inflação e outras variáveis relevantes sob o contexto da política monetária. Esses dados são utilizados na composição do modelo econométrico através da seleção das séries de metas anuais de inflação e das taxas mensais de juros SELIC. 
 
-O IPP investiga, em pouco mais de 2 100 empresas, os preços recebidos pelo produtor, isentos de impostos, tarifas e fretes e definidos segundo as práticas comerciais mais usuais. Os produtos coletados são especificados em detalhes (aspectos físicos e de transação), garantindo, dessa forma, que sejam comparados produtos homogêneos ao longo do tempo. Com isso, coletam-se cerca de 6 000 preços mensalmente
+Além dos dados do Banco Central, o Instituto Brasileiro de Geografia e Estatística (IBGE) forneceu dados mensais da evolução do IPCA, a Fundação Getúlio Vargas forneceu os dados de IGP-DI e IPA-EP-DI e o Instituto de Pesquisa Econômica Aplicada (IPEA) forneceu dados para compor as variáveis do PIB (a estimativa do IPEA feita via interpolação dos valores trimestrais divulgados pelo IBGE nos permite fácil conciliação com as outras bases de dados) e da taxa de câmbio. O IBGE também disponibiliza o Índice de Preços ao Produtor, porém o IPA-EP-DI foi preferido dada o fato do estudo analisar o impacto da inflação desde 2003 e o IPP possuir dados históricos apenas a partir de 2011.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+O IPA-EP-DI separa os preços em três categorias: bens finais, bens intermediários, e matérias-primas brutas. Isso permite uma análise mais granular dos impactos de oferta, já que muitos choques de oferta começam com o aumento dos preços das matérias-primas ou dos bens intermediários, que depois afetam os bens finais.
+Com essa estrutura, é possível identificar com maior clareza em que ponto da cadeia produtiva os choques de oferta estão ocorrendo e como esses aumentos se propagam até os preços finais. A capacidade de separar os preços das matérias-primas de outros estágios oferece uma visão mais clara das dinâmicas da inflação de oferta.
 
-Ao integrar essas diferentes fontes de dados, será possível construir um panorama robusto da dinâmica inflacionária no Brasil e avaliar como o regime de metas de inflação foi ajustado em resposta aos choques de oferta e demanda entre 2003 e 2023. Isso permitirá uma análise crítica da eficácia das políticas monetárias adotadas, com base em evidências quantitativas e qualitativas.
+O IPA-EP-DI é uma ferramenta mais adequada para medir a inflação de oferta do que outros índices da FGV como o Índice de Preços ao Produtor Amplo - Mercado (IPA-M), pois oferece uma segmentação detalhada dos preços ao longo da cadeia produtiva, permitindo identificar como os aumentos nos custos dos insumos básicos afetam os preços finais, sendo particularmente útil para análises sobre a origem e o impacto dos choques de oferta na economia.
 
+O PIB foi deflacionado para o ano de 2003 utilizando o IGP-DI como deflator, isolando o efeito das flutuações de preços e garantindo que as comparações ao longo do período estudado reflitam mudanças reais na produção, e não apenas na inflação. O IGP-DI foi escolhido como o índice deflator por ser um indicador abrangente que capta a variação de preços em diferentes setores da economia, incluindo o atacado, o consumidor e a construção civil, tornando-o uma medida robusta para corrigir o PIB nominal e convertê-lo em termos reais.
+
+A taxa de câmbio utilizada no estudo expressa o valor da moeda brasileira em relação ao dólar americano. As observações diárias foram transformadas em observações mensais através do cálculo de média simples. Isso foi feito para compatibilizar essa variável com as demais.
+
+A meta de inflação, definida pelo Conselho Monetário Nacional (CMN) e conduzida pelo BCB, serve como um guia para as expectativas inflacionárias e para a condução das taxas de juros via taxa Selic. Ao incluir essa variável no modelo, é possível verificar se a inflação real (capturada pelo IPA-EP-DI no lado de oferta e pelo IPCA no lado de demanda) converge para a meta estabelecida, o que permite avaliar o sucesso ou as deficiências da política monetária no controle da inflação ao longo do tempo. Além disso, essa variável permite observar como a política monetária responde a diferentes tipos de choques inflacionários ao longo do período analisado.
+
+Após descrever as variáveis das diferentes fontes de dados, é apresentada, a seguir, a Tabela \ref{table:vars}, que sintetiza as variáveis, suas origens e as siglas que foram adotadas durante a execução da rotina econométrica feita no \textit{software} STATA:
 
 \vspace{0.2cm}
 \begin{table}[H]
@@ -992,130 +946,120 @@ Ao integrar essas diferentes fontes de dados, será possível construir um panor
 	\rowcolors{2}{gray!8}{white}
 	\begin{tabular}{ | l || c | l | }
 		\hline
-		\textbf{Variável}                                       & \textbf{Origem} & \textbf{Sigla} \\
+		\textbf{Variável}                                                  & \textbf{Origem} & \textbf{Sigla} \\
 		\hline
-		\textbf{Índice de Preços ao Consumidor Amplo (IPCA)}    & IBGE            & ln\_ipca       \\
-		\textbf{Índice de Preços ao Produtor Amplo (IPA-EP-DI)} & FGV             & ln\_ipa        \\
-		\textbf{Produto Interno Bruto Real}                     & IBGE            & ln\_pib        \\
-		\textbf{Taxa de Juros SELIC}                            & BCB             & ln\_selic      \\
-		\textbf{Câmbio Real}                                    & BCB             & ln\_cambio     \\
+		\textbf{Índice de Preços ao Consumidor Amplo (IPCA)}               & IBGE            & ipca           \\
+		\textbf{Índice Geral de Preços - Disponibilidade Interna (IGP-DI)} & FGV             & igpdi          \\
+		\textbf{Índice de Preços ao Produtor Amplo (IPA-EP-DI)}            & FGV             & d\_ipa\_ep\_di \\
+		\textbf{Produto Interno Bruto Real}                                & Ipeadata        & d\_pibdefl2003 \\
+		\textbf{Taxa de Juros SELIC}                                       & BCB             & selic          \\
+		\textbf{Meta de Inflação}                                          & BCB             & metabcb        \\
+		\textbf{Câmbio Real}                                               & BCB             & d\_rate        \\
 		\hline
 	\end{tabular}
 	\vspace{1ex}
+	\label{table:vars}
 	
 	\raggedright{
-		\noindent \footnotesize{Fonte: Histórico das Alterações da Moeda Nacional. Disponível em \\ https://web.archive.org/web/20151115205007/http://www.ocaixa.com.br/passos/passos2.htm.}}
+		\noindent \footnotesize{Fonte: o próprio autor.}}
 \end{table}
 
 \vspace{-0.2cm}
 \vspace{0.5cm}
 
-TODO: integrar no texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Sim, o IPA-EP-DI (Índice de Preços ao Produtor Amplo – Estágios de Produção – Disponibilidade Interna) mede de forma mais precisa a inflação de oferta em comparação ao IPA-M, pois ele segmenta os preços ao longo dos diferentes estágios da cadeia produtiva, permitindo uma análise mais detalhada das pressões de custo em cada fase da produção.
-
-Razões pelas quais o IPA-EP-DI mede melhor a inflação de oferta:
-Divisão por estágios de produção:
-
-O IPA-EP-DI separa os preços em três categorias: bens finais, bens intermediários, e matérias-primas brutas. Isso permite uma análise mais granular dos impactos de oferta, já que muitos choques de oferta começam com o aumento dos preços das matérias-primas ou dos bens intermediários, que depois afetam os bens finais.
-Com essa estrutura, é possível identificar com maior clareza em que ponto da cadeia produtiva os choques de oferta estão ocorrendo e como esses aumentos se propagam até os preços finais.
-Foco em insumos produtivos:
-
-A categoria de matérias-primas brutas do IPA-EP-DI capta diretamente as variações nos preços de commodities e outros insumos básicos, que são frequentemente os principais motores da inflação de oferta. Esse é o estágio onde ocorrem os primeiros impactos de aumentos de custos, seja devido a fatores externos (como aumento nos preços internacionais de petróleo ou alimentos) ou internos (como choques climáticos que afetam a agricultura).
-A capacidade de separar os preços das matérias-primas de outros estágios oferece uma visão mais clara das dinâmicas da inflação de oferta.
-Transmissão ao longo da cadeia:
-
-O IPA-EP-DI permite acompanhar a transmissão dos choques de preços ao longo da cadeia de produção, desde o aumento dos custos das matérias-primas até como eles afetam os preços dos bens intermediários e, finalmente, os preços dos bens finais. Isso é crucial para entender a inflação de oferta, que muitas vezes começa com aumentos de custo nos estágios iniciais da produção.
-Comparação com o IPA-M:
-IPA-M: Embora o IPA-M capte bem as variações de preços no atacado, ele é um índice mais agregado, o que dificulta a identificação precisa de onde os choques de oferta estão ocorrendo na cadeia produtiva. Ele reflete tanto fatores de demanda quanto de oferta.
-IPA-EP-DI: Por ser segmentado em estágios de produção, o IPA-EP-DI oferece uma visão mais precisa dos choques de oferta, especialmente no que se refere ao impacto dos preços das matérias-primas e insumos industriais nos preços finais.
-Conclusão:
-O IPA-EP-DI é uma ferramenta mais adequada para medir a inflação de oferta do que o IPA-M, pois oferece uma segmentação detalhada dos preços ao longo da cadeia produtiva, permitindo identificar como os aumentos nos custos dos insumos básicos afetam os preços finais. Isso torna o IPA-EP-DI particularmente útil para análises mais sofisticadas sobre a origem e o impacto dos choques de oferta na economia.
-
-O Índice de Preços ao Produtor (IPP), apesar de ser uma ferramenta útil para medir a variação dos preços na "porta de fábrica", possui dados históricos apenas a partir de 2011, o que limita sua aplicabilidade em análises de longo prazo. Dada a necessidade de estudar o impacto da inflação desde 2003, optaremos por utilizar o Índice de Preços ao Produtor Amplo – Estágios de Produção – Disponibilidade Interna (IPA-EP-DI). O IPA-EP-DI oferece uma série temporal mais longa, além de fornecer uma segmentação detalhada dos preços ao longo dos estágios de produção, permitindo uma análise mais completa das pressões inflacionárias no período desejado.
-
-
-O modelo VAR captura as inter-relações dinâmicas entre variáveis. Vamos começar com um modelo VAR simples que inclui o IPCA como proxy da inflação de demanda e o IPA-EP-DI (Índice de Preços por Atacado - Oferta Interna) como proxy da inflação de oferta. Outras variáveis importantes que podem ser adicionadas incluem:
-
-Taxa Selic: Indicador da política monetária.
-PIB Real: Para capturar o efeito da atividade econômica.
-Câmbio Real: Para capturar o impacto da depreciação ou valorização do câmbio na inflação de oferta (via preços de importação).
-Equações do VAR (em LaTeX):
-
-% IPCA = https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html?=&t=series-historicas
-% IPA-EP-DI = https://extra-ibre.fgv.br/IBRE/sitefgvdados/visualizaconsulta.aspx
-% SELIC = https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/pagamentos-e-parcelamentos/taxa-de-juros-selic#Taxa_de_Juros_Selic
-% PIB = http://www.ipeadata.gov.br/ExibeSerie.aspx?serid=521274780&module=M
-% CAMBIO = http://www.ipeadata.gov.br/ExibeSerie.aspx?stub=1&serid=38590&module=M
-
-IMPORTANTE: ressaltar que o PIB é interpolado do PIB trimestral.
-IMPORTANTE: ressaltar que o CAMBIO é media dos valores diarios para cada mes.
-
-deflacionamos PIB com igpdi para 2003 como ano base.
-
-se muito poucos lags -> modelo especificado incorretamente (viesado)
-se lag muito grande -> graus de liberdade são gastos desnecessariamente
-
-criterio para achar lags: akaike, Schwarz, Hannan-Quinn
-
-nao pode ter autocorr no nivel de lag selecionado
+A seguir, definimos dois modelos VAR, sendo que um deles inclui o IPCA como variável \textit{proxy} da inflação de demanda e o outro inclui o IPA-EP-DI como \textit{proxy} da inflação de oferta, como observado nas equações \ref{eqn:varipca} e \ref{eqn:varipa}:
 
 \begin{equation}
-	IPCA_t = \alpha_1 + \beta_{11}IPCA_{t-1} + \beta_{12}IPA_{t-1} + \beta_{13}SELIC_{t-1} + \beta_{14}PIB_{t-1} + \beta_{15}CAMBIO_{t-1} + \varepsilon_{1t}
+	\label{eqn:varipca}
+	\text{ipca} = \alpha +  \beta_{1}\text{metabcb} + \beta_{2}\text{selic} + \beta_{3}\text{d\_pibdefl2003} + \beta_{4}\text{d\_rate} + u_{t}
 \end{equation}
+\begin{equation}
+	\label{eqn:varipa}
+	\text{d\_ipa\_ep\_di} = \alpha +  \beta_{1}\text{metabcb} + \beta_{2}\text{selic} + \beta_{3}\text{d\_pibdefl2003} + \beta_{4}\text{d\_rate} + u_{t}
+\end{equation}
+\vspace{0ex}
 
-Modelo ECM:
-Para captar as relações de longo prazo entre as variáveis, o ECM introduz termos de correção de erros. O termo de correção capta o desvio das variáveis em relação ao equilíbrio de longo prazo. Abaixo está o modelo de correção de erros.
+Para verificar a relação entre as variáveis, propõe-se o uso do teste de causalidade de Granger, visto em sequência.
 
-Equações do ECM (em LaTeX):
+\section{Teste de Causalidade de Granger}
+
+O teste de causalidade de Granger, proposto por Clive Granger em 1969, é uma ferramenta fundamental para avaliar se uma variável \( X_t \) ajuda a prever outra variável \( Y_t \). O conceito de causalidade no sentido de Granger não se refere a uma causalidade no sentido tradicional, mas sim à ideia de que \( X_t \) é útil para prever \( Y_t \) além do que \( Y_t \) poderia prever com base apenas em suas próprias defasagens. Ou seja, se a inclusão das defasagens de \( X_t \) melhora a previsão de \( Y_t \), então \( X_t \) Granger-causa \( Y_t \).
+
+Para testar a causalidade de Granger, consideram-se dois modelos de regressão linear autoregressiva para uma série temporal \( Y_t \):
 
 \begin{equation}
-	IPA_t  = \alpha_2 + \beta_{21}IPCA_{t-1} + \beta_{22}IPA_{t-1} + \beta_{23}SELIC_{t-1} + \beta_{24}PIB_{t-1} + \beta_{25}CAMBIO_{t-1} + \varepsilon_{2t}
+	Y_t = \alpha_0 + \sum_{i=1}^{p} \alpha_i Y_{t-i} + \epsilon_t
 \end{equation}
+
+e
+
+\begin{equation}
+	Y_t = \beta_0 + \sum_{i=1}^{p} \beta_i Y_{t-i} + \sum_{i=1}^{p} \gamma_i X_{t-i} + \epsilon_t
+\end{equation}
+
+onde:
+
+\begin{itemize}
+	\item \( Y_t \) é a variável dependente,
+	\item \( X_t \) é a variável candidata a Granger-causar \( Y_t \),
+	\item \( \alpha_i \), \( \beta_i \), e \( \gamma_i \) são os coeficientes das defasagens das variáveis \( Y_t \) e \( X_t \),
+	\item \( \epsilon_t \) é o termo de erro,
+	\item \( p \) é o número de defasagens escolhido para o teste.
+\end{itemize}
+
+A hipótese nula do teste de Granger é que \( X_t \) não causa \( Y_t \) no sentido de Granger, ou seja, as defasagens de \( X_t \) não são estatisticamente significativas para prever \( Y_t \). Matematicamente, a hipótese nula (\( H_0 \)) e a hipótese alternativa (\( H_1 \)) podem ser expressas da seguinte forma:
+
+\begin{equation}
+	H_0: \gamma_1 = \gamma_2 = \dots = \gamma_p = 0
+\end{equation}
+
+\begin{equation}
+	H_1: \text{Pelo menos um } \gamma_i \neq 0 \text{, para } i = 1, 2, \dots, p
+\end{equation}
+
+O teste de Granger utiliza a estatística \( F \) para testar a hipótese nula. Essa estatística compara a soma dos quadrados dos resíduos (SQR) dos dois modelos. Se a inclusão de \( X_t \) reduz significativamente a SQR, rejeita-se a hipótese nula, indicando que \( X_t \) Granger-causa \( Y_t \). A estatística \( F \) é dada pela equação \ref{eqn:squares}:
+
+\begin{equation}
+	\label{eqn:squares}
+	F = \frac{(SQR_{\text{restrito}} - SQR_{\text{completo}})/p}{SQR_{\text{completo}}/(n - 2p - 1)}
+\end{equation}
+
+onde:
+
+\begin{itemize}
+	\item \( SQR_{\text{restrito}} \) é a soma dos quadrados dos resíduos do modelo sem \( X_t \),
+	\item \( SQR_{\text{completo}} \) é a soma dos quadrados dos resíduos do modelo com \( X_t \),
+	\item \( p \) é o número de defasagens,
+	\item \( n \) é o número de observações.
+\end{itemize}
+
+Se o valor calculado de \( F \) exceder o valor crítico de \( F \) em uma determinada significância (geralmente 5\%), rejeita-se a hipótese nula, concluindo que \( X_t \) Granger-causa \( Y_t \). O teste de Granger pode ser bilateral, ou seja, também pode ser aplicado para verificar se \( Y_t \) Granger-causa \( X_t \), testando assim uma relação bidirecional de causalidade. Como o teste pressupõe que as séries temporais sejam estacionárias, utilizamos o teste de Dickey-Fuller Aumentado (ADF) e o teste de Phillips-Perron (PP).
 
 \section{Resultados e Discussão}
 
-\begin{figure}[H]
-	
-	\caption{PIB}
-	
-	\includegraphics[]{fig/meta_infl_annum_99_23.png}\\
-	
-	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
-	
-\end{figure}
 
-\begin{figure}[H]
-	
-	\caption{PIB}
-	
-	\includegraphics[]{fig/ibge_ipca_bcb_meta_99_23_t.png}\\
-	
-	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
-	
-\end{figure}
-
-\begin{figure}[H]
-	
-	\caption{Inflação Acumulada x Meta BCB}
-	
-	\includegraphics[]{fig/ibge_deflator_96_21_t.png}\\
-	
-	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
-	
-\end{figure}
-
-\begin{figure}[H]
-	
-	\caption{PIB}
-	
-	\includegraphics[]{fig/ibge_pib_rsmi_96_21_t.png}\\
-	
-	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
-	
-	
-\end{figure}
-
+\begin{table}[H]
+	\centering
+	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\begin{tabular}{l*{1}{c}}
+		\hline\hline
+		        & \multicolumn{1}{c}{(1)}                                                                \\
+		        & \multicolumn{1}{c}{ipca}                                                               \\
+		\hline
+		metabcb & -1.085                                                                                 \\
+		        & (-1.73)                                                                                \\
+		[1em]
+		\_cons  & 0.891\sym{***}                                                                         \\
+		        & (3.93)                                                                                 \\
+		\hline
+		\(N\)   & 264                                                                                    \\
+		\hline\hline
+		\multicolumn{2}{l}{\footnotesize \textit{t} statistics in parentheses}                           \\
+		\multicolumn{2}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)} \\
+	\end{tabular}
+\end{table}
 
 \chapter{Considerações Finais}
 
