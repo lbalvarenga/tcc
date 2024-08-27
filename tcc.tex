@@ -438,6 +438,7 @@
 	\item[ABNT] Associação Brasileira de Normas Técnicas.
 	\item[RMI] Regime de metas de inflação
 	\item[SELIC] Sistema Especial de Liquidação e Custódia
+	\item[IPA-EP-DI] Índice de Preços ao Produtor Amplo, Estágios de Produção, Disponibilidade Interna
 	\item[IPCA] Índice Nacional de Preços ao Consumidor Amplo
 	\item[IBGE] Instituto Brasileiro de Geografia e Estatística
 	\item[IGP-DI] Índice Geral de Preços - Disponibilidade Interna
@@ -449,10 +450,14 @@
 	\item[PEC] Proposta de Emenda à Constituição
 	\item[BCB] Banco Central do Brasil
 	\item[IPP] Índice de Preços ao Produtor
-	\item[IPA-EP-DI] Índice de Preços ao Produtor Amplo, Estágios de Produção, Disponibilidade Interna
 	\item[MQO] Método de Mínimos Quadrados Ordinários
 	\item[MQG] Método de Mínimos Quadrados Generalizados
-	\item[ADF] Dickey-Fuller Aumentado
+	\item[ADF] Teste de Dickey-Fuller Aumentado
+	\item[PP] Teste de Phillips-Perron
+	\item[IRF] Função de Impulso-Resposta
+	\item[VD]  Decomposição de Variância
+	\item[AIC] Critério de Informação de Akaike
+	\item[BIC] Critério de Informação Bayesiano
 \end{siglas}
 \pagebreak
 
@@ -482,7 +487,7 @@
 
 O controle da inflação é um dos principais desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. Diante desse contexto, este trabalho tem como objetivo analisar a dinâmica inflacionária no Brasil sob o RMI entre os anos de 2003 e 2023, focando especificamente nos componentes de inflação de demanda e de oferta para verificar a efetividade das políticas do Banco Central.
 
-Ao longo deste trabalho, serão abordados os diferentes tipos de inflação, seguido por um detalhamento do histórico econômico brasileiro e uma discussão sobre o RMI e a política monetária na terceira seção. A quarta seção detalhará a metodologia, os modelos utilizado e os dados coletados. Os resultados e a discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica, assim como os impactos sobre o produto e o desenvolvimento econômico.
+Ao longo deste trabalho, serão abordados os diferentes tipos de inflação, seguido por um detalhamento do histórico econômico brasileiro e uma discussão sobre o RMI e a política monetária na terceira seção. A quarta seção detalhará a metodologia, os modelos utilizados e os dados coletados. Os resultados e sua subsequente discussão serão apresentados na quinta seção, culminando com a conclusão na sexta seção. Por meio desta análise, espera-se contribuir para uma melhor compreensão da dinâmica inflacionária no Brasil e a eficácia do RMI na promoção da estabilidade econômica, assim como os impactos sobre o produto e o desenvolvimento econômico.
 
 Para compreender o cenário a ser estudado, definimos o Regime de Metas de Inflação como um arranjo institucional em que o Banco Central se compromete a manter a inflação dentro de um intervalo preestabelecido, utilizando instrumentos de política monetária, como as operações em \textit{open market}, para alcançar esse objetivo \cite{svensson_1997_inflation}. Este regime busca ancorar as expectativas inflacionárias dos agentes econômicos, contribuindo para a estabilidade macroeconômica \cite{mishkin_2000_inflation}. Desde sua implementação, o RMI no Brasil tem se baseado em metas anuais de inflação definidas pelo Conselho Monetário Nacional (CMN), com o Banco Central ajustando a taxa do Sistema Especial de Liquidação e Custódia (SELIC) via instrumentos de política monetária para controlar a demanda agregada e manter a inflação dentro dos limites estipulados.
 
@@ -495,30 +500,33 @@ De acordo com o Banco Central do Brasil (2013), A taxa SELIC é obtida através 
 
 A equação 1.1 baseia-se em três principais variáveis, sendo elas $L_j$, o fator diário correspondente à taxa da j-ésima operação, $V_j$, o valor financeiro correspondente à taxa da j-ésima operação e $n$, o número de operações que compõem a amostra. A taxa SELIC é principalmente ajustada pelas operações de mercado aberto (\textit{open market}), instrumento da política monetária onde o Banco Central realiza a compra ou venda de títulos da dívida pública aos principais bancos comerciais brasileiros.
 
-Dessa forma, o ajuste da SELIC reflete os movimentos do Banco Central no controle da inflação ao influenciar a oferta de moeda e o custo do crédito no mercado. A variação na taxa básica de juros, promovida pelas operações de mercado aberto, tem, portanto, efeitos diretos sobre os níveis de consumo e investimento na economia. A política monetária, ao atuar na direção de modificar a taxa SELIC, busca equilibrar o crescimento econômico com as pressões inflacionárias, que podem ter diferentes origens e dinâmicas.
+Considerando o que foi exposto acima, temos que o ajuste da da taxa SELIC reflete os movimentos do Banco Central no controle da inflação ao influenciar a oferta de moeda e o custo do crédito no mercado. A variação na taxa básica de juros, promovida pelas operações de mercado aberto, tem, portanto, efeitos diretos sobre os níveis de consumo e investimento na economia. A política monetária, ao atuar na direção de modificar a taxa SELIC, busca equilibrar o crescimento econômico com as pressões inflacionárias, que podem ter diferentes origens e dinâmicas.
 
-Assim, detalhamos os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido às mudanças nas variáveis macroeconômicas. A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento econômico real e a base monetária, resultando em inflação. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI.
+Assim, detalhamos os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido às mudanças nas variáveis macroeconômicas. A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento econômico real e a base monetária, resultando em inflação. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI, como será observado ao decorrer deste trabalho.
 
-Como exemplo, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}, porém aumentar a taxa de juros em resposta a esse tipo de inflação pode ser ineficaz uma vez que abre oportunidade para o resfriamento da economia, já que não combate a causa raiz do processo inflacionário. Compreender a interação entre os tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Nesse contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios.
+Como exemplo, a inflação de oferta é impulsionada por choques nos custos de produção, como aumentos nos preços de matérias-primas ou salários \cite{blinder_2008_the}. Aumentar a taxa de juros em resposta a esse tipo de inflação pode, porém, ser ineficaz, uma vez que abre oportunidade para o resfriamento da economia, já que não combate a causa raiz do processo inflacionário para esse caso em particular. Compreender a interação entre os tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Nesse contexto, o presente trabalho pretende investigar como a inflação de demanda e de oferta influenciaram a dinâmica inflacionária no Brasil durante o período analisado e como o RMI respondeu a esses desafios.
 
-Para isso, é, também, essencial utilizar técnicas econométricas aplicadas a séries temporais relacionadas aos índices de preços, produto interno e outros indicadores econômicos. A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+Para isso, são utilizadas técnicas econométricas aplicadas a séries temporais relacionadas aos índices de preços, tanto pelo lado da oferta, com indicadores como o  Índice de Preços ao Produtor Amplo (Disponibilidade Interna) (IPA-EP-DI), quanto pelo lado de demanda, com indicadores como o IPCA (Índice de Preços ao Consumidor Amplo). Também são utilizados outros indicadores macroeconômicos pertinentes, como o produto interno bruto (PIB) e a taxa de câmbio entre o Real brasilero e o Dólar Estadunidense.
 
-A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas nos permite avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços. A seguir, é feita a descrição aprofundada dos tipos de inflação que a economia brasileira observou historicamente e sua relação com o RMI.
+A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
+
+A aplicação de econometria a séries temporais envolve várias etapas, incluindo a identificação e a modelagem das propriedades estocásticas das séries de dados, a estimação dos parâmetros do modelo e a realização de testes de hipóteses para validar os resultados \cite{stock_2020_introduction}. Essas técnicas nos permite avaliar a resposta da inflação a choques de demanda e oferta, bem como a eficácia das intervenções do Banco Central no controle dos preços. A seguir, iniciamos pela descrição aprofundada dos tipos de inflação que a economia brasileira observou historicamente e sua relação com o RMI.
 
 \chapter{Tipos de Inflação}
 
-Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada um decorrente de fatores econômicos e contextos específicos. Nos anos de 1980 e início dos anos 1990, por exemplo, o país sofreu com altos níveis de inflação, caracterizado por aumentos de preços extremamente rápidos e incontroláveis. Esse período foi marcado por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Para \citeonline{bresser_1990_hiperinfla}, o fator desencadeante da hiperinflação foi a crise fiscal dos anos 1980, que pode ser desmembrada em três elementos: o déficit público, a dívida pública, tanto interna quanto externa, e o curto prazo de vencimento dos títulos públicos.
+Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada um decorrente de fatores econômicos e contextos específicos. Nos anos de 1980 e início dos anos 1990, por exemplo, o país sofreu com altos níveis de inflação, caracterizada por aumentos de preços extremamente rápidos e incontroláveis. Esse período foi marcado por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Para \citeonline{bresser_1990_hiperinfla}, o fator desencadeante da hiperinflação foi a crise fiscal dos anos 1980, que pode ser desmembrada em três elementos: o déficit público, a dívida pública, tanto interna quanto externa, e o curto prazo de vencimento dos títulos públicos.
 
 % TODO: citation to back this up? https://www.scielo.br/j/rec/a/4ZqfqsrqsHwFJV9QjJWYsfN/?lang=pt
 
 O Brasil experenciou de forma ostensiva a inflação inercial no final do século XX. Esse fenômeno é como um ciclo vicioso, uma vez que a inflação persiste devido à expectativa de que ela continuará, independentemente de outros fatores econômicos. Nos anos 1990, especialmente antes do Plano Real, a inflação inercial era alimentada pela indexação, onde preços e contratos eram ajustados automaticamente com base na inflação passada. O Plano Real, implementado em 1994, conseguiu quebrar essa inércia ao introduzir uma nova moeda e uma série de reformas econômicas que estabilizaram a economia. A partir desse ponto, o Brasil passou a experimentar uma inflação mais controlada, embora ainda enfrentasse desafios ocasionais devido a choques externos e flutuações internas na economia.
 
-Abaixo, é apresentado um breve histórico das moedas que circularam na economia brasileira. É importante observar como a base monetária se expandiu ao longo do tempo, principalmente a partir do Cruzeiro na década de 1970, momento em que houve sucessivos "cortes de zero", onde a nova moeda possuia valores nas cédulas geralmente mil vezes menores do que a moeda anterior.
+Abaixo, na Tabela \ref{table:currencyhist}, é apresentado um breve histórico das moedas que circularam na economia brasileira. É interessante observar como a base monetária se expandiu ao longo do tempo, principalmente a partir do Cruzeiro na década de 1970, momento em que houve sucessivos "cortes de zero", onde a nova moeda possuia valores nas cédulas geralmente mil vezes menores do que a moeda anterior.
 
 \vspace{0.2cm}
 
 \begin{table}[H]
 	\caption{Histórico de moedas brasileiras}
+	\centering
 	\rowcolors{2}{gray!8}{white}
 	\begin{tabular}{ | l || c | l | }
 		\hline
@@ -536,14 +544,17 @@ Abaixo, é apresentado um breve histórico das moedas que circularam na economia
 		\textbf{Real}                               & Desde 1994                   & R\$ 1,00 = CR\$ 2.750,00   \\                                                                  
 		\hline
 	\end{tabular}
+	
+	\label{table:currencyhist}
 	\vspace{1ex}
 	
-	\noindent \footnotesize{Fonte: Histórico das Alterações da Moeda Nacional. Disponível em \\ https://web.archive.org/web/20151115205007/http://www.ocaixa.com.br/passos/passos2.htm.}
+	\raggedright{
+		\noindent \footnotesize{Fonte: Histórico das Alterações da Moeda Nacional. Disponível em \\ https://web.archive.org/web/20151115205007/http://www.ocaixa.com.br/passos/passos2.htm.}}
 \end{table}
 \vspace{-0.2cm}
 \vspace{0.5cm}
 
-Desde o Cruzeiro, passando pelo Cruzado, até chegar ao Real, cada uma das moedas surgiu em resposta a crises inflacionárias e à perda de confiança na moeda nacional. Essas mudanças foram frequentemente catalisadas por eventos externos, como crises internacionais, choques no preço do petróleo, e também por fatores internos, como descontrole fiscal e políticas econômicas inconsistentes. Abaixo, detalhamos como a instabilidade econômica que impacta diretamente a capacidade produtiva das empresas e o custo dos produtos e serviços contribui para a inflação de oferta.
+Desde o Cruzeiro, passando pelo Cruzado, até chegar ao Real, cada uma das moedas observadas na Tabela \ref{table:currencyhist} surgiu em resposta a crises inflacionárias e à perda de confiança na moeda nacional vigente na época. Essas mudanças foram frequentemente catalisadas por eventos externos, como crises internacionais, choques no preço do petróleo, e também por fatores internos, como descontrole fiscal e políticas econômicas inconsistentes. Abaixo, detalhamos como a instabilidade econômica, que impacta diretamente a capacidade produtiva das empresas e o custo dos produtos e serviços, contribui para a inflação de oferta.
 
 \section{Inflação de Oferta}
 
@@ -551,13 +562,11 @@ Um exemplo marcante de inflação de oferta, tanto no Brasil quanto no mundo, oc
 
 É também conhecida como inflação de custos e ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
 
-"A inflação de custos, além de elevar o nível de preços da economia, causa estagflação, expressão empregada quando a economia apresenta alto nível de preços e contração do produto interno bruto, diferentemente da inflação de demanda, onde a expansão da demanda agregada, além de elevar o nível de preços, aquece a economia e estimula o crescimento do PIB". \cite{cortapasso_estagflacao}
+"A inflação de custos, além de elevar o nível de preços da economia, causa estagflação, expressão empregada quando a economia apresenta alto nível de preços e contração do produto interno bruto, diferentemente da inflação de demanda, onde a expansão da demanda agregada, além de elevar o nível de preços, aquece a economia e estimula o crescimento do PIB" \cite{cortapasso_estagflacao}.
 
 Logo, combater a inflação de oferta envolve várias estratégias, incluindo a melhoria da infraestrutura para reduzir custos de produção e distribuição, a diversificação de fontes de insumos para diminuir a dependência de um único fornecedor e o incentivo à inovação e adoção de novas tecnologias para aumentar a produtividade. Além disso, políticas cambiais que estabilizem a moeda podem minimizar os impactos de variações cambiais nos custos de insumos importados. 
 
-TODO: citation
-
-Visto que o Banco Central do Brasil (BCB) não prioriza o canal cambial para a transmissão da política monetária (XYZ, 2020), ter o principal instrumento de política monetária concentrado nas operações de mercado aberto implica que, em um caso de inflação de custos, a resposta seria a modificação da taxa de juros básica da economia. Aumentar a taxa de juros em resposta a esse tipo de inflação, porém, pode ser ineficaz ou até prejudicial, pois, embora possa ajudar a conter os preços, também pode frear o crescimento econômico, agravando a situação ao desestimular investimentos e aumentar o custo do crédito. Esse tipo de medida tende a impactar mais fortemente a demanda, mas não resolve as causas subjacentes do aumento nos custos de produção.
+Visto que o principal canal de transmissão da política monetária exercitado pelo Banco Central do Brasil (BCB) não é o cambial, mas sim a taxa SELIC, em um caso de inflação de custos, a principal resposta seria a modificação da taxa de juros básica da economia. Um aumento da taxa de juros em resposta a esse tipo de inflação, porém, pode ser ineficaz ou até prejudicial, pois, embora possa ajudar a conter os preços, também pode frear o crescimento econômico, agravando a situação ao desestimular investimentos e aumentar o custo do crédito. Esse tipo de medida tende a impactar mais fortemente a demanda, mas não resolve as causas subjacentes do aumento nos custos de produção.
 
 \section{Inflação de Demanda}
 
@@ -565,11 +574,7 @@ Se por um lado choques nos custos de produção e salários causam inflação de
 
 Um exemplo histórico significativo de inflação de demanda ocorreu durante a década de 1970, quando muitos países enfrentaram pressões inflacionárias devido a políticas fiscais expansionistas e aumentos rápidos nos gastos de consumo \cite{blinder_2008_the}. Segundo \cite{woodford_2009_interest}, a gestão eficaz da demanda agregada é crucial para evitar pressões inflacionárias, destacando a importância da coordenação entre políticas fiscais e monetárias. Portanto, o controle da inflação de demanda requer uma abordagem equilibrada que inclua a moderação das expansões fiscais e uma política monetária prudente que consiga antecipar e neutralizar excessos de demanda.
 
-TODO: Falar mais sobre o RMI e seus impactos
-
-TODO: 3rd phrase weird
-
-Um dos principais efeitos observados sob a gestão macroeconômica brasileira é o aumento das taxas de juros, que desestimula o consumo e o investimento ao encarecer o crédito. Além disso, é possível realizar a redução dos gastos públicos e o aumento da tributação, ajudando a conter a demanda agregada, mas trazendo efeitos colaterais negativos que fazem com que essa metodologia não seja tão utilizada. Essas medidas visam equilibrar a demanda com a capacidade produtiva da economia, reduzindo a pressão sobre os preços.
+Um dos principais efeitos observados na economia sob a gestão macroeconômica brasileira baseada no RMI em situações de inflação de demanda é o aumento das taxas de juros, que desestimula o consumo e o investimento ao encarecer o crédito. Logo após a flexibilização das medidas adotadas durante a pandemia de COVID-19, em um cenário de choques de oferta e políticas fiscais expansionistas, a economia brasileira vivenciou pressões inflacionárias exacerbadas por uma demanda reprimida, liberada à medida que as restrições eram flexibilizadas. Para conter essa pressão inflacionária, o Banco Central do Brasil (BCB) iniciou um ciclo de aperto monetário em 2021, que resultou em elevações históricas da taxa SELIC, saindo de sua mínima histórica de 2\% ao ano em março de 2021 para 13,75\% em agosto de 2022.
 
 \section{Inflação Estrutural}
 
@@ -579,30 +584,24 @@ No Brasil, a inflação estrutural pôde ser observada durante as décadas de 19
 
 Sob o contexto do RMI, a regulação excessiva da taxa de juros pode contribuir para um cenário de inflação estrutural, uma vez que condições adversas de crédito e disponibilidade de moeda podem impedir processos de crescimento, atualização tecnológica e inovação dos setores produtivos. Adiante, observaremos o reflexo da condução da política monetária sobre a economia brasileira a longo prazo e como tentativas de preservação da estabilidade monetária podem, contraditoriamente, desencadear processos de descontrole monetário.
 
-
-TODO: better link
-
 \section{Inflação Inercial}
-
-% TODO: Como retratam Giambiagi et al. (2011), no Plano Collor II houve a tentativa de controle da inflação por meio do congelamento dos preços, visando acabar com a memória inflacionária, ou seja, desindexar a economia, contudo o plano reduziu a inflação somente no curto prazo, a solução veio com o Plano Real em 1994 que estabeleceu a Unidade Real de Valor (URV) para desindexar a economia e determinou o lançamento de uma nova unidade monetária que estaria indexada ao dólar, nascia assim o real.
 
 Outra forma de inflação experenciada pelo Brasil na mesma época discutida na seção anterior foi a inflação inercial, que é associada à tendência dos índices de preços continuarem aumentando devido à persistência das expectativas inflacionárias passadas. Esse tipo de inflação pode ser causado pela indexação de preços e salários, onde os agentes econômicos ajustam automaticamente os preços e salários futuros com base na inflação passada. \citeonline{lopes_1985_inflao} explica que, em um ambiente de inflação inercial, as expectativas de inflação se tornam autorrealizáveis, perpetuando a continuidade da inflação mesmo na ausência de novos choques de demanda ou custos.
 
 A indexação da economia, como já mencionada na seção 2.3 de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação perpetuava a inflação ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito (PEREIRA, 1998).
 
-É notável que, apesar do plano Real ter sido um fator muito importante para limitar as tendências inflácionárias, inclusive de inflação	inercial, o crescimento dos índices de preços, como o IGP-DI visto na Figura \ref{fig:igpdiacum} foram superiores às metas estipuladas pelo Banco Central. Assim, os preços de bens e serviços subiram a um ritmo mais acelerado que o esperado e a população mais pobre acaba tendo seu orçamento familiar comprimido.
+É notável que, apesar do plano Real ter sido um fator muito importante para limitar as tendências inflácionárias, inclusive de inflação	inercial, o crescimento dos índices de preços, como o IGP-DI visto na Figura \ref{fig:igpdiacum} foram superiores às metas estipuladas pelo Banco Central. Assim, os preços de bens e serviços subiram a um ritmo mais acelerado que o esperado e a população de baixa renda acabou tendo seu orçamento familiar comprimido.
 
 \begin{figure}[H]
 	
 	\caption{IGP-DI Acumulado x Meta de Inflação Acumulada (\%)}
 	
 	\includegraphics[]{fig/igpdi_96_24_t.png}\\
-	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central e Fundação Getúlio Vargas.
-	
+	\footnotesize{\textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central e Fundação Getúlio Vargas.}
 	\label{fig:igpdiacum}
 \end{figure}
 
-Na seção subsequente, observar-se-á que as principais fontes de inflação histórica no Brasil são associadas a políticas desenvolvimentistas e expansionistas. Nota-se que a inflação estrutural e a inflação inercial se sobressaltaram na economia brasileira, principalmente nas décadas de 1980 e 1990, até a execução bem-sucedida do Plano Real.
+Na seção subsequente, observar-se-á que as principais fontes de inflação histórica no Brasil são associadas a políticas desenvolvimentistas e expansionistas, cuja contrapartida no crescimento da produção real da economia foi inferior ao necessário para evitar descompasso na elevação da base monetária. Nota-se que a inflação estrutural e a inflação inercial se sobressaltaram na economia brasileira, principalmente nas décadas de 1980 e 1990, até a execução bem-sucedida do Plano Real.
 
 
 \chapter{Elementos Sobre Economia Brasileira}
@@ -645,7 +644,7 @@ A instabilidade econômica e a subsequente estabilização pela qual o Brasil pa
 	
 \end{figure}
 
-Com destaque, a inflação no Brasil (Figura \ref{fig:igpdi}), observou diversos choques resultantes de políticas ineficazes no controle dos preços. O legado dos governos populistas do século XX, com suas políticas desenvolvimentistas e intervenções estatais, deixou uma economia caracterizada por altas taxas de inflação, dívida pública crescente e instabilidade macroeconômica. A implementação do RMI em 1999 representou um esforço para romper com esse passado e adotar uma política monetária mais disciplinada e previsível, visando garantir a estabilidade de preços e promover o crescimento sustentável a longo prazo \cite{amaurypatrickgremaud_2009_economia}.
+Com destaque, a inflação no Brasil (Figura \ref{fig:igpdi}), observou diversos choques resultantes de políticas ineficazes no controle dos preços. O legado deixado pelo governos populistas do século XX, com suas políticas desenvolvimentistas e intervenções estatais, foi uma economia caracterizada por altas taxas de inflação, dívida pública crescente e instabilidade macroeconômica. A implementação do RMI em 1999 representou um esforço para romper com esse passado e adotar uma política monetária mais disciplinada e previsível, visando garantir a estabilidade de preços e promover o crescimento sustentável a longo prazo \cite{amaurypatrickgremaud_2009_economia}.
 
 \section{Transição para a Estabilidade: Plano Real e a Introdução do RMI}
 
@@ -746,6 +745,383 @@ TODO: incluir mais um gráfico sintetizando PIB, inflação etc.
 
 % Dominancia fiscal?
 
+\chapter{Metodologia}
+
+Há diversos modelos econométricos capazes de analisar a relação entre a política monetária e a inflação. Para o estudo, foi selecionado o modelo de vetores autorregressivos (VAR), que é amplamente utilizado para compreender a relação dinâmica entre múltiplas séries temporais, compostas por variáveis de política monetária como taxa de juros, índices de inflação e variáveis macroeconômicas, como PIB e taxa de câmbio. 
+
+O modelo VAR será utilizado porque permite analisar a interação entre múltiplas variáveis econômicas de forma dinâmica, sem impor restrições \textit{a priori} sobre a causalidade entre elas. Em um contexto como o da inflação no Brasil, onde diversas variáveis interagem de maneira complexa, o VAR se destaca por sua capacidade de modelar essas inter-relações de forma simultânea. Diferentemente de modelos estruturais, o VAR trata todas as variáveis como endógenas, o que é crucial para capturar adequadamente a resposta da política monetária e outras variáveis econômicas a choques inesperados, como os de oferta e demanda.
+
+Como o objetivo deste estudo é analisar tanto a dinâmica inflacionária de oferta quanto de demanda, o VAR oferece a flexibilidade necessária para modelar essas influências e testar como a política monetária deve ser ajustada para alcançar os objetivos propostos pelo regime de metas de inflação. Em sua extensão, o modelo VAR oferece funções de resposta a impulsos (IRF) e decomposição de variância (VD), que são utilizados para estudar o impacto de um choque na política monetária sobre a inflação ao longo do tempo.
+
+\section{Modelo}
+
+Para a construção do modelo VAR, o primeiro passo é garantir que as variáveis utilizadas no modelo sejam estacionárias. A estacionariedade é fundamental para evitar resultados espúrios, ou seja, resultados que indicam uma relação de longo prazo inexistente entre as variáveis. De acordo com Gujarati e Porter (2011), uma série temporal estacionária é aquela cujas propriedades estatísticas, como média, variância e autocorrelação, não mudam ao longo do tempo. A verificação da estacionariedade é realizada por meio de testes como o Dickey-Fuller aumentado (ADF) e o Phillips-Perron (PP), que testam a presença de raiz unitária na série temporal. Caso as séries não sejam estacionárias, é possível realizar diferenciações para atingir a estacionariedade \cite{gujarati_porter_2011}.
+
+\subsection{Diferenciação de Séries Temporais}
+
+A diferenciação de uma série temporal é um procedimento utilizado para tornar uma série não estacionária em estacionária, eliminando tendências e ciclos de longo prazo. A diferenciação consiste em calcular a diferença entre os valores consecutivos da série. Para uma série temporal \( y_t \), a primeira diferença é dada por:
+
+\[
+	\Delta y_t = y_t - y_{t-1}
+\]
+
+onde:
+
+\begin{itemize}
+	\item \( y_t \) é o valor da série no período \( t \),
+	\item \( y_{t-1} \) é o valor da série no período \( t-1 \),
+	\item \( \Delta y_t \) é a primeira diferença da série temporal.
+\end{itemize}
+
+A diferenciação de ordem \( d \), observada na equação \ref{eqn:diffsimple} a seguir generaliza esse conceito. Quando a série precisa ser diferenciada mais de uma vez para se tornar estacionária, o processo pode ser repetido. De forma geral, a diferenciação de ordem \( d \) de uma série \( y_t \) é definida como:
+
+\begin{equation}
+	\label{eqn:diffsimple}
+	\Delta^d y_t = \Delta^{d-1}(y_t - y_{t-1})
+\end{equation}
+
+A diferenciação de séries temporais é frequentemente o primeiro passo para lidar com a não estacionariedade em modelos econométricos. No entanto, para verificar se a série tornou-se efetivamente estacionária após a diferenciação, é essencial realizar um teste formal de raiz unitária, como o teste de Dickey-Fuller Aumentado (ADF). Esse teste avalia a presença de uma raiz unitária na série, o que indicaria a não estacionariedade. O ADF ajusta a equação de Dickey-Fuller original incluindo defasagens das primeiras diferenças, a fim de controlar por autocorrelação nos resíduos, garantindo assim que a série diferenciada atenda às condições necessárias para a modelagem econométrica correta.
+
+\subsection{Teste de Dickey-Fuller Aumentado}
+
+O teste de Dickey-Fuller Aumentado (ADF) é uma extensão do teste de Dickey-Fuller original, projetado para detectar a presença de raiz unitária em séries temporais, o que indicaria que a série é não estacionária. O teste ADF adiciona termos de defasagem das diferenças da variável dependente ao modelo para capturar qualquer autocorrelação nos resíduos. Isso permite que o teste corrija problemas de autocorrelação, que podem invalidar os resultados do teste de Dickey-Fuller padrão em séries temporais complexas, como é comum em séries macroeconômicas e financeiras.
+
+A equação geral do teste ADF pode ser representada da seguinte forma:
+
+\[
+	\Delta y_t = \alpha + \beta t + \gamma y_{t-1} + \sum_{i=1}^{p} \delta_i \Delta y_{t-i} + \epsilon_t
+\]
+
+onde:
+
+\begin{itemize}
+	\item \( \Delta y_t \) é a primeira diferença da série temporal \( y_t \),
+	\item \( \alpha \) é o intercepto ou termo constante,
+	\item \( \beta \) é o coeficiente da tendência temporal \( t \),
+	\item \( \gamma \) é o coeficiente de \( y_{t-1} \), utilizado para testar a presença de raiz unitária (com a hipótese nula \( H_0: \gamma = 0 \)),
+	\item \( \delta_i \) são os coeficientes das defasagens \( \Delta y_{t-i} \), introduzidos para ajustar a autocorrelação,
+	\item \( \epsilon_t \) são os resíduos da equação.
+\end{itemize}
+
+A inclusão das defasagens \( \Delta y_{t-i} \) é fundamental, pois permite ao teste ADF lidar com séries temporais que apresentam autocorrelação serial nos erros. O número de defasagens \( p \) é selecionado com base em critérios de informação, como o Critério de Informação de Akaike (AIC) ou o Critério de Informação Bayesiano (BIC), de modo a garantir que os erros \( \epsilon_t \) sejam não correlacionados e distribuídos de forma aproximadamente normal.
+
+A hipótese nula do teste ADF é que a série possui uma raiz unitária (\( H_0: \gamma = 0 \)), ou seja, que a série é não estacionária. Se o valor calculado da estatística \( t \) for menor do que o valor crítico correspondente, a hipótese nula é rejeitada, indicando que a série é estacionária. Caso contrário, a série é considerada não estacionária e, portanto, apresenta uma raiz unitária. O teste ADF, assim como o teste de Phillips-Perron, pode ser ajustado para incluir apenas um termo constante, um termo de tendência, ou ambos, dependendo da natureza da série temporal.
+
+Uma vantagem do teste ADF em relação ao Dickey-Fuller simples é sua robustez a formas mais gerais de autocorrelação nos resíduos, o que o torna amplamente utilizado em análises econométricas. Contudo, sua eficácia ainda depende da seleção adequada do número de defasagens, pois incluir muitas defasagens pode reduzir a potência do teste, enquanto incluir poucas pode deixar a autocorrelação nos resíduos não ajustada, comprometendo os resultados do teste.
+
+
+Após garantir a estacionariedade das séries, o próximo passo consiste na escolha do número de defasagens (\textit{lags}) que devem ser incluídas no modelo VAR. Segundo \citeonline{enders_2014_applied_econometric}, a inclusão de defasagens apropriadas é essencial para captar as dinâmicas de curto prazo entre as variáveis, uma vez que a omissão de defasagens pode gerar autocorrelação residual nos erros. 
+
+Para determinar o número ideal de \textit{lags}, utilizam-se critérios de informação, como o Critério de Informação de Akaike (AIC) e o Critério de Informação Bayesiano (BIC). Esses critérios indicam o número de lags que minimiza a perda de informação no modelo. O AIC tende a selecionar um número maior de defasagens, enquanto o BIC costuma ser mais parcimonioso \cite{enders_2014_applied_econometric}.
+
+\subsection{Teste de Phillips-Perron}
+
+O teste de Dickey-Fuller Aumentado é amplamente utilizado para verificar a presença de uma raiz unitária em séries temporais. No entanto, ele assume que os erros do modelo são homocedásticos, o que pode ser uma limitação em casos onde há heterocedasticidade ou autocorrelação nos resíduos. Para resolver esses problemas, \citeonline{phillips_perron_1988} propuseram uma alternativa mais robusta, o teste de Phillips-Perron (PP), que lida com essas questões sem a necessidade de incluir defasagens adicionais das diferenças como no ADF.
+
+O teste de Phillips-Perron se baseia na mesma equação \ref{eqn:adf_reg} de regressão do teste de Dickey-Fuller, que pode ser representada como:
+
+\begin{equation}
+	\label{eqn:adf_reg}
+	\Delta y_t = \alpha + \beta t + \gamma y_{t-1} + \epsilon_t
+\end{equation}
+
+onde:
+
+\begin{itemize}
+	\item \( \Delta y_t \) é a diferença da série temporal \( y_t \),
+	\item \( \alpha \) é o termo constante (ou intercepto),
+	\item \( \beta \) é o coeficiente da tendência determinística \( t \),
+	\item \( \gamma \) é o parâmetro que testa a raiz unitária, sendo \( H_0: \gamma = 0 \) o indicativo de presença de raiz unitária,
+	\item \( \epsilon_t \) são os erros do modelo.
+\end{itemize}
+
+Diferentemente do ADF, o teste de Phillips-Perron utiliza uma correção não paramétrica para lidar com autocorrelação e heterocedasticidade nos erros \( \epsilon_t \). Em vez de adicionar defasagens para ajustar a autocorrelação serial, o teste PP ajusta a estatística \( t \) da regressão por meio de uma estimativa robusta da variância assintótica dos resíduos. Isso é feito através da seguinte modificação na estatística \( t \):
+
+\[
+	Z_\alpha = \frac{\hat{\gamma}}{\widehat{\sigma}_{\gamma}}
+\]
+
+onde \( \hat{\gamma} \) é o coeficiente estimado da regressão e \( \widehat{\sigma}_{\gamma} \) é a estimativa robusta da variância assintótica de \( \hat{\gamma} \), que corrige para heterocedasticidade e autocorrelação dos erros \( \epsilon_t \).
+
+\citeonline{phillips_perron_1988} mostram que o teste PP é assintoticamente equivalente ao ADF, mas com a vantagem de ser mais robusto a formas de heterocedasticidade que são comuns em séries temporais econômicas. De acordo com \citeonline{greene_2008_econometric_analysis}, o teste de Phillips-Perron é uma alternativa poderosa quando se deseja manter a simplicidade do modelo sem incluir muitas defasagens, o que pode ser especialmente útil em amostras menores, onde a inclusão de muitas defasagens poderia reduzir a potência do teste.
+
+Outro ponto importante é que o teste de Phillips-Perron, assim como o ADF, pode ser realizado sob diferentes hipóteses. Ele pode ser ajustado para incluir um termo constante, uma tendência determinística, ou ambos, dependendo das características da série temporal que se está analisando. Assim, ele oferece a flexibilidade necessária para lidar com uma ampla gama de séries temporais, desde aquelas com tendência até as que são puramente estacionárias.
+
+De maneira semelhante ao teste ADF, os valores críticos do teste de Phillips-Perron são obtidos de tabelas específicas que levam em consideração a estrutura assintótica da série. O valor de \( \gamma \) deve ser comparado com os valores críticos apropriados, e a hipótese nula de raiz unitária (\( H_0: \gamma = 0 \)) é rejeitada se a estatística de teste for menor que o valor crítico, indicando que a série é estacionária.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Critério de Informação de Akaike (AIC)}
+
+O Critério de Informação de Akaike (AIC) é um dos métodos mais amplamente utilizados para determinar o número ótimo de defasagens em modelos de séries temporais. Desenvolvido por Hirotugu Akaike, o AIC busca balancear a qualidade do ajuste do modelo com a complexidade do mesmo, penalizando a inclusão de parâmetros desnecessários. A fórmula do AIC é dada por:
+
+\[
+	AIC = -2 \ln(L) + 2k
+\]
+
+onde:
+
+\begin{itemize}
+	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
+	\item \( k \) é o número de parâmetros estimados no modelo, incluindo as defasagens e o termo constante.
+\end{itemize}
+
+O AIC é construído de modo a favorecer modelos que maximizam a verossimilhança enquanto penalizam o número de parâmetros. A ideia central é que, quanto maior o número de parâmetros, melhor o ajuste do modelo aos dados. No entanto, um aumento no número de parâmetros pode levar a um ajuste excessivo (overfitting), onde o modelo capta não apenas o padrão subjacente nos dados, mas também o ruído. O termo de penalização \( 2k \) busca corrigir esse problema, promovendo um equilíbrio entre ajuste e simplicidade.
+
+Ao comparar diferentes modelos com defasagens variáveis, o modelo que apresenta o menor valor de AIC é escolhido como o modelo ótimo. No entanto, o AIC tende a ser mais permissivo em relação ao número de defasagens, selecionando frequentemente um número maior de lags em comparação com outros critérios, como o Critério de Informação de Schwarz (BIC) ou o Critério de Hannan-Quinn.
+
+Embora o AIC seja amplamente utilizado, ele não garante que o modelo selecionado seja o verdadeiro. Ele se concentra na aproximação do modelo à realidade e pode ser mais adequado para previsões em vez de inferências estatísticas robustas. O uso do AIC é particularmente eficaz em amostras grandes, onde a penalização por complexidade é suavizada pela abundância de dados.
+
+\subsection{Critério de Informação de Schwarz (BIC)}
+
+O Critério de Informação de Schwarz (BIC), também conhecido como Critério de Informação Bayesiano, foi proposto por Gideon Schwarz e é uma alternativa ao AIC. O BIC também busca equilibrar a qualidade do ajuste do modelo e sua simplicidade, mas penaliza de maneira mais severa a inclusão de parâmetros adicionais. A fórmula do BIC é dada por:
+
+\[
+	BIC = -2 \ln(L) + k \ln(n)
+\]
+
+onde:
+
+\begin{itemize}
+	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
+	\item \( k \) é o número de parâmetros estimados no modelo,
+	\item \( n \) é o número de observações na série temporal.
+\end{itemize}
+
+Uma diferença chave entre o BIC e o AIC é que o termo de penalização no BIC, \( k \ln(n) \), aumenta com o número de observações, tornando-o mais rigoroso conforme a amostra cresce. Isso implica que, para grandes amostras, o BIC tende a selecionar modelos com menos parâmetros em comparação ao AIC. Essa característica torna o BIC mais adequado para inferências estatísticas, já que evita o ajuste excessivo aos dados.
+
+O critério BIC é amplamente utilizado quando se busca modelos parcimoniosos, ou seja, modelos que explicam os dados de maneira eficiente com o menor número possível de parâmetros. Ao minimizar o BIC, o pesquisador seleciona o modelo que equilibra o ajuste com a complexidade, favorecendo a simplicidade sempre que possível.
+
+No entanto, devido à sua penalização mais severa, o BIC pode, às vezes, subestimar o número de defasagens necessário, principalmente em séries temporais complexas ou quando há muita autocorrelação residual. Ainda assim, sua aplicação é preferida em contextos onde a robustez estatística é crucial, como em testes de hipóteses e modelagem econométrica tradicional.
+
+\subsection{Critério de Hannan-Quinn (HQIC)}
+
+O Critério de Hannan-Quinn (HQIC) é outra ferramenta importante para a seleção de defasagens em modelos de séries temporais. Desenvolvido por Edward Hannan e Barry Quinn, o HQIC oferece um meio-termo entre o AIC e o BIC em termos de penalização pela inclusão de parâmetros adicionais. A fórmula do HQIC é:
+
+\[
+	HQIC = -2 \ln(L) + 2k \ln(\ln(n))
+\]
+
+onde:
+
+\begin{itemize}
+	\item \( L \) é o valor da função de verossimilhança estimada para o modelo,
+	\item \( k \) é o número de parâmetros estimados no modelo,
+	\item \( n \) é o número de observações na série temporal.
+\end{itemize}
+
+Como pode ser observado na fórmula, o HQIC penaliza a inclusão de parâmetros de maneira mais severa que o AIC, mas menos rigorosa que o BIC. O termo \( 2k \ln(\ln(n)) \) cresce mais lentamente do que o termo \( k \ln(n) \) no BIC, tornando o HQIC uma escolha apropriada em situações onde o BIC pode ser muito conservador e o AIC, muito permissivo.
+
+O HQIC é particularmente útil em séries temporais de tamanho intermediário, onde o número de observações não é suficientemente grande para justificar o uso do BIC, mas onde ainda é necessário um controle maior sobre o número de defasagens em comparação com o AIC. Sua capacidade de fornecer um balanço entre ajuste e parcimônia o torna uma alternativa valiosa quando se busca modelar a interdependência entre variáveis sem superestimar a importância de defasagens mais longas.
+
+No entanto, como os outros critérios, o HQIC não garante que o modelo selecionado seja o "verdadeiro" modelo subjacente, apenas que ele representa um bom compromisso entre complexidade e ajuste. Seu uso, assim como o AIC e o BIC, deve ser acompanhado de outras análises diagnósticas para garantir a adequação do modelo às características da série temporal.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Formalização do Modelo}
+
+Com a seleção do número de lags concluída, o modelo VAR pode ser formalizado. A equação geral de um modelo VAR de ordem \( p \) com \( k \) variáveis endógenas pode ser expressa da seguinte forma:
+
+\[
+	Y_t = A_1 Y_{t-1} + A_2 Y_{t-2} + \dots + A_p Y_{t-p} + \epsilon_t
+\]
+
+onde \( Y_t \) é o vetor de variáveis endógenas no período \( t \), \( A_1, A_2, \dots, A_p \) são as matrizes de coeficientes de cada defasagem, e \( \epsilon_t \) é o vetor de erros aleatórios que captura choques não explicados pelas variáveis do modelo. É importante lembrar que esses erros são assumidos como não correlacionados entre si ao longo do tempo %\cite{stock_watson_2001}.
+
+
+Uma vez que o modelo está estimado, é crucial verificar a presença de autocorrelação serial nos resíduos, o que violaria as premissas do modelo. A autocorrelação pode ser testada utilizando o teste de Breusch-Godfrey, que é amplamente recomendado para a detecção de autocorrelação em modelos multivariados. A ausência de autocorrelação é um indicativo de que as defasagens selecionadas foram suficientes para capturar as dinâmicas entre as variáveis. Se a autocorrelação estiver presente, novas defasagens devem ser incluídas %\cite{wooldridge_2013_introductory_econometrics}.
+
+O próximo passo é realizar a decomposição da variância dos erros, que permite avaliar a contribuição de cada variável endógena na explicação das variações das demais variáveis ao longo do tempo. Segundo Lutkepohl (2005), a decomposição da variância oferece uma visão clara das inter-relações entre as variáveis no modelo, fornecendo uma ferramenta para análise da importância relativa dos choques em cada variável no sistema %\cite{lutkepohl_2005_new_introduction}.
+
+Além disso, deve-se realizar a função de resposta ao impulso (IRF), que mostra como as variáveis do modelo respondem a choques exógenos aplicados em uma das variáveis endógenas. A IRF é uma das principais ferramentas para a análise dinâmica de um sistema VAR, e sua interpretação requer atenção especial às respostas de curto e longo prazo. Um choque positivo em uma variável, por exemplo, pode causar uma resposta inicial positiva em outra variável, mas essa resposta pode se reverter após alguns períodos, dependendo das inter-relações dinâmicas entre as variáveis %\cite{hamilton_1994_time_series_analysis}.
+
+Finalmente, é possível integrar o modelo VAR com correções de erro (VECM), caso as variáveis sejam cointegradas. A cointegração ocorre quando existe uma relação de longo prazo estável entre duas ou mais séries temporais, mesmo que individualmente elas sejam não estacionárias. O modelo de correção de erro (ECM) introduz uma variável de correção que ajusta as discrepâncias de curto prazo em direção ao equilíbrio de longo prazo. O teste de Johansen é amplamente utilizado para verificar a existência de vetores de cointegração, o que justifica o uso do VECM em vez de um VAR padrão %\cite{johansen_1991_cointegration_and_vectors}.
+
+Após realizar todos esses passos, a validade do modelo deve ser avaliada por meio de testes de diagnóstico. Além do teste de autocorrelação já mencionado, é importante verificar a normalidade dos resíduos utilizando o teste de Jarque-Bera e a heterocedasticidade dos erros com o teste de White. Esses testes garantem que as premissas clássicas do modelo sejam atendidas, permitindo a validade inferencial das estimativas obtidas %\cite{green_2008_econometric_analysis}.
+
+Por fim, recomenda-se realizar uma análise de robustez, que pode incluir a reestimação do modelo com diferentes janelas temporais ou variáveis auxiliares. A robustez das conclusões é crucial para garantir que os resultados não sejam sensíveis a pequenas alterações nos dados ou no período de análise. O processo de validação do modelo econométrico deve ser contínuo, garantindo que os resultados sejam consistentes com a teoria econômica e os dados empíricos disponíveis %\cite{stock_watson_2011_introduction}.
+
+A aplicação de um modelo VAR, portanto, envolve uma série de etapas interdependentes que garantem a robustez e a confiabilidade dos resultados obtidos. A combinação entre critérios de seleção de lags, testes de estacionariedade e autocorrelação, e análise de respostas a choques proporciona uma ferramenta poderosa para o entendimento das dinâmicas entre variáveis econômicas.
+
+\subsection{Metodologia para VAR (Vetores Autorregressivos)}
+O modelo VAR (Vetores Autorregressivos) é uma metodologia amplamente utilizada para analisar a inter-relação entre variáveis macroeconômicas, capturando as influências simultâneas entre elas ao longo do tempo. No contexto da relação entre política monetária e inflação, o VAR permite tratar tanto a inflação quanto as variáveis de política monetária, como taxas de juros ou oferta monetária, como variáveis endógenas, ou seja, influenciam-se mutuamente.
+
+A estrutura do VAR envolve modelar cada variável como uma função das suas próprias defasagens e das defasagens de todas as outras variáveis do sistema. A escolha do número de defasagens é fundamental e pode ser determinada por critérios de informação, como o critério de Akaike (AIC) ou critério de Schwarz (BIC), que ajudam a evitar problemas de overfitting. Após a especificação do modelo, é possível usar funções de resposta a impulsos (IRFs) para avaliar como choques em uma variável, como um aumento na taxa de juros, afetam a inflação ao longo do tempo. Outro método complementar no VAR é a decomposição de variância (VD), que ajuda a entender a proporção de variação em uma variável (como a inflação) explicada por choques nas variáveis de política monetária.
+
+No entanto, o VAR é um modelo puramente estatístico, sem incorporar diretamente as restrições teóricas. Isso significa que é adequado para análises descritivas e para capturar relações contemporâneas, mas pode exigir a adoção de versões mais estruturais (como SVAR) para identificar relações causais claras.
+
+
+
+\section{Dados}
+
+% variaveis do modelo, OK
+% tsset,
+% dfuller, pperron,          p < 0.05 = estacionario
+% dfuller diff, pperron diff p < 0.05 = estacionario
+% var v1 v2, lags(1/2)
+% varsoc
+% varstable
+% predict err, resid
+% summarize err
+% tsline err, yline(COPY OF MEAN FROM LAST CMD)
+% varlmar (lagrange autocorr)
+% granger test to check causality (p < 0.05 -> v1 predicts v2)
+
+% https://www3.bcb.gov.br/sgspub/localizarseries/localizarSeries.do?method=prepararTelaLocalizarSeries
+
+O Banco Central é a principal fonte de informações para indicadores monetários e de inflação, disponibilizando séries temporais detalhadas sobre a taxa SELIC, as metas anuais de inflação e outras variáveis relevantes para a política monetária. Esses dados são utilizados na composição do modelo econométrico para ...
+
+Além dos dados do Banco Central, outras fontes relevantes foram utilizadas para complementar a análise. O Instituto Brasileiro de Geografia e Estatística (IBGE) forneceu informações detalhadas sobre a evolução do IPCA, índice utilizado por ser o índice oficial para medir a inflação no Brasil. O IBGE também oferece dados sobre inflação setorial, o que pode ser útil para diferenciar a inflação de oferta e de demanda.
+
+TODO: isso é citação direta do site FGV.
+
+O Índice de Preços ao Produtor - IPP, cujo âmbito são as indústrias extrativas e de transformação, tem como principal objetivo mensurar a mudança média dos preços de venda recebidos pelos produtores domésticos de bens e serviços, bem como sua evolução ao longo do tempo, sinalizando as tendências inflacionárias de curto prazo no País. Constitui, assim, um indicador essencial para o acompanhamento macroeconômico e, por conseguinte, um valioso instrumento analítico para tomadores de decisão, públicos ou privados.
+
+O IPP investiga, em pouco mais de 2 100 empresas, os preços recebidos pelo produtor, isentos de impostos, tarifas e fretes e definidos segundo as práticas comerciais mais usuais. Os produtos coletados são especificados em detalhes (aspectos físicos e de transação), garantindo, dessa forma, que sejam comparados produtos homogêneos ao longo do tempo. Com isso, coletam-se cerca de 6 000 preços mensalmente
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ao integrar essas diferentes fontes de dados, será possível construir um panorama robusto da dinâmica inflacionária no Brasil e avaliar como o regime de metas de inflação foi ajustado em resposta aos choques de oferta e demanda entre 2003 e 2023. Isso permitirá uma análise crítica da eficácia das políticas monetárias adotadas, com base em evidências quantitativas e qualitativas.
+
+
+\vspace{0.2cm}
+\begin{table}[H]
+	\caption{Variáveis Utilizadas}
+	\centering
+	\rowcolors{2}{gray!8}{white}
+	\begin{tabular}{ | l || c | l | }
+		\hline
+		\textbf{Variável}                                       & \textbf{Origem} & \textbf{Sigla} \\
+		\hline
+		\textbf{Índice de Preços ao Consumidor Amplo (IPCA)}    & IBGE            & ln\_ipca       \\
+		\textbf{Índice de Preços ao Produtor Amplo (IPA-EP-DI)} & FGV             & ln\_ipa        \\
+		\textbf{Produto Interno Bruto Real}                     & IBGE            & ln\_pib        \\
+		\textbf{Taxa de Juros SELIC}                            & BCB             & ln\_selic      \\
+		\textbf{Câmbio Real}                                    & BCB             & ln\_cambio     \\
+		\hline
+	\end{tabular}
+	\vspace{1ex}
+	
+	\raggedright{
+		\noindent \footnotesize{Fonte: Histórico das Alterações da Moeda Nacional. Disponível em \\ https://web.archive.org/web/20151115205007/http://www.ocaixa.com.br/passos/passos2.htm.}}
+\end{table}
+
+\vspace{-0.2cm}
+\vspace{0.5cm}
+
+TODO: integrar no texto
+
+Sim, o IPA-EP-DI (Índice de Preços ao Produtor Amplo – Estágios de Produção – Disponibilidade Interna) mede de forma mais precisa a inflação de oferta em comparação ao IPA-M, pois ele segmenta os preços ao longo dos diferentes estágios da cadeia produtiva, permitindo uma análise mais detalhada das pressões de custo em cada fase da produção.
+
+Razões pelas quais o IPA-EP-DI mede melhor a inflação de oferta:
+Divisão por estágios de produção:
+
+O IPA-EP-DI separa os preços em três categorias: bens finais, bens intermediários, e matérias-primas brutas. Isso permite uma análise mais granular dos impactos de oferta, já que muitos choques de oferta começam com o aumento dos preços das matérias-primas ou dos bens intermediários, que depois afetam os bens finais.
+Com essa estrutura, é possível identificar com maior clareza em que ponto da cadeia produtiva os choques de oferta estão ocorrendo e como esses aumentos se propagam até os preços finais.
+Foco em insumos produtivos:
+
+A categoria de matérias-primas brutas do IPA-EP-DI capta diretamente as variações nos preços de commodities e outros insumos básicos, que são frequentemente os principais motores da inflação de oferta. Esse é o estágio onde ocorrem os primeiros impactos de aumentos de custos, seja devido a fatores externos (como aumento nos preços internacionais de petróleo ou alimentos) ou internos (como choques climáticos que afetam a agricultura).
+A capacidade de separar os preços das matérias-primas de outros estágios oferece uma visão mais clara das dinâmicas da inflação de oferta.
+Transmissão ao longo da cadeia:
+
+O IPA-EP-DI permite acompanhar a transmissão dos choques de preços ao longo da cadeia de produção, desde o aumento dos custos das matérias-primas até como eles afetam os preços dos bens intermediários e, finalmente, os preços dos bens finais. Isso é crucial para entender a inflação de oferta, que muitas vezes começa com aumentos de custo nos estágios iniciais da produção.
+Comparação com o IPA-M:
+IPA-M: Embora o IPA-M capte bem as variações de preços no atacado, ele é um índice mais agregado, o que dificulta a identificação precisa de onde os choques de oferta estão ocorrendo na cadeia produtiva. Ele reflete tanto fatores de demanda quanto de oferta.
+IPA-EP-DI: Por ser segmentado em estágios de produção, o IPA-EP-DI oferece uma visão mais precisa dos choques de oferta, especialmente no que se refere ao impacto dos preços das matérias-primas e insumos industriais nos preços finais.
+Conclusão:
+O IPA-EP-DI é uma ferramenta mais adequada para medir a inflação de oferta do que o IPA-M, pois oferece uma segmentação detalhada dos preços ao longo da cadeia produtiva, permitindo identificar como os aumentos nos custos dos insumos básicos afetam os preços finais. Isso torna o IPA-EP-DI particularmente útil para análises mais sofisticadas sobre a origem e o impacto dos choques de oferta na economia.
+
+O Índice de Preços ao Produtor (IPP), apesar de ser uma ferramenta útil para medir a variação dos preços na "porta de fábrica", possui dados históricos apenas a partir de 2011, o que limita sua aplicabilidade em análises de longo prazo. Dada a necessidade de estudar o impacto da inflação desde 2003, optaremos por utilizar o Índice de Preços ao Produtor Amplo – Estágios de Produção – Disponibilidade Interna (IPA-EP-DI). O IPA-EP-DI oferece uma série temporal mais longa, além de fornecer uma segmentação detalhada dos preços ao longo dos estágios de produção, permitindo uma análise mais completa das pressões inflacionárias no período desejado.
+
+
+O modelo VAR captura as inter-relações dinâmicas entre variáveis. Vamos começar com um modelo VAR simples que inclui o IPCA como proxy da inflação de demanda e o IPA-EP-DI (Índice de Preços por Atacado - Oferta Interna) como proxy da inflação de oferta. Outras variáveis importantes que podem ser adicionadas incluem:
+
+Taxa Selic: Indicador da política monetária.
+PIB Real: Para capturar o efeito da atividade econômica.
+Câmbio Real: Para capturar o impacto da depreciação ou valorização do câmbio na inflação de oferta (via preços de importação).
+Equações do VAR (em LaTeX):
+
+% IPCA = https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html?=&t=series-historicas
+% IPA-EP-DI = https://extra-ibre.fgv.br/IBRE/sitefgvdados/visualizaconsulta.aspx
+% SELIC = https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/pagamentos-e-parcelamentos/taxa-de-juros-selic#Taxa_de_Juros_Selic
+% PIB = http://www.ipeadata.gov.br/ExibeSerie.aspx?serid=521274780&module=M
+% CAMBIO = http://www.ipeadata.gov.br/ExibeSerie.aspx?stub=1&serid=38590&module=M
+
+IMPORTANTE: ressaltar que o PIB é interpolado do PIB trimestral.
+IMPORTANTE: ressaltar que o CAMBIO é media dos valores diarios para cada mes.
+
+deflacionamos PIB com igpdi para 2003 como ano base.
+
+se muito poucos lags -> modelo especificado incorretamente (viesado)
+se lag muito grande -> graus de liberdade são gastos desnecessariamente
+
+criterio para achar lags: akaike, Schwarz, Hannan-Quinn
+
+nao pode ter autocorr no nivel de lag selecionado
+
+\begin{equation}
+	IPCA_t = \alpha_1 + \beta_{11}IPCA_{t-1} + \beta_{12}IPA_{t-1} + \beta_{13}SELIC_{t-1} + \beta_{14}PIB_{t-1} + \beta_{15}CAMBIO_{t-1} + \varepsilon_{1t}
+\end{equation}
+
+Modelo ECM:
+Para captar as relações de longo prazo entre as variáveis, o ECM introduz termos de correção de erros. O termo de correção capta o desvio das variáveis em relação ao equilíbrio de longo prazo. Abaixo está o modelo de correção de erros.
+
+Equações do ECM (em LaTeX):
+
+\begin{equation}
+	IPA_t  = \alpha_2 + \beta_{21}IPCA_{t-1} + \beta_{22}IPA_{t-1} + \beta_{23}SELIC_{t-1} + \beta_{24}PIB_{t-1} + \beta_{25}CAMBIO_{t-1} + \varepsilon_{2t}
+\end{equation}
+
+\section{Resultados e Discussão}
+
+\begin{figure}[H]
+	
+	\caption{PIB}
+	
+	\includegraphics[]{fig/meta_infl_annum_99_23.png}\\
+	
+	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
+	
+\end{figure}
+
+\begin{figure}[H]
+	
+	\caption{PIB}
+	
+	\includegraphics[]{fig/ibge_ipca_bcb_meta_99_23_t.png}\\
+	
+	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
+	
+\end{figure}
+
+\begin{figure}[H]
+	
+	\caption{Inflação Acumulada x Meta BCB}
+	
+	\includegraphics[]{fig/ibge_deflator_96_21_t.png}\\
+	
+	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
+	
+\end{figure}
+
+\begin{figure}[H]
+	
+	\caption{PIB}
+	
+	\includegraphics[]{fig/ibge_pib_rsmi_96_21_t.png}\\
+	
+	\footnotesize \textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central.
+	
+	
+\end{figure}
+
+
+\chapter{Considerações Finais}
+
+O objetivo do estudo é de verificar se o RMI é eficiente diante das variáveis macroeconômicas observadas ao longo do período de cerca de duas décadas. Foram selecionados os modelos VAR e ECM para efetuar testes a respeito da premissa de que xyz.
+
+TODO: rodar modelo
 
 %%%%%%%%%%%%%
 %BIBLIOGRAFIA
