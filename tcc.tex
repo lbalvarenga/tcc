@@ -116,7 +116,7 @@
 
 % %%%%%%%%%%%%%%%%
 %NOME DO TRABALHO 
-\titulo{\bfseries ANÁLISE DA DINÂMICA INFLACIONÁRIA SOB O REGIME DE METAS DE INFLAÇÃO NO BRASIL ENTRE 2003 e 2023}
+\titulo{\bfseries ANÁLISE DA DINÂMICA INFLACIONÁRIA SOB O REGIME DE METAS DE INFLAÇÃO NO BRASIL ENTRE 2002 e 2024}
 
 
 % %%%%%%%%%%%%%%%%
@@ -303,7 +303,7 @@
 				\begin{flushright}
 					\begin{minipage}{6cm}	
 				\centering
-				Londrina, 27 de Agosto de \imprimirdata.
+				Londrina, 06 de fevereiro de \imprimirdata.
 					\end{minipage}
 			\end{flushright}
 		
@@ -390,7 +390,7 @@
 	\noindent
 	ALVARENGA, Lucas. {\bfseries Análise da Dinâmica Inflacionária Sob o Regime de Metas de Inflação no Brasil Entre 2003 e 2023}. \imprimirdata. \ztotpages \, f. Monografia (Graduação em Ciências Econômicas). Centro de Estudos Sociais Aplicados, Universidade Estadual de Londrina, Londrina, 2024.
 	
-	Este trabalho tem por objetivo verificar o impacto da inflação, principalmente sob a ótica da oferta e da demanda sobre a economia brasileira e avaliar os efeitos destas sobre a eficácia do regime de metas de inflação (RMI) no Brasil. Será examinado se as respostas do Banco Central são eficientes e se as óticas atuais da condução da política monetária atendem de forma eficiente os objetivos propostos pelo RMI. Por meio deste trabalho, busca-se atingir um melhor entendimento dos mecanismos que regem a dinâmica inflacionária no Brasil e como é moldada a resposta à inflação pela autoridade monetária brasileira. Para isso, será utilizado o modelo econométrico de vetores autorregressivos (VAR), que consegue capturar relações de longo prazo entre as variáveis escolhidas, que são a meta de inflação anual do Banco Central, a taxa de câmbio entre o Real e o Dólar Americano, o produto interno bruto (PIB) real do Brasil, o Índice Nacional de Preços ao Consumidor Amplo (IPCA) e o Índice de \textit{Commodities} - Brasil (IC-Br).
+	Este trabalho tem por objetivo verificar o impacto de choques de oferta e demanda sobre a inflação no contexto da economia brasileira e avaliar os efeitos destes sobre a eficácia do regime de metas de inflação (RMI) no Brasil. Será examinado o grau de eficiência das respostas do Banco Central e se as óticas atuais da condução da política monetária atendem de forma satisfatória os objetivos propostos pelo RMI. Por meio deste trabalho, busca-se atingir um melhor entendimento dos mecanismos que regem a dinâmica inflacionária no Brasil e como é moldada a resposta à inflação pela autoridade monetária brasileira. Para isso, será utilizado o modelo econométrico de vetores autorregressivos (VAR), que consegue capturar relações de longo prazo entre as variáveis escolhidas, que são a meta de inflação anual do Banco Central, a taxa de câmbio entre o Real e o Dólar Americano, o produto interno bruto (PIB) real do Brasil, o Índice Nacional de Preços ao Consumidor Amplo (IPCA) e o Índice de \textit{Commodities} - Brasil (IC-Br). Os resultados obtidos apontam que componentes de oferta são relevantes para a composição da inflação, mas podem ser negligenciados pela forma como o RMI é hoje estruturado.
 	
 	\textbf{Palavras-chave}: inflação; oferta; demanda; econometria; política monetária.
 \end{resumo}
@@ -456,6 +456,7 @@
 	\item[AIC] Critério de Informação de Akaike
 	\item[SBIC] Critério de Informação Bayesiano
 	\item[IPEA] Instituto de Pesquisa Econômica Aplicada
+	\item[ERPT] Exchange Rate Pass-Through
 \end{siglas}
 \pagebreak
 
@@ -483,27 +484,28 @@
 
 \chapter{Introdução}
 
-O controle da inflação é um dos grandes desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os níveis de preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. A implementação do RMI é tida como um sucesso no geral, mas está, como em todo modelo, sujeita a ineficiências. Este trabalho tem como objetivo analisar o comportamento da dinâmica inflacionária no Brasil sob o RMI no período de 2003 a 2023, focando na efetividade do conjunto de políticas de contenção de inflação exercidas pelo Banco Central.
+O controle da inflação é um dos grandes desafios enfrentados pelas autoridades econômicas em diversas nações ao redor do mundo. No Brasil, a adoção do Regime de Metas de Inflação (RMI) em 1999 representou uma mudança significativa na condução da política monetária, com o objetivo de estabilizar os níveis de preços e promover um ambiente econômico previsível \cite{fraga_2003_inflation}. A implementação do RMI é tida como um sucesso no geral, mas este está, como todo modelo, sujeito a ineficiências. Este trabalho tem como objetivo analisar o comportamento da dinâmica inflacionária no Brasil sob o RMI no período de 2002 a 2024, focando na efetividade do conjunto de políticas de contenção de inflação exercidas pelo Banco Central.
 
 Para compreender o cenário a ser estudado, definimos o Regime de Metas de Inflação como um arranjo institucional em que o Banco Central se compromete a manter a inflação dentro de um intervalo pré estabelecido, utilizando instrumentos de política monetária, como as operações em \textit{open market}, para alcançar esse objetivo \cite{svensson_1997_inflation}. Este regime busca ancorar as expectativas inflacionárias dos agentes econômicos, contribuindo para a estabilidade macroeconômica \cite{mishkin_2000_inflation}, por meio de ajustes às taxas de juros da economia. Desde sua implementação, o RMI no Brasil tem se baseado em metas anuais de inflação definidas pelo Conselho Monetário Nacional (CMN), sendo o Banco Central responsável por ajustar a taxa do Sistema Especial de Liquidação e Custódia (SELIC) via instrumentos de política monetária para controlar a demanda agregada e manter a inflação dentro dos limites estipulados.
 
-De acordo com o Banco Central do Brasil (2013), a taxa SELIC é obtida através do cálculo da taxa média ponderada e ajustada das operações de financiamento de um dia, que são garantidas por títulos públicos federais. Essas operações ocorrem no sistema financeiro ou em câmaras de compensação e liquidação de ativos, sob a forma de operações compromissadas, onde o vendedor se compromete a recomprar os títulos vendidos no dia útil seguinte. Abaixo, na equação 1.1, é dada a fórmula utilizada para o cálculo da taxa:
+De acordo com o Banco Central do Brasil (2013), a taxa SELIC é obtida através do cálculo da taxa média ponderada e ajustada das operações de financiamento de um dia, que são garantidas por títulos públicos federais. Essas operações ocorrem no sistema financeiro ou em câmaras de compensação e liquidação de ativos, sob a forma de operações compromissadas, onde o vendedor se compromete a recomprar os títulos vendidos no dia útil seguinte. Abaixo, na equação \ref{eqn:selic}, é dada a fórmula utilizada para o cálculo da taxa:
 
 \begin{equation}
+	\label{eqn:selic}
 	\left[ \left( \left(\frac{\sum_{j=1}^{n} L_j \cdot V_j}{\sum_{j=1}^{n} V_j} \right)^{252} - 1 \right) \times 100 \right] \textrm{\% ao ano}
 \end{equation}
 
-A equação 1.1 baseia-se em três principais variáveis, sendo elas $L_j$, o fator diário correspondente à taxa da j-ésima operação, $V_j$, o valor financeiro correspondente à taxa da j-ésima operação e $n$, o número de operações que compõem a amostra. A taxa SELIC é principalmente ajustada pelas operações de mercado aberto (\textit{open market}), instrumento da política monetária onde o Banco Central realiza a compra ou venda de títulos da dívida pública aos principais bancos comerciais brasileiros (nível 1).
+A equação \ref{eqn:selic} baseia-se em três principais variáveis, sendo elas $L_j$, o fator diário correspondente à taxa da j-ésima operação, $V_j$, o valor financeiro correspondente à taxa da j-ésima operação e $n$, o número de operações que compõem a amostra. A taxa SELIC é principalmente ajustada pelas operações de mercado aberto (\textit{open market}), instrumento da política monetária onde o Banco Central realiza a compra ou venda de títulos da dívida pública aos principais bancos comerciais brasileiros, integrantes do que é denominado o nível 1.
 
 Considerando isso, verifica-se que o ajuste da taxa SELIC reflete os movimentos do Banco Central no controle da inflação ao influenciar a oferta de moeda e o custo do crédito no mercado. A variação na taxa básica de juros, promovida pelas operações de mercado aberto, tem, portanto, efeitos diretos sobre os níveis de consumo e investimento na economia. A política monetária, ao atuar na direção de modificar a taxa SELIC, busca equilibrar o crescimento econômico com as pressões inflacionárias, que podem ter diferentes origens e dinâmicas.
 
-Dessa forma, é importante verificar se a execução da política monetária como é definida atualmente gera um ambiente econômico excessivamente restritivo, onde o crédito se torna escasso e a reação às pressões inflacionárias geram taxas de juros muito altas, ainda mais quando se considera que o Brasil, em alguns momentos, possuiu uma das maiores taxas do mundo.
+Dessa forma, é importante verificar se a execução da política monetária como é definida atualmente gera um ambiente econômico excessivamente restritivo, onde o crédito se torna escasso e a reação às pressões inflacionárias geram taxas de juros muito elevadas, ainda mais quando se considera que o Brasil, em alguns momentos, possuiu uma das maiores taxas do mundo.
 
-Logo, detalharemos os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido às mudanças nas variáveis macroeconômicas. A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento econômico real e a base monetária, resultando em inflação. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI, como será observado ao decorrer deste trabalho.
+ A economia brasileira, como muitas outras, está sujeita a um descompasso entre o crescimento econômico real e a base monetária, resultando em inflação. Assim, detalharemos os diferentes tipos de inflação experienciados pelo país para analisar como o Banco Central tem respondido às pressões sobre os níveis de preços da economia. O processo inflacionário pode ter como fonte diversos fatores, sendo comum verificar a inflação de oferta, a inflação de demanda, a inflação inercial e a inflação estrutural. Cada um desses tipos de inflação apresenta características distintas que influenciam a eficácia do RMI, como será observado ao decorrer deste trabalho.
 
 Como exemplo, a inflação de oferta decorre de choques nos custos de produção, como aumentos nos preços de matérias-primas advindas de importação ou salários \cite{blinder_2008_the}. Elevar a taxa de juros em resposta a esse tipo de inflação pode, porém, ser ineficaz, uma vez que não combate a causa raiz do processo inflacionário para esse caso em particular. Tratam-se de situações em que deve haver sobrecompensação da taxa de juros para evitar aumento no nível de preços. Isso pode reduzir o crescimento econômico demasiadamente e gerar impactos em setores alheios às causas do problema.
 
- Diante desse contexto, compreender a interação entre os tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Para isso, são utilizadas técnicas econométricas aplicadas a séries temporais relacionadas aos índices de preços, tanto pelo lado da oferta, com indicadores como o  Índice de Preços ao Produtor Amplo (Disponibilidade Interna) (IPA-EP-DI), quanto pelo lado de demanda, com indicadores como o IPCA (Índice de Preços ao Consumidor Amplo). Também são utilizados outros indicadores macroeconômicos pertinentes, como o produto interno bruto (PIB) e a taxa de câmbio entre o real brasilero e o dólar estadunidense.
+ Diante desse contexto, compreender a interação entre os tipos de inflação e o funcionamento do RMI é crucial para avaliar a eficácia das políticas monetárias adotadas pelo Banco Central do Brasil nas últimas décadas. Para isso, são utilizadas técnicas econométricas aplicadas a séries temporais dos índices de preços, em especial o IPCA (Índice de Preços ao Consumidor Amplo) e \textit{proxies} que o influenciam. Dessa forma, são utilizados outros indicadores macroeconômicos pertinentes, como o produto interno bruto (PIB), a taxa de câmbio entre o real brasilero e o dólar estadunidense e o indíce de comercialização de \textit{commodities} (IC-Br).
 
 A análise de séries temporais permite modelar e prever o comportamento de variáveis econômicas ao longo do tempo, capturando tanto as tendências quanto as flutuações cíclicas e sazonais \cite{enders_2015_applied}. Métodos como a Análise de Vetores Autoregressivos (VAR), a Modelagem de Correção de Erros (ECM) e os testes de raiz unitária são frequentemente utilizados para investigar a relação entre a política monetária e a inflação \cite{hamilton_2020_time}.
 
@@ -513,9 +515,7 @@ Ao longo deste trabalho, serão abordados os diferentes tipos de inflação, seg
 
 \chapter{Tipos de Inflação}
 
-Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada um decorrente de fatores econômicos e contextos específicos. Nos anos de 1980 e início dos anos 1990, por exemplo, o país sofreu com altos níveis de inflação, caracterizada por aumentos de preços extremamente rápidos e incontroláveis. Esse período foi marcado por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Para \citeonline{bresser_1990_hiperinfla}, o fator desencadeante da hiperinflação foi a crise fiscal dos anos 1980, que pode ser desmembrada em três elementos: o déficit público, a dívida pública, tanto interna quanto externa, e o curto prazo de vencimento dos títulos públicos.
-
-% TODO: citation to back this up? https://www.scielo.br/j/rec/a/4ZqfqsrqsHwFJV9QjJWYsfN/?lang=pt
+Historicamente, o Brasil enfrentou diferentes tipos de inflação, cada um decorrente de fatores econômicos e contextos específicos. Nos anos de 1980 e início dos anos de 1990, por exemplo, o país sofreu com altos níveis de inflação. Esse períodos foram caracterizados por aumentos de preços extremamente rápidos e incontroláveis e foram, também, marcados por políticas econômicas instáveis, déficits fiscais elevados e um ciclo de indexação de preços, onde os preços e salários eram ajustados automaticamente à inflação passada, perpetuando o ciclo inflacionário. Para \citeonline{bresser_1990_hiperinfla}, o fator desencadeante da hiperinflação foi a crise fiscal dos anos 1980, que pode ser desmembrada em três elementos: o déficit público, a dívida pública, tanto interna quanto externa, e o curto prazo de vencimento dos títulos públicos.
 
 O Brasil experenciou de forma ostensiva a inflação inercial no final do século XX. Esse fenômeno é como um ciclo vicioso, uma vez que a inflação persiste devido à expectativa de que ela continuará, independentemente de outros fatores econômicos. Nos anos 1990, especialmente antes do Plano Real, a inflação inercial era alimentada pela indexação, onde preços e contratos eram ajustados automaticamente com base na inflação passada. O Plano Real, implementado em 1994, conseguiu quebrar essa inércia ao introduzir uma nova moeda e uma série de reformas econômicas que estabilizaram a economia. A partir desse ponto, o Brasil passou a experimentar uma inflação mais controlada, embora ainda enfrentasse desafios ocasionais devido a choques externos e flutuações internas na economia.
 
@@ -553,11 +553,11 @@ Abaixo, na Tabela \ref{table:currencyhist}, é apresentado um breve histórico d
 \vspace{-0.2cm}
 \vspace{0.5cm}
 
-Desde o Cruzeiro, passando pelo Cruzado, até chegar ao Real, cada uma das moedas observadas na Tabela \ref{table:currencyhist} surgiu em resposta a crises inflacionárias e à perda de confiança na moeda nacional vigente na época. Essas mudanças foram frequentemente catalisadas por eventos externos, como crises internacionais, choques no preço do petróleo, e também por fatores internos, como descontrole fiscal e políticas econômicas inconsistentes. Abaixo, detalhamos como a instabilidade econômica, que impacta diretamente a capacidade produtiva das empresas e o custo dos produtos e serviços, contribui para a inflação de oferta.
+Desde o Cruzeiro, passando pelo Cruzado, até chegar ao Real, cada uma das moedas observadas na Tabela \ref{table:currencyhist} surgiu em resposta a crises inflacionárias e à perda de confiança na moeda nacional vigente na época. Essas mudanças foram frequentemente catalisadas por eventos externos, como crises internacionais e choques no preço do petróleo, mas também por fatores internos, como descontrole fiscal e políticas econômicas inconsistentes. Abaixo, detalhamos como a instabilidade econômica, que impacta diretamente a capacidade produtiva das empresas e o custo dos produtos e serviços, contribui para a inflação de oferta.
 
 \section{Inflação de Oferta}
 
-Um exemplo marcante de inflação de oferta, tanto no Brasil quanto no mundo, ocorreu durante as crises do petróleo dos anos 1970. O aumento abrupto dos preços do petróleo, um insumo fundamental para diversas indústrias, resultou em custos mais altos de transporte e produção, impactando a economia brasileira. Outro exemplo mais recente foi observado durante a crise hídrica na região sudeste em 2014 e 2015, quando a escassez de água afetou a produção agrícola e a geração de energia hidrelétrica, levando ao aumento dos custos de alimentos e eletricidade (FRANCO, 2014).
+Um exemplo marcante de inflação de oferta, tanto no Brasil quanto em diversos outros países, ocorreu durante as crises do petróleo dos anos 1970. O aumento abrupto dos preços do petróleo, um insumo fundamental para diversas indústrias, resultou em custos mais altos de transporte e produção, impactando a economia brasileira. Outro exemplo mais recente foi observado durante a crise hídrica na região sudeste em 2014 e 2015, quando a escassez de água afetou a produção agrícola e a geração de energia hidrelétrica, levando ao aumento dos custos de alimentos e eletricidade \cite{crise_hidrica_lais}.
 
 É também conhecida como inflação de custos e ocorre quando os custos de produção aumentam, levando a um aumento nos preços dos bens e serviços finais. Esses aumentos nos custos podem ser decorrentes de elevações nos preços das matérias-primas, aumentos salariais, ou choques de oferta adversos, como desastres naturais ou interrupções no fornecimento de insumos essenciais. \citeonline{blinder_2008_the} descrevem a inflação de custos como um fenômeno onde os produtores, enfrentando maiores custos de produção, repassam esses custos para os consumidores através de preços mais altos.
 
@@ -573,21 +573,21 @@ Se por um lado choques nos custos de produção e salários causam inflação de
 
 Um exemplo histórico significativo de inflação de demanda ocorreu durante a década de 1970, quando muitos países enfrentaram pressões inflacionárias devido a políticas fiscais expansionistas e aumentos rápidos nos gastos de consumo \cite{blinder_2008_the}. Segundo \cite{woodford_2009_interest}, a gestão eficaz da demanda agregada é crucial para evitar pressões inflacionárias, destacando a importância da coordenação entre políticas fiscais e monetárias. Portanto, o controle da inflação de demanda requer uma abordagem equilibrada que inclua a moderação das expansões fiscais e uma política monetária prudente que consiga antecipar e neutralizar excessos de demanda.
 
-Um dos principais efeitos observados na economia sob a gestão macroeconômica brasileira baseada no RMI em situações de inflação de demanda é o aumento das taxas de juros, que desestimula o consumo e o investimento ao encarecer o crédito. Logo após a flexibilização das medidas adotadas durante a pandemia de COVID-19, em um cenário de choques de oferta e políticas fiscais expansionistas, a economia brasileira vivenciou pressões inflacionárias exacerbadas por uma demanda reprimida, liberada à medida que as restrições eram flexibilizadas. Para conter essa pressão inflacionária, o Banco Central do Brasil (BCB) iniciou um ciclo de aperto monetário em 2021, que resultou em elevações históricas da taxa SELIC, saindo de sua mínima histórica de 2\% ao ano em março de 2021 para 13,75\% em agosto de 2022.
+Um dos principais efeitos observados na economia sob a gestão macroeconômica brasileira baseada no RMI em situações de inflação de demanda é a desestimulação do consumo e do investimento acompanhado de um encarecimento do crédito. Para ilustrar a situação, logo após a flexibilização das medidas adotadas durante a pandemia de COVID-19, em um cenário de choques de oferta e políticas fiscais expansionistas, a economia brasileira vivenciou pressões inflacionárias exacerbadas por uma demanda reprimida, liberada à medida que as restrições eram flexibilizadas. Para conter essa pressão inflacionária, o Banco Central do Brasil (BCB) iniciou um ciclo de aperto monetário em 2021, que resultou em elevações históricas da taxa SELIC, saindo de sua mínima histórica de 2\% ao ano em março de 2021 para 13,75\% em agosto de 2022.
 
-\section{Inflação Estrutural}
+\section{Inflação Estrutural} \label{seq:inflestr}
 
 Diferentemente das modalidades anteriores, a inflação estrutural é causada por desequilíbrios fundamentais na estrutura econômica de um país. Fatores como a rigidez dos mercados, a ineficiência produtiva e a falta de competitividade em determinados setores podem contribuir para esse tipo de inflação. A inflação estrutural é particularmente relevante em economias em desenvolvimento, onde a infraestrutura inadequada e a baixa produtividade agrícola podem levar a aumentos persistentes nos preços. Essa forma de inflação requer reformas estruturais profundas para melhorar a eficiência e a capacidade produtiva da economia.
 
-No Brasil, a inflação estrutural pôde ser observada durante as décadas de 1970 e 1980, quando o país enfrentou uma inflação persistente devido a vários fatores estruturais na economia. Entre esses fatores estavam a ineficiência produtiva, a baixa competitividade das indústrias nacionais, a excessiva burocracia, e a rigidez do mercado de trabalho. Isso foi agravado pela indexação generalizada da economia, onde salários, contratos e preços eram ajustados automaticamente com base na inflação passada, criando um ciclo contínuo de reajustes que perpetuava a inflação.
-
 Sob o contexto do RMI, a regulação excessiva da taxa de juros pode contribuir para um cenário de inflação estrutural, uma vez que condições adversas de crédito e disponibilidade de moeda podem impedir processos de crescimento, atualização tecnológica e inovação dos setores produtivos. Adiante, observaremos o reflexo da condução da política monetária sobre a economia brasileira a longo prazo e como tentativas de preservação da estabilidade monetária podem, contraditoriamente, desencadear processos de descontrole monetário.
+
+No Brasil, a inflação estrutural pôde ser observada durante as décadas de 1970 e 1980, quando o país enfrentou uma inflação persistente devido a vários fatores estruturais na economia. Entre esses fatores estavam a ineficiência produtiva, a baixa competitividade das indústrias nacionais, a excessiva burocracia, e a rigidez do mercado de trabalho. Isso foi agravado pela indexação generalizada da economia, onde salários, contratos e preços eram ajustados automaticamente com base na inflação passada, criando um ciclo contínuo de reajustes que perpetuava a inflação.
 
 \section{Inflação Inercial}
 
 Outra forma de inflação experenciada pelo Brasil na mesma época discutida na seção anterior foi a inflação inercial, que é associada à tendência dos índices de preços continuarem aumentando devido à persistência das expectativas inflacionárias passadas. Esse tipo de inflação pode ser causado pela indexação de preços e salários, onde os agentes econômicos ajustam automaticamente os preços e salários futuros com base na inflação passada. \citeonline{lopes_1985_inflao} explica que, em um ambiente de inflação inercial, as expectativas de inflação se tornam autorrealizáveis, perpetuando a continuidade da inflação mesmo na ausência de novos choques de demanda ou custos.
 
-A indexação da economia, como já mencionada na seção 2.3 de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação perpetuava a inflação ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito (PEREIRA, 1998).
+A indexação da economia, como já mencionada na seção \ref{seq:inflestr} de inflação estrutural, fazia com que o ajuste automático dos salários e contratos com base na inflação passada criasse um ciclo contínuo de reajustes. Essa indexação perpetuava a inflação ao longo do tempo, principalmente nos anos de 1980, quando esse comportamento começou a ser identificado a partir do desenvolvimento de teorias a respeito \cite{pereira2_98}.
 
 É notável que, apesar do plano Real ter sido um fator muito importante para limitar as tendências inflácionárias, inclusive de inflação	inercial, o crescimento dos índices de preços, como o IGP-DI visto na Figura \ref{fig:igpdiacum} foram superiores às metas estipuladas pelo Banco Central. Assim, os preços de bens e serviços subiram a um ritmo mais acelerado que o esperado e as populações de rendas menores acabaram tendo seus poderes de compra reduzidos.
 
@@ -608,8 +608,6 @@ Na seção subsequente, observar-se-á que as principais fontes de inflação hi
 Nessa seção, inicia-se a contextualização da história econômica do Brasil, assim como a análise do comportamento da política monetária ao longo do tempo. É feito, também, um detalhamento das principais características das políticas econômicas conduzidas por cada governo de 2003 a 2023 e seus impactos sobre o cenário econômico nacional.
 
 \section{Governos do Século XX}
-
-% TODO: O cenário econômico brasileiro entre a década de 80 e 90 foi marcado por anos de inflação recorrente, o regime militar deixara uma dívida externa estratosférica para os governos seguintes que tinham como principal meta o controle dos preços por meio de planos de estabilização. Sabe-se que todos os planos fracassaram na tentativa de conter o avanço da inflação, como explicam Moran e Witte (1993, p. 120): “No Brasil, são notórias as tentativas de conter este processo, a maioria não obteve o sucesso desejado por vários motivos. [...] dentre os quais destacam o Plano Cruzado I, o Plano Cruzado II, o Plano Bresser, o Plano Verão, o Plano Collor I e o Plano Collor II.”.
 
 A bagagem econômica herdada dos diversos governos do século XX no Brasil teve um impacto duradouro na economia e na capacidade do país de implementar políticas macroeconômicas eficazes. Durante as décadas de 1950 e 1960, os governos de Getúlio Vargas e Juscelino Kubitschek adotaram políticas desenvolvimentistas que promoveram a industrialização acelerada e a expansão da infraestrutura, muitas vezes financiadas por meio de déficit público \cite{bielschowsky_2022_a}. Essas políticas resultaram em um crescimento econômico robusto, mas também em um aumento significativo da dívida pública e das pressões inflacionárias.
 
@@ -659,8 +657,6 @@ O sucesso do Plano Real não foi isento de desafios. A âncora cambial, enquanto
 
 Em resposta a essas crises e às pressões cambiais crescentes, o governo brasileiro decidiu abandonar a âncora cambial em janeiro de 1999 e adotar um regime de câmbio flutuante. Essa mudança foi acompanhada pela introdução do Regime de Metas de Inflação (RMI), que visava ancorar as expectativas inflacionárias por meio da transparência e previsibilidade das ações do Banco Central. Sob o RMI, o Conselho Monetário Nacional estabelece metas de inflação anuais, e o Banco Central utiliza as operações de \textit{open market}, redesconto e depósito compulsório como  principais instrumentos para atingir essas metas.
 
-% TODO: No segundo mandato de FHC, entre 1999 e 2002, o país precisou recorrer ao Fundo Monetário Internacional (FMI) para enfrentar o problema externo, recebendo acote de ajuda em torno de U$ 40 bilhões. O acordo com o FMI enfrentou duas adversidades, Giambiagi et al. (2011) explicam que a desconfiança referente a não desvalorização do câmbio por parte do mercado e o desprezo pelo Congresso com relação a medida de contribuição previdenciária, imposta pelo plano, levou a rejeição da medida pelos congressistas e aumentou o pessimismo, acelerando o processo de perda de divisas.
-
 A transição para o RMI representou uma mudança significativa na política monetária do Brasil. Ao invés de se concentrar exclusivamente no controle do câmbio, o Banco Central passou a focar na estabilidade de preços como seu principal objetivo. Essa abordagem permitiu uma maior flexibilidade na condução da política monetária, facilitando a resposta a choques econômicos internos e externos. A transparência do regime de metas também aumentou a credibilidade das políticas do Banco Central, ajudando a ancorar as expectativas inflacionárias e a reduzir a inflação de forma sustentável.
 
 Nos primeiros anos do RMI, a economia brasileira enfrentou desafios significativos, incluindo uma crise cambial em 1999 e um cenário internacional adverso. No entanto, a política monetária firme e a disciplina fiscal contribuíram para a estabilização da economia. A inflação, que chegou a 8,9\% em 1999, foi gradualmente reduzida, atingindo 5,97\% em 2002. A credibilidade do Banco Central e a eficácia do RMI foram reforçadas pela consistência das políticas adotadas, mesmo diante de adversidades \cite{fabiogiambiagi_1999_a}.
@@ -685,12 +681,10 @@ Além das políticas de estabilização econômica, o governo Lula implementou p
 
 No entanto, o aumento do consumo e a expansão dos programas sociais também colocaram pressão sobre a inflação. A execução do RMI levantou críticas sobre os altos custos dos empréstimos e o impacto negativo sobre o investimento e o crescimento econômico a longo prazo. Dessa forma, o regime de metas de inflação trouxe impactos para a economia brasileira durante o governo Lula, proporcionando estabilidade de preços, mas também impondo restrições à flexibilidade econômica.
 
-TODO: passar citações para refs.bib
-
 \section{Período Dilma Rousseff (2011-2016)}
 O governo de Dilma Rousseff (2011-2016) enfrentou desafios econômicos significativos, incluindo uma desaceleração econômica e aumento das pressões inflacionárias. A política econômica adotada durante este período foi caracterizada por uma expansão fiscal e intervenções frequentes nos preços administrados, como combustíveis e energia, o que dificultou o controle da inflação. A credibilidade do governo foi colocada em questão devido ao uso de medidas não convencionais e à percepção de interferência política no Banco Central. Como resultado, a inflação frequentemente excedeu as metas estabelecidas, exigindo aumentos abruptos na taxa de juros para tentar trazer a inflação de volta ao intervalo meta \cite{carvalho_2016_growth}.
 
-A implementação de políticas expansionistas, conhecidas como "nova matriz econômica", buscava incentivar o crescimento econômico através do aumento dos gastos públicos e subsídios a setores estratégicos. No entanto, essas políticas resultaram em um aumento do déficit fiscal e da dívida pública, o que elevou as expectativas inflacionárias. As desonerações tributárias e a política de controle de preços contribuíram para a deterioração das contas públicas e limitaram a capacidade do Banco Central de utilizar a política monetária para controlar a inflação de maneira eficaz.
+A implementação de políticas expansionistas, conhecidas como ``nova matriz econômica'', buscava incentivar o crescimento econômico através do aumento dos gastos públicos e subsídios a setores estratégicos. No entanto, essas políticas resultaram em um aumento do déficit fiscal e da dívida pública, o que elevou as expectativas inflacionárias. As desonerações tributárias e a política de controle de preços contribuíram para a deterioração das contas públicas e limitaram a capacidade do Banco Central de utilizar a política monetária para controlar a inflação de maneira eficaz.
 
 O contexto internacional também influenciou significativamente a economia brasileira durante o governo Dilma. A queda nos preços das \textit{commodities} e a desaceleração do crescimento global impactaram negativamente a balança comercial brasileira, reduzindo as receitas de exportação e aumentando a vulnerabilidade externa do país. Esses fatores externos, aliados às políticas domésticas expansionistas, intensificaram as pressões inflacionárias e tornaram o ambiente econômico mais desafiador para a manutenção da estabilidade dos preços.
 
@@ -720,11 +714,9 @@ A política fiscal do governo Bolsonaro, particularmente durante a pandemia, foi
 
 Além dos desafios econômicos, o governo Bolsonaro também enfrentou uma série de crises políticas que impactaram a economia. A relação tensa entre o poder executivo e os outros poderes, além das constantes mudanças nos ministérios, contribuiu para um ambiente de incerteza. No entanto, a independência formal do Banco Central, conquistada em 2021, foi vista como um passo importante para fortalecer o RMI e garantir uma política monetária mais eficiente e menos sujeita a pressões políticas, contribuindo para a estabilidade macroeconômica.
 
-\section{Perspectivas Recentes e Desafios (2023)}
+\section{Perspectivas Recentes e Desafios (2023 em diante)}
 
-Atualmente, o Brasil enfrenta uma série de desafios e oportunidades econômicas. Um dos principais focos continua sendo o controle da inflação, que permanece sendo um ponto focal para o Banco Central. Sob a liderança de Roberto Campos Neto, a política monetária tem sido rigorosamente ajustada para garantir que a inflação fique dentro das metas estabelecidas, apesar das pressões inflacionárias globais e domésticas. Como é observado abaixo na Figura \ref{fig:ipcatgt}, o país tem enfrentado taxas de inflação frequentemente maiores do que o planejado e isso se acentuou de forma severa após 2020:
-
-TODO: plotar SELIC e explicar essa dinamica. sobrecompensação etc.
+Atualmente, o Brasil enfrenta uma série de desafios e oportunidades econômicas. O controle da inflação permanece sendo um ponto focal para o Banco Central. Sob a liderança de Roberto Campos Neto, a política monetária tem sido rigorosamente ajustada para garantir que a inflação fique dentro das metas estabelecidas, apesar das pressões inflacionárias globais e domésticas. Como é observado abaixo na Figura \ref{fig:ipcatgt}, isso fez com que o país tenha enfrentado taxas de inflação frequentemente maiores do que o planejado e isso se acentuou de forma severa após 2020:
 
 \begin{figure}[H]
 	
@@ -737,11 +729,9 @@ TODO: plotar SELIC e explicar essa dinamica. sobrecompensação etc.
 	
 \end{figure}
 
-É interessante notar como crises econômicas	globais tiveram impacto sobre o ritmo do crescimento da inflação no Brasil. Tanto em 2009, na crise do \textit{subprime}, quanto em 2019, com a crise do COVID-19, observou-se (Tabela \ref{fig:ipcatgt}) a incapacidade das metas de inflação acompanharem a expansão monetária realizada nos períodos de gerenciamento das crises, evidenciando a dificuldade em manter a inflação sob controle. Diante dessa complexidade, a próxima seção traz a escolha de modelos econométricos que propõem formas de analisar o comportamento da política monetária diante de tais cenários econômicos.
+Sob esse contexto, a alta taxa de juros necessária para manter a inflação sob controle tem tido um impacto negativo sobre o crescimento econômico e o emprego. Os custos de empréstimos elevados desincentivam investimentos e consumo, limitando o crescimento do PIB: ``Em relação ao setor produtivo, as altas taxas de juros foram apontadas como principal entrave ao crescimento econômico.'' \cite{omar_juros08}.
 
-% \section{}
-
-% A alta taxa de juros necessária para manter a inflação sob controle tem um impacto negativo sobre o crescimento econômico e o emprego. Os custos de empréstimos elevados desincentivam investimentos e consumo, limitando o crescimento do PIB
+É interessante notar como crises econômicas	globais tiveram impacto sobre o ritmo do crescimento da inflação no Brasil. Com a crise da COVID-19, por exemplo, observou-se (Figura \ref{fig:ipcatgt}) a incapacidade das metas de inflação acompanharem a expansão monetária realizada nos períodos de gerenciamento da crise, evidenciando a dificuldade em manter a inflação sob controle. Diante disso, a próxima seção traz a escolha de modelos econométricos que propõem formas de analisar o comportamento da política monetária diante de tais cenários econômicos.
 
 % A pressão para atingir metas anuais pode levar a uma política monetária excessivamente restritiva ou expansiva, prejudicando a estabilidade econômica de longo prazo. A tentativa de atingir metas de curto prazo pode negligenciar problemas estruturais mais profundos na economia brasileira
 
@@ -749,23 +739,15 @@ TODO: plotar SELIC e explicar essa dinamica. sobrecompensação etc.
 
 \chapter{Metodologia}
 
-% TODO: 1 or 2 citations
-
 Há diversos modelos econométricos capazes de analisar a relação entre a política monetária e a inflação. Para o estudo, foi selecionado o modelo de vetores autorregressivos (VAR), que é amplamente utilizado para compreender a relação dinâmica entre múltiplas séries temporais, compostas por variáveis de política monetária como taxa de juros, índices de inflação e variáveis macroeconômicas, como PIB e taxa de câmbio. 
 
 O modelo VAR será utilizado porque permite analisar a interação entre múltiplas variáveis econômicas de forma dinâmica, sem impor restrições \textit{a priori} sobre a causalidade entre elas. Em um contexto como o da inflação no Brasil, onde diversas variáveis interagem de maneira complexa, o VAR se destaca por sua capacidade de modelar essas inter-relações de forma simultânea. Diferentemente de modelos estruturais, o VAR trata todas as variáveis como endógenas, o que é crucial para capturar adequadamente a resposta da política monetária e outras variáveis econômicas a choques inesperados, como os de oferta e demanda.
 
-Como o objetivo deste estudo é analisar tanto a dinâmica inflacionária de oferta quanto de demanda, o VAR oferece a flexibilidade necessária para modelar essas influências e testar como a política monetária deve ser ajustada para alcançar os objetivos propostos pelo regime de metas de inflação. Em sua extensão, o modelo VAR oferece funções de resposta a impulsos (IRF) e decomposição de variância (VD), que são utilizados para estudar o impacto de um choque nas variáveis do modelo sobre a inflação ao longo do tempo.
+Como o objetivo deste estudo é analisar tanto a dinâmica inflacionária de oferta quanto de demanda, o VAR oferece a flexibilidade necessária para modelar essas influências e testar como a política monetária deve ser ajustada para alcançar os objetivos propostos pelo regime de metas de inflação. Em sua extensão, o modelo VAR oferece funções de resposta a impulsos (IRF) e decomposição de variância (VD), que serão utilizados para estudar o impacto de um choque nas variáveis do modelo sobre a inflação ao longo do tempo.
 
 \section{Modelo}
 
-% TODO: refs23
-% Enders, W. (2004). Applied Econometric Time Series. John Wiley & Sons.
-% Hamilton, J. D. (1994). Time Series Analysis. Princeton University Press.
-% Lütkepohl, H. (2005). New Introduction to Multiple Time Series Analysis. Springer.
-% Stock, J. H., & Watson, M. W. (2001). Vector Autoregressions. Journal of Economic Perspectives, 15(4), 101–115.
-
-Na equação \ref{eqn:varmodl} abaixo, é apresentado o modelo VAR de ordem $p$, onde um vetor de variáveis endógenas $y_t$ de dimensão $n \times 1$ é descrito por:
+Na equação \ref{eqn:varmodl} abaixo, é apresentado o modelo VAR de ordem $p$, onde um vetor de $n$ variáveis endógenas $y_t$ de dimensão $n \times 1$ é descrito por:
 
 \begin{equation}
 	\label{eqn:varmodl}
@@ -780,9 +762,11 @@ Onde:
 	\item $u_t$ é um vetor $n \times 1$ de termos de erro.
 \end{itemize}
 
-A estimação do modelo pode ser feita por Mínimos Quadrados Ordinários (MQO), aplicados equação a equação ou via métodos mais robustos e eficientes, dependendo das hipóteses sobre $u_t$ (Hamilton, 1994). A obtenção do comportamento da IRF é feita por meio da introdução de um choque, normalmente de 1 desvio padrão sobre o modelo, sendo computado iterativamente pela decomposição autorregressiva do VAR (Lütkepohl, 2005).
+A estimação do modelo pode ser feita por Mínimos Quadrados Ordinários (MQO), aplicados equação a equação ou via métodos mais robustos e eficientes, dependendo das hipóteses sobre $u_t$ \cite{hamilton_1994_time_series_analysis}. A obtenção do comportamento da IRF é feita por meio da introdução de um choque sobre o modelo, sendo computado iterativamente pela decomposição autorregressiva do VAR \cite{lutkepohl_2005_new_introduction}.
 
-Para uma construção eficaz do modelo VAR, o primeiro passo é garantir que as variáveis utilizadas no modelo sejam estacionárias. A estacionariedade é fundamental para evitar resultados espúrios, ou seja, resultados que indicam uma relação de longo prazo inexistente entre as variáveis. De acordo com Gujarati e Porter (2011), uma série temporal estacionária é aquela cujas propriedades estatísticas, como média, variância e autocorrelação, não mudam ao longo do tempo. A verificação da estacionariedade é realizada por meio de testes como o Dickey-Fuller aumentado (ADF) e o Phillips-Perron (PP), que testam a presença de raiz unitária na série temporal. Caso as séries não sejam estacionárias, é possível realizar diferenciações para atingir a estacionariedade \cite{gujarati_porter_2011}, como observado a seguir.
+Para uma construção eficaz do modelo, o primeiro passo é garantir que as variáveis utilizadas no modelo sejam estacionárias. A estacionariedade é fundamental para evitar resultados espúrios, ou seja, resultados que indicam uma relação de longo prazo inexistente entre as variáveis. De acordo com \citeonline{gujarati_porter_2011}, uma série temporal estacionária é aquela cujas propriedades estatísticas, como média, variância e autocorrelação, não mudam ao longo do tempo.
+
+A verificação da estacionariedade é realizada por meio de testes como o Dickey-Fuller aumentado (ADF) e o Phillips-Perron (PP), que testam a presença de raiz unitária na série temporal. Caso as séries não sejam estacionárias, é possível realizar diferenciações para atingir a estacionariedade, como observado a seguir.
 
 \subsection{Diferenciação de Séries Temporais}
 
@@ -807,7 +791,7 @@ A diferenciação de ordem \( d \), observada na equação \ref{eqn:diffsimple} 
 	\Delta^d y_t = \Delta^{d-1}(y_t - y_{t-1})
 \end{equation}
 
-Para determinar corretamente como proceder com a diferenciação de uma série, surge a necessidade de verificar se cada série temporal possui raiz unitária e, portanto, não é estacionária. Nesse contexto, as seções subsequentes apresentam procedimentos para que isso seja determinado.
+Para determinar corretamente como proceder com a diferenciação de uma série, surge a necessidade de verificar se cada série temporal possui raiz unitária e, portanto, não é estacionária. Nesse contexto, as seções subsequentes apresentam procedimentos para que isso seja feito.
 
 \subsection{Teste de Dickey-Fuller Aumentado (ADF)}
 
@@ -836,7 +820,7 @@ Uma vantagem do teste ADF em relação ao Dickey-Fuller simples é sua robustez 
 
 \subsection{Teste de Phillips-Perron (PP)}
 
-Visto que o ADF assume que os erros do modelo são homocedásticos, sendo uma potencial limitação em casos onde há heterocedasticidade ou autocorrelação nos resíduos, \citeonline{phillips_perron_1988} propuseram uma alternativa mais robusta, que é o teste de Phillips-Perron (PP). O teste é procedido sem a necessidade de incluir defasagens adicionais das diferenças como no ADF. A metodologia de Phillips-Perron se baseia na mesma equação \ref{eqn:adf_reg} de regressão do teste de Dickey-Fuller, que pode ser representada como:
+Visto que o ADF assume que os erros do modelo são homocedásticos, ou seja, a variância dos erros é constante, \citeonline{phillips_perron_1988} propuseram uma alternativa mais robusta para lidar com a potencial limitação em casos onde há heterocedasticidade ou autocorrelação nos resíduos, que é o teste de Phillips-Perron (PP). O teste é procedido sem a necessidade de incluir defasagens adicionais das diferenças como no ADF. A metodologia de Phillips-Perron se baseia na mesma equação \ref{eqn:adf_reg} de regressão do teste de Dickey-Fuller, que pode ser representada como:
 
 \begin{equation}
 	\label{eqn:adf_reg}
@@ -864,6 +848,8 @@ onde \( \hat{\gamma} \) é o coeficiente estimado da regressão e \( \widehat{\s
 \citeonline{phillips_perron_1988} mostram que o teste PP é assintoticamente equivalente ao ADF, mas com a vantagem de ser mais robusto a formas de heterocedasticidade que são comuns em séries temporais econômicas. De acordo com \citeonline{greene_2008_econometric_analysis}, o teste de Phillips-Perron é uma alternativa poderosa quando se deseja manter a simplicidade do modelo sem incluir muitas defasagens, sendo especialmente útil em amostras menores, onde a inclusão de muitas defasagens poderia reduzir a potência do teste.
 
 De maneira semelhante ao teste ADF, os valores críticos do teste de Phillips-Perron são obtidos de tabelas específicas que levam em consideração a estrutura assintótica da série. O valor de \( \gamma \) deve ser comparado com os valores críticos apropriados, e a hipótese nula de raiz unitária (\( H_0: \gamma = 0 \)) é rejeitada se a estatística de teste for menor que o valor crítico, indicando que a série é estacionária.
+
+Uma vez identificada a presença ou não de raizes unitárias nas variaveis selecionadas, seja via ADF ou PP, é necessário determinar o numero de defasagens a serem adotas pelo modelo VAR. Abaixo, sao elencadas algumas formas de realizar uma selecao otima.
 
 \subsection{Critério de Informação de Akaike (AIC)} \label{sec:aic}
 
@@ -986,7 +972,7 @@ O PIB foi inflacionado tomando como base o ano de 2024 utilizando o IGP-DI como 
 
 A taxa de câmbio utilizada no estudo expressa o valor da moeda brasileira em relação ao dólar comercial americano. A meta de inflação, definida pelo Conselho Monetário Nacional (CMN) e conduzida pelo BCB, serve como um guia para as expectativas inflacionárias e para a condução das taxas de juros via taxa SELIC. Ao incluir essa variável no modelo, é possível verificar se a inflação real (capturada pelo IPCA) converge para a meta estabelecida, o que permite avaliar o grau de sucesso e as possíveis deficiências da política monetária no controle da inflação ao longo do tempo. Além disso, essa variável permite observar como a política monetária responde a diferentes tipos de choques inflacionários ao longo do período analisado.
 
-Levando o que foi apresentado em consideração, a seguir, é apresentada a Tabela \ref{table:vars}, que sintetiza as variáveis, suas origens e as siglas que foram adotadas durante a execução da rotina econométrica desenvolvida no \textit{software} STATA:
+Levando o que foi apresentado em consideração, a seguir, são apresentadas a Tabela \ref{table:vars} e a Figura \ref{fig:ln_variaveis}, que sintetizam as variáveis, suas origens e as siglas que foram adotadas durante a execução da rotina econométrica desenvolvida no \textit{software} STATA, além de mostrá-las de forma visual:
 
 \vspace{0.2cm}
 \begin{table}[H]
@@ -1015,6 +1001,15 @@ Levando o que foi apresentado em consideração, a seguir, é apresentada a Tabe
 
 \vspace{-0.2cm}
 \vspace{0.5cm}
+
+\begin{figure}[H]
+	
+	\caption{Variáveis selecionadas em escala logarítimica ($\ln$) (2002-2024)}
+	
+	\includegraphics[width=\textwidth]{fig/ln_variaveis.png}\\
+	\footnotesize{\textbf{Fonte}: o próprio autor, dados do IBGE e Banco Central}
+	\label{fig:ln_variaveis}
+\end{figure}
 
 Com base nas variáveis selecionadas, definimos, a seguir, o modelo VAR que propõe a medição do impacto da oferta (\textit{IC-Br}) e da demanda (\textit{PIB}) da economia brasileira sobre a inflação (\textit{IPCA}):
 
@@ -1049,7 +1044,7 @@ A seguir, procedemos os testes de raizes unitárias, verificamos a necessidade d
 
 \section{Resultados e Discussão}
 
-Os resultados dos testes DF-GLS e Phillips-Perron estão elencados na tabela \ref{table:adfpptests} abaixo. É evidente que as séries temporais não são estacionárias para nenhuma das variáveis a um nível de significância de $5\%$. Como observação, o prefixo "$\ln\_$" indica que a variável em questão foi transformada em logaritmo.
+Os resultados dos testes DF-GLS e Phillips-Perron estão elencados na tabela \ref{table:adfpptests} abaixo. É evidente que as séries temporais não são estacionárias para nenhuma das variáveis a um nível de significância de $5\%$. Como observação, o prefixo ``$\ln\_$'' indica que a variável em questão foi transformada em logaritmo -- feito para que seja interpretada como elasticidade.
 
 \begin{table}[H]
 \centering
@@ -1079,7 +1074,7 @@ Os resultados dos testes DF-GLS e Phillips-Perron estão elencados na tabela \re
 \end{minipage}
 \end{table}
 
-A partir dos resultados obtidos, fica nítida a necessadidade de se aplicar a diferenciação às variáveis. Após a aplicação das primeiras diferenças, observamos, através da tabela \ref{table:adfpptestsdiff}, que o critério de estacionariedade é satisfeito e as séries podem ser utilizadas como insumo para proceder o modelo VAR. Como observação, o prefixo "$d.$" demonstra que a primeira diferença foi utilizada para a variável em questão.
+A partir dos resultados obtidos, fica nítida a necessadidade de se aplicar a diferenciação às variáveis. Após a aplicação das primeiras diferenças, observamos, através da tabela \ref{table:adfpptestsdiff}, que o critério de estacionariedade é satisfeito e as séries podem ser utilizadas como insumo para proceder o modelo VAR. Como observação, o prefixo ``$d.$'' demonstra que a primeira diferença foi utilizada para a variável em questão.
 
 \begin{table}[H]
 \centering
@@ -1109,7 +1104,7 @@ A partir dos resultados obtidos, fica nítida a necessadidade de se aplicar a di
 \end{minipage}
 \end{table}
 
-Uma vez determinado que as variáveis atendem aos critérios de estacionariedade, procedemos os testes relacionados aos critérios de informação de Akaike, Hannan-Quinn e Schwarz. A tabela \ref{tab:defasagem} demonstra uma preferência ao nível de significância de $5\%$ por quatro defasagens, apesar do critério SBIC demostrar apenas uma defasagen como ideal.
+Uma vez determinado que as variáveis atendem aos critérios de estacionariedade, procedemos os testes relacionados aos critérios de informação de Akaike, Hannan-Quinn e Schwarz. A tabela \ref{tab:defasagem} demonstra uma preferência, ao nível de significância de $5\%$, por quatro defasagens, apesar do critério SBIC demostrar apenas uma defasagen como ideal.
 
 \begin{table}[H]
 \centering
@@ -1136,35 +1131,49 @@ Uma vez determinado que as variáveis atendem aos critérios de estacionariedade
 \end{table}
 
 
-Observa-se que enquanto que o critério de informação de Schwarz indica o uso de uma defasagem, os outros critérios, AIC e HQIC apontam quatro defasagens como ideais para o modelo. Uma vez que o SBIC pune mais severamente subsequentes defasagens e que as séries temporais se extendem por um período de 20 anos, optamos por utilizar 4 \textit{lags}. Ao executar o modelo e obter sua IRF para as variáveis \textit{d.ln\_icbr} e \textit{d.ln\_pibinfl}, obtemos a figura \ref{fig:irf_ipca} abaixo:
+Enquanto o critério de informação de Schwarz indica o uso de uma defasagem, os outros critérios, AIC e HQIC apontam quatro defasagens como ideais para o modelo. Uma vez que o SBIC pune mais severamente subsequentes defasagens e que as séries temporais se extendem por um período de 20 anos, optamos por utilizar 4 \textit{lags}. Ao executar o modelo e obter sua IRF para as variáveis \textit{d.ln\_icbr} e \textit{d.ln\_pibinfl}, obtemos a figura \ref{fig:irf_ipca_2002_2024} abaixo:
 
 
 \begin{figure}[H]
 	
 	\caption{IRF para choques de oferta e demanda sobre o IPCA (2002-2024)}
 	
-	\includegraphics[width=\textwidth]{fig/irf_ipca.png}\\
-	\footnotesize{\textbf{Fonte}: o próprio autor, dados fornecidos pelo Banco Central e Fundação Getúlio Vargas.}
-	\label{fig:irf_ipca}
+	\includegraphics[width=\textwidth]{fig/irf_ipca_2002_2024.png}\\
+	\footnotesize{\textbf{Fonte}: o próprio autor, via \textit{software} STATA 17.}
+	\label{fig:irf_ipca_2002_2024}
 \end{figure}
 
-TODO: Explicar que o lado de oferta não é bem suportado pelo RMI, como demonstra a IRF.
+Com base na figura \ref{fig:irf_ipca_2002_2024}, é possível observar que choques de demanda (PIB) são responsáveis apenas por parte do efeito observado sobre a inflação. Boa parte do comportamento do IPCA pode ser atribuído a choques de oferta (IC-Br). A implicação disso é que a política monetária brasileira atua sob eficiência reduzida, uma vez que seu principal mecanismo de ação é a contenção da demanda.
+
+Adicionalmente, é possível explicitar outros fatores na composição da inflação. Notadamente, temos o efeito \textit{exchange rate pass-through} (ERPT), que, de acordo com \citeonline{cortapasso_estagflacao}, é o que descreve o grau de repasse da variação cambial para o nível de preços da economia. A figura \ref{fig:irf_cambio_2002_2024} demonstra que, além de choques de oferta e demanda, o efeito ERPT pode influenciar, ainde que em menor grau, a variação dos preços da economia.
+
+\begin{figure}[H]
+	
+	\caption{IRF para choques no câmbio sobre o IPCA (2002-2024)}
+	
+	\includegraphics[width=\textwidth]{fig/irf_cambio_2002_2024.png}\\
+	\footnotesize{\textbf{Fonte}: o próprio autor, via \textit{software} STATA 17.}
+	\label{fig:irf_cambio_2002_2024}
+\end{figure}
+
+Em suma, o estudo demonstra que há outras vias pelas quais a política monetária pode atuar a fim de maximizar sua efetividade e promover a contenção da inflação de forma sustentável, evitando a estagnação econômica decorrente do encarecimento do crédito e do arrefecimento do ambiente econômico frequentemente observado nas implantações do regime de metas de inflação baseado puramente na ótica da demanda.
 
 \chapter{Considerações Finais}
 
-O objetivo do estudo é de verificar se o RMI é eficiente diante das variáveis macroeconômicas observadas ao longo do período de cerca de duas décadas. Foram selecionados os modelos VAR e ECM para efetuar testes a respeito da premissa de que xyz.
+Os resultados apresentados ao longo deste trabalho evidenciam o caráter multifacetado da dinâmica inflacionária no Brasil. Embora a adoção do Regime de Metas de Inflação (RMI) em 1999 tenha sido bem-sucedida em consolidar as expectativas de estabilidade de preços, nossa análise reforçou que a inflação não é um fenômeno estritamente relacionado à demanda. Pelo contrário, choques de oferta (como variações nos custos de \textit{commodities}) também desempenham papel essencial na formação dos preços ao longo do período estudado (2002 a 2024). Isso sugere que o Banco Central, ao se apoiar sobretudo em políticas de elevação da taxa SELIC para conter a inflação, pode, em certos casos, desconsiderar a origem do choque inflacionário, o que torna o controle dos preços mais custoso para a economia.
 
-TODO: explicar que boa parte da variacao IPCA é formada por choques de oferta que nao sao bem resolvidas pela alteracao da SELIC.
+A metodologia adotada, baseada em modelos de Vetores Autoregressivos (VAR), permitiu isolar e quantificar a resposta do IPCA a choques específicos de oferta e de demanda. A constatação de que fatores de oferta (como o índice de \textit{commodities} IC-Br) afetam de maneira não negligenciável a trajetória de preços reforça a relevância de políticas de estabilização que ultrapassem o escopo puramente monetário. Em cenários em que a pressão sobre a inflação advém predominantemente de choques de custo, reajustes intensos da taxa básica de juros podem, muitas vezes, elevar o custo de crédito e inibir o crescimento do PIB, sem resolver a raiz do problema inflacionário.
 
-TODO: executar o mesmo modelo para 2019-2024 (verificar impacto especifico da COVID)
-TODO: demonstrar outros choques (efeito pass-through)
+Da mesma forma, a avaliação das políticas econômicas e dos diferentes governos evidenciou a necessidade de coordenação entre política monetária e política fiscal. Periodicamente, o descompasso entre aumento de gastos públicos (ampliando a demanda agregada) e a tentativa de conter preços por meio de juros mais elevados acabou elevando o endividamento público e, consequentemente, a percepção de risco dos agentes econômicos. O equilíbrio entre disciplina fiscal, transparência nas ações do Banco Central e observância às metas inflacionárias mostrou-se crucial para a credibilidade da política monetária e para a confiança de investidores e consumidores.
+
+Em termos de contribuições práticas, os resultados deste trabalho apontam para a importância de se considerar a natureza dos choques inflacionários antes de qualquer ação corretiva. Caso a origem seja a demanda, um incremento na taxa de juros pode ser justificado, mas, se, por outro lado, o choque advir de fatores de oferta, talvez sejam necessárias políticas setoriais ou estruturais, bem como estratégias de mitigação de volatilidade cambial, para reduzir a intensidade das pressões inflacionárias sem restringir excessivamente o investimento e o consumo. Ademais, a melhoria contínua na comunicação do Banco Central, alinhada a um debate público abrangente sobre metas e custos de combate à inflação, pode aprimorar a previsibilidade da política econômica e consolidar a ancoragem das expectativas inflacionárias.
+
+Em síntese, o RMI continua relevante para a estabilidade de preços no Brasil, mas demanda um olhar atento para os diferentes motores da inflação. Se, por um lado, a forte tradição de indexação e a volatilidade econômica reforçam o papel de uma política monetária ativa, por outro, há a necessidade de complementá-la com reformas estruturais e maior coordenação fiscal. Dessa forma, a condução das políticas econômicas brasileiras poderá equilibrar a busca pela estabilidade de preços com a promoção de um ambiente macroeconômico menos suscetível a estagnações e mais propício ao crescimento de longo prazo.
 
 %%%%%%%%%%%%%
 %BIBLIOGRAFIA
 \bibliographystyle{abntex2-alf}
 \bibliography{ref}
-
-
 
 %%%%%%%%%%%%%%%%%
 %APÊNCICES
