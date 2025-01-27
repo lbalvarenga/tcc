@@ -1,1 +1,107 @@
-qui {	clear all	local BASE_PATH "\\wsl.localhost\Debian\home\lal\work\uel\tcc"local BLOCK_PROMPT 1  cd `BASE_PATH'do "utils\utils.do"	sysuse autoimport delimited "data\stata\joined_02_23.csv", clear// Vars coletadaslabel var date "Mês"label var rate "Taxa de Câmbio (R$/USD)"label var ipa_ep_di "Índice de Preços ao Produtor Amplo"label var ipca "Índice de Preços ao Consumidor Amplo"label var pibdefl03 "Produto Interno Bruto Deflacionado (2003)"label var selic "Taxa SELIC"label var metabcb "Meta de Inflação do Banco Central"// Vars para gerar...gen months = monthly(date, "YM")format months %tm// Configurar serie temporaln tsset months, monthly// TODO: ADF para todas vars// Testes de estacionariedaden _print "------- TESTES: ADF, PP -------" n _print "*************** Taxa de Câmbio (R$/USD) ****************"n dfuller rate // > 0.05 -> fazer diffn pperron rate // > 0.05 -> fazer diffn _print "********** Índice de Preços ao Produtor Amplo **********"n dfuller ipa_ep_di // > 0.05 -> fazer diffn pperron ipa_ep_di // > 0.05 -> fazer diffn _print "********* Índice de Preços ao Consumidor Amplo *********"n dfuller ipca // < 0.05 estacionarialocal beta_1a = r(Zt)local p_1a = r(p)n pperron ipca // < 0.05 estacionarialocal beta_1b = r(Zt)local p_1b = r(p)n _print "****** Produto Interno Bruto Deflacionado (2003) ******"n dfuller pibdefl03 // > 0.05 -> fazer diffn pperron pibdefl03 // > 0.05 -> fazer diffn _print "********************** Taxa SELIC *********************"n dfuller selic // < 0.05 -> estacionarialocal beta_2a = r(Zt)local p_2a = r(p)n pperron selic // < 0.05 -> estacionarialocal beta_2b = r(Zt)local p_2b = r(p)n _print "********** Meta de Inflação do Banco Central **********"n dfuller metabcb // < 0.05 -> estacionarialocal beta_3a = r(Zt)local p_3a = r(p)n pperron metabcb // < 0.05 -> estacionarialocal beta_3b = r(Zt)local p_3b = r(p)// Criacao vars diffgen d_rate = d.rategen d_ipa_ep_di = d.ipa_ep_digen d_pibdefl03 = d.pibdefl03n _print "*******************************************************"n _print "------- TESTES CORRIGIDOS: ADF, PP -------" n _print "*************** Taxa de Câmbio (R$/USD) ****************"n dfuller d_rate // < 0.05 -> estacionarialocal beta_4a = r(Zt)local p_4a = r(p)n pperron d_rate // < 0.05 -> estacionarialocal beta_4b = r(Zt)local p_4b = r(p)n _print "********** Índice de Preços ao Produtor Amplo **********"n dfuller d_ipa_ep_di // < 0.05 -> estacionarialocal beta_5a = r(Zt)local p_5a = r(p)n pperron d_ipa_ep_di // < 0.05 -> estacionarialocal beta_5b = r(Zt)local p_5b = r(p)n _print "****** Produto Interno Bruto Deflacionado (2003) ******"n dfuller d_pibdefl03 // < 0.05 -> estacionarialocal beta_6a = r(Zt)local p_6a = r(p)n pperron d_pibdefl03 // < 0.05 -> estacionarialocal beta_6b = r(Zt)local p_6b = r(p)// Salvar dfuller e ppquietly {	capture log close csv	log using "stataout\adf.csv", replace text name(csv)		noisily di "var,adf,pval"		noisily di "ipca," %4.2f `beta_1a' "," %4.3f `p_1a'		noisily di "selic," %4.2f `beta_2a' "," %4.3f `p_2a'		noisily di "metabcb," %4.2f `beta_3a' "," %4.3f `p_3a'		noisily di "d_rate," %4.2f `beta_4a' "," %4.3f `p_4a'		noisily di "d_ipa_ep_di," %4.2f `beta_5a' "," %4.3f `p_5a'		noisily di "d_pibdefl03," %4.2f `beta_6a' "," %4.3f `p_6a'	capture log close csv	log using "stataout\pp.csv", replace text name(csv)		noisily di "var,pp,pval"		noisily di "ipca," %4.2f `beta_1b' "," %4.3f `p_1b'		noisily di "selic," %4.2f `beta_2b' "," %4.3f `p_2b'		noisily di "metabcb," %4.2f `beta_3b' "," %4.3f `p_3b'		noisily di "d_rate," %4.2f `beta_4b' "," %4.3f `p_4b'		noisily di "d_ipa_ep_di," %4.2f `beta_5b' "," %4.3f `p_5b'		noisily di "d_pibdefl03," %4.2f `beta_6b' "," %4.3f `p_6b'	capture log close csv}}
+qui {
+	
+cls
+clear all
+	
+local BASE_PATH "\\wsl.localhost\Debian\home\lal\work\uel\tcc"
+local BLOCK_PROMPT 1
+  
+cd `BASE_PATH'
+do "utils\utils.do"
+	
+sysuse auto
+import delimited "data\combinado.csv", clear
+
+// Vars coletadas
+label var date "Mês"
+label var pibinfl "PIB Inflacionado (IGP-DI)"
+label var igpdi "IGP-DI"
+label var icbr "Commodities Brasil"
+label var consap "Consumo Aparente"
+label var pib "PIB"
+label var cambio "Taxa de Câmbio (PTAX)"
+label var ipca "IPCA"
+label var selic "Taxa SELIC"
+
+// Vars para gerar...
+gen ivals = _n
+gen months = tm(2002m1) + _n - 1
+n tsset months, monthly
+
+
+n _print "------- Geração das variáveis ln-------" 
+gen ln_pibinfl = ln(pibinfl)
+gen ln_igpdi = ln(igpdi)
+gen ln_icbr = ln(icbr)
+gen ln_consap = ln(consap)
+gen ln_cambio = ln(cambio)
+gen ln_ipca = ln(ipca)
+gen ln_selic = ln(selic)
+
+// TODO: ADF para todas vars
+
+// Testes de estacionariedade
+n _print "------- TESTES: DF-GLS, PP -------" 
+
+n _print "*************** IPCA ****************"
+n dfgls ln_ipca, maxlag(6)
+n pperron ln_ipca
+
+n _print "*************** Taxa de Câmbio (PTAX) ****************"
+n dfgls ln_cambio, maxlag(6)
+n pperron ln_cambio
+
+n _print "*************** Taxa de Juros SELIC ****************"
+n dfgls ln_selic, maxlag(6)
+n pperron ln_selic
+
+n _print "*************** PIB Inflacionado (IGP-DI) ****************"
+n dfgls ln_pibinfl, maxlag(6)
+n pperron ln_pibinfl
+
+n _print "*************** Índice de Commodities - Brasil (IC-Br) ****************"
+n dfgls ln_icbr, maxlag(6)
+n pperron ln_icbr
+
+n _print "*******************************************************"
+// n block_prompt 1
+
+n _print "------- TESTES CORRIGIDOS: DF-GLS, PP -------" 
+
+n _print "*************** IPCA ****************"
+n dfgls d.ln_ipca, maxlag(6)
+n pperron d.ln_ipca
+
+n _print "*************** Taxa de Câmbio (PTAX) ****************"
+n dfgls d.ln_cambio, maxlag(6)
+n pperron d.ln_cambio
+
+n _print "*************** Taxa de Juros SELIC ****************"
+n dfgls d.ln_selic, maxlag(6)
+n pperron d.ln_selic
+
+n _print "*************** PIB Inflacionado (IGP-DI) ****************"
+n dfgls d.ln_pibinfl, maxlag(6)
+n pperron d.ln_pibinfl
+
+n _print "*************** Índice de Commodities - Brasil (IC-Br) ****************"
+n dfgls d.ln_icbr, maxlag(6)
+n pperron d.ln_icbr
+
+n _print "*******************************************************"
+// n block_prompt 1
+
+
+
+n _print "------- Modelo VAR -------" 
+
+n _print "*************** AIC, BIC, HQIC ****************"
+n varsoc d.ln_ipca d.ln_cambio d.ln_selic d.ln_pibinfl d.ln_icbr
+
+n _print "*************** IRF ****************"
+n varbasic d.ln_ipca d.ln_cambio d.ln_selic d.ln_pibinfl d.ln_icbr, lags(1 2 3 4) step(12)
+irf set "_varbasic.irf"
+
+irf graph irf, irf(varbasic) impulse(D.ln_pibinfl D.ln_icbr) response(D.ln_ipca)
+
+}
